@@ -40,19 +40,18 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24">
+      <section className="py-16 md:py-24">
         <div className="container-narrow">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <p className="text-xs uppercase tracking-[0.4em] text-primary mb-4">Contact</p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl tracking-wide mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-4">
               Entrons en contact
             </h1>
-            <p className="text-foreground/60 text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Vous êtes galeriste, journaliste, ou simplement touché par mon univers ? 
               N'hésitez pas à m'écrire pour toute demande de collaboration, exposition ou information.
             </p>
@@ -61,7 +60,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="pb-32">
+      <section className="pb-20">
         <div className="container-narrow">
           <div className="grid lg:grid-cols-3 gap-16">
             {/* Contact Info */}
@@ -69,36 +68,36 @@ const Contact = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1 }}
-              className="space-y-12"
+              transition={{ duration: 0.8 }}
+              className="space-y-8"
             >
               <div>
-                <h2 className="text-xl tracking-wide mb-8">Informations</h2>
+                <h2 className="text-xl font-semibold mb-6">Informations</h2>
                 
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <MapPin className="text-primary mt-1" size={20} strokeWidth={1.5} />
+                    <MapPin className="text-primary mt-1" size={20} />
                     <div>
-                      <p className="text-foreground/80">Atelier</p>
+                      <p className="font-medium">Atelier</p>
                       <p className="text-muted-foreground">Nantes, France</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <Mail className="text-primary mt-1" size={20} strokeWidth={1.5} />
+                    <Mail className="text-primary mt-1" size={20} />
                     <div>
-                      <p className="text-foreground/80">Email</p>
+                      <p className="font-medium">Email</p>
                       <p className="text-muted-foreground">contact@carrementabstrait.com</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-8 border-t border-border/50">
-                <h3 className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+              <div className="pt-8 border-t border-border">
+                <h3 className="text-sm uppercase tracking-widest text-muted-foreground mb-4">
                   Pour les professionnels
                 </h3>
-                <p className="text-foreground/60 text-sm leading-relaxed">
+                <p className="text-foreground/70 text-sm leading-relaxed">
                   Je suis disponible pour des expositions personnelles ou collectives, 
                   des commandes sur mesure, et des collaborations artistiques.
                 </p>
@@ -110,13 +109,13 @@ const Contact = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:col-span-2"
             >
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid md:grid-cols-2 gap-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">
+                    <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Nom *
                     </label>
                     <input
@@ -126,13 +125,13 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-0 py-4 border-0 border-b border-border bg-transparent focus:outline-none focus:border-primary transition-colors duration-300 text-foreground placeholder:text-muted-foreground"
+                      className="w-full px-4 py-3 border border-border bg-transparent focus:outline-none focus:border-primary transition-colors"
                       placeholder="Votre nom"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">
+                    <label htmlFor="email" className="block text-sm font-medium mb-2">
                       Email *
                     </label>
                     <input
@@ -142,14 +141,14 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-0 py-4 border-0 border-b border-border bg-transparent focus:outline-none focus:border-primary transition-colors duration-300 text-foreground placeholder:text-muted-foreground"
+                      className="w-full px-4 py-3 border border-border bg-transparent focus:outline-none focus:border-primary transition-colors"
                       placeholder="votre@email.com"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">
+                  <label htmlFor="subject" className="block text-sm font-medium mb-2">
                     Objet *
                   </label>
                   <select
@@ -158,19 +157,19 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-0 py-4 border-0 border-b border-border bg-transparent focus:outline-none focus:border-primary transition-colors duration-300 text-foreground"
+                    className="w-full px-4 py-3 border border-border bg-transparent focus:outline-none focus:border-primary transition-colors"
                   >
-                    <option value="" className="bg-background">Sélectionnez un objet</option>
-                    <option value="exposition" className="bg-background">Proposition d'exposition</option>
-                    <option value="presse" className="bg-background">Demande presse</option>
-                    <option value="collaboration" className="bg-background">Collaboration artistique</option>
-                    <option value="information" className="bg-background">Demande d'information</option>
-                    <option value="autre" className="bg-background">Autre</option>
+                    <option value="">Sélectionnez un objet</option>
+                    <option value="exposition">Proposition d'exposition</option>
+                    <option value="presse">Demande presse</option>
+                    <option value="collaboration">Collaboration artistique</option>
+                    <option value="information">Demande d'information</option>
+                    <option value="autre">Autre</option>
                   </select>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">
                     Message *
                   </label>
                   <textarea
@@ -180,7 +179,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-0 py-4 border-0 border-b border-border bg-transparent focus:outline-none focus:border-primary transition-colors duration-300 resize-none text-foreground placeholder:text-muted-foreground"
+                    className="w-full px-4 py-3 border border-border bg-transparent focus:outline-none focus:border-primary transition-colors resize-none"
                     placeholder="Votre message..."
                   />
                 </div>
@@ -188,14 +187,14 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group inline-flex items-center gap-4 bg-primary text-background px-10 py-5 text-sm uppercase tracking-[0.15em] hover:bg-primary/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 text-sm uppercase tracking-widest hover:bg-foreground/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     "Envoi en cours..."
                   ) : (
                     <>
                       Envoyer
-                      <Send size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
+                      <Send size={16} />
                     </>
                   )}
                 </button>

@@ -41,19 +41,18 @@ const Presse = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24">
+      <section className="py-16 md:py-24">
         <div className="container-narrow">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <p className="text-xs uppercase tracking-[0.4em] text-primary mb-4">Médias</p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl tracking-wide mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-4">
               On parle de moi
             </h1>
-            <p className="text-foreground/60 text-lg">
+            <p className="text-muted-foreground text-lg">
               Découvrez ce que la presse et les professionnels de l'art disent de mon univers.
             </p>
           </motion.div>
@@ -61,22 +60,21 @@ const Presse = () => {
       </section>
 
       {/* Press Kit Download */}
-      <section className="pb-20">
+      <section className="pb-16">
         <div className="container-narrow">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative p-12 md:p-16 text-center glass-dark glow-gold"
+            transition={{ duration: 0.6 }}
+            className="bg-primary text-primary-foreground p-8 md:p-12 text-center"
           >
-            <p className="text-xs uppercase tracking-[0.4em] text-primary mb-4">Professionnels</p>
-            <h2 className="text-3xl tracking-wide mb-4">Dossier de presse</h2>
-            <p className="text-foreground/60 mb-8 max-w-xl mx-auto">
+            <h2 className="text-2xl font-semibold mb-4">Dossier de presse</h2>
+            <p className="text-primary-foreground/80 mb-6 max-w-xl mx-auto">
               Téléchargez mon dossier de presse complet incluant biographie, 
               visuels haute définition et informations de contact.
             </p>
-            <button className="group inline-flex items-center gap-4 bg-primary text-background px-10 py-5 text-sm uppercase tracking-[0.15em] hover:bg-primary/90 transition-all duration-300">
+            <button className="inline-flex items-center gap-3 bg-background text-foreground px-8 py-4 text-sm uppercase tracking-widest hover:bg-background/90 transition-colors">
               <Download size={18} />
               Télécharger le dossier de presse
             </button>
@@ -91,8 +89,8 @@ const Presse = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-12"
+            transition={{ duration: 0.6 }}
+            className="text-2xl font-semibold mb-8"
           >
             Articles de presse
           </motion.h2>
@@ -104,24 +102,22 @@ const Presse = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="group p-8 md:p-10 border border-border/50 hover:border-primary/30 transition-all duration-500"
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="border border-border p-6 md:p-8 hover:border-primary/30 transition-colors"
               >
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 text-sm text-muted-foreground mb-3">
-                      <span className="text-primary">{article.source}</span>
-                      <span className="w-1 h-1 rounded-full bg-muted-foreground" />
+                    <div className="flex items-center gap-3 text-sm text-muted-foreground mb-2">
+                      <span className="font-medium text-primary">{article.source}</span>
+                      <span>•</span>
                       <span>{article.date}</span>
                     </div>
-                    <h3 className="text-xl tracking-wide mb-4 group-hover:text-primary transition-colors duration-300">
-                      {article.title}
-                    </h3>
-                    <p className="text-foreground/60 leading-relaxed">{article.excerpt}</p>
+                    <h3 className="text-xl font-semibold mb-3">{article.title}</h3>
+                    <p className="text-foreground/70 leading-relaxed">{article.excerpt}</p>
                   </div>
                   <a
                     href={article.link}
-                    className="inline-flex items-center gap-2 text-sm text-primary hover:text-foreground transition-colors duration-300 whitespace-nowrap"
+                    className="inline-flex items-center gap-2 text-sm text-primary hover:underline whitespace-nowrap"
                   >
                     Lire l'article
                     <ExternalLink size={14} />
@@ -134,20 +130,17 @@ const Presse = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/30 to-transparent" />
-        
-        <div className="container-narrow relative z-10">
-          <motion.div
+      <section className="py-20 bg-foreground/[0.02]">
+        <div className="container-narrow">
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-2xl font-semibold mb-12 text-center"
           >
-            <p className="text-xs uppercase tracking-[0.4em] text-primary mb-4">Témoignages</p>
-            <h2 className="text-4xl tracking-wide">Ce qu'ils en disent</h2>
-          </motion.div>
+            Témoignages
+          </motion.h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
@@ -156,15 +149,15 @@ const Presse = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.15 }}
-                className="relative p-10 glass-dark"
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="relative p-8 bg-background border border-border"
               >
-                <Quote className="absolute top-8 left-8 text-primary/20" size={40} strokeWidth={1} />
-                <p className="font-accent text-xl mb-8 pt-8 leading-relaxed text-foreground/80">
+                <Quote className="absolute top-6 left-6 text-primary/20" size={32} />
+                <p className="font-accent text-lg mb-6 pt-8 leading-relaxed">
                   "{testimonial.quote}"
                 </p>
                 <footer>
-                  <p className="text-primary">{testimonial.author}</p>
+                  <p className="font-semibold">{testimonial.author}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 </footer>
               </motion.blockquote>
@@ -174,29 +167,22 @@ const Presse = () => {
       </section>
 
       {/* Media Logos Placeholder */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="container-narrow">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground mb-12"
+            transition={{ duration: 0.6 }}
+            className="text-center text-sm uppercase tracking-widest text-muted-foreground mb-8"
           >
             Ils ont parlé de mon travail
           </motion.p>
-          <div className="flex flex-wrap justify-center items-center gap-16">
-            {["Média 1", "Média 2", "Média 3", "Média 4"].map((media, index) => (
-              <motion.span 
-                key={media} 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 0.4 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-muted-foreground tracking-widest uppercase text-sm hover:text-primary hover:opacity-100 transition-all duration-300"
-              >
+          <div className="flex flex-wrap justify-center items-center gap-12 opacity-50">
+            {["Média 1", "Média 2", "Média 3", "Média 4"].map((media) => (
+              <span key={media} className="text-muted-foreground">
                 {media}
-              </motion.span>
+              </span>
             ))}
           </div>
         </div>

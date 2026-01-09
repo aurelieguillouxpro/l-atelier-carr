@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -14,66 +14,46 @@ const navigation = [
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-background/95 backdrop-blur-md py-4" : "bg-transparent py-8"
-      }`}
-    >
-      <nav className="container-narrow flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm">
+      <nav className="container-narrow flex items-center justify-between py-6">
         {/* Logo */}
         <Link to="/" className="group">
-          <motion.h1 
-            className="text-xl md:text-2xl tracking-[0.2em] uppercase text-primary"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
+          <h1 className="text-xl md:text-2xl font-semibold tracking-wide">
             Carrément Abstrait
-          </motion.h1>
+          </h1>
+          <p className="text-xs text-muted-foreground tracking-widest uppercase">
+            Marie-Christine Chaillou
+          </p>
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-10">
-          {navigation.map((item, index) => (
-            <motion.li 
-              key={item.name}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
+        <ul className="hidden md:flex items-center gap-8">
+          {navigation.map((item) => (
+            <li key={item.name}>
               <Link
                 to={item.href}
-                className={`link-underline text-sm tracking-[0.15em] uppercase transition-colors duration-300 ${
+                className={`link-underline text-sm tracking-wide transition-colors ${
                   location.pathname === item.href
                     ? "text-primary"
-                    : "text-foreground/70 hover:text-primary"
+                    : "text-foreground hover:text-primary"
                 }`}
               >
                 {item.name}
               </Link>
-            </motion.li>
+            </li>
           ))}
         </ul>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-primary"
+          className="md:hidden p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Menu"
         >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
@@ -81,36 +61,28 @@ const Header = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden fixed inset-0 top-0 bg-background z-40"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-background border-t border-border"
           >
-            <div className="flex flex-col items-center justify-center h-full">
-              <ul className="space-y-8 text-center">
-                {navigation.map((item, index) => (
-                  <motion.li
-                    key={item.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
+            <ul className="container-narrow py-6 space-y-4">
+              {navigation.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    to={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block text-lg ${
+                      location.pathname === item.href
+                        ? "text-primary"
+                        : "text-foreground"
+                    }`}
                   >
-                    <Link
-                      to={item.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={`text-2xl tracking-[0.2em] uppercase ${
-                        location.pathname === item.href
-                          ? "text-primary"
-                          : "text-foreground/70"
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </motion.div>
         )}
       </AnimatePresence>

@@ -46,19 +46,18 @@ const Expositions = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24">
+      <section className="py-16 md:py-24">
         <div className="container-narrow">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <p className="text-xs uppercase tracking-[0.4em] text-primary mb-4">Parcours</p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl tracking-wide mb-6">
-              Expositions
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-4">
+              Mon parcours d'expositions
             </h1>
-            <p className="text-foreground/60 text-lg">
+            <p className="text-muted-foreground text-lg">
               J'expose régulièrement mon travail dans des galeries, salons et événements artistiques.
             </p>
           </motion.div>
@@ -67,18 +66,18 @@ const Expositions = () => {
 
       {/* Upcoming Exhibitions */}
       {exhibitions.upcoming.length > 0 && (
-        <section className="pb-20">
+        <section className="pb-16">
           <div className="container-narrow">
-            <motion.div
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="flex items-center gap-4 mb-12"
+              transition={{ duration: 0.6 }}
+              className="text-2xl font-semibold mb-8 flex items-center gap-3"
             >
-              <span className="w-3 h-3 bg-primary rounded-full animate-pulse" />
-              <h2 className="text-xs uppercase tracking-[0.3em] text-primary">À venir</h2>
-            </motion.div>
+              <span className="w-3 h-3 bg-accent rounded-full animate-pulse" />
+              À venir
+            </motion.h2>
 
             <div className="space-y-8">
               {exhibitions.upcoming.map((expo, index) => (
@@ -87,31 +86,31 @@ const Expositions = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="glass-dark p-8 md:p-12 glow-gold"
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="border border-accent/30 bg-accent/5 p-8"
                 >
                   <div className="grid lg:grid-cols-3 gap-8">
                     {/* Image placeholder */}
-                    <div className="aspect-[16/9] lg:aspect-square bg-secondary/50 flex items-center justify-center text-muted-foreground">
-                      <span className="text-sm tracking-widest uppercase">Visuel</span>
+                    <div className="aspect-[16/9] lg:aspect-square bg-gradient-to-br from-muted/30 to-muted/10 flex items-center justify-center text-muted-foreground/50">
+                      <span className="text-sm">Visuel</span>
                     </div>
 
                     <div className="lg:col-span-2">
-                      <h3 className="text-3xl tracking-wide mb-3">{expo.title}</h3>
-                      <p className="text-xl text-primary mb-6">{expo.venue}</p>
+                      <h3 className="text-2xl font-semibold mb-2">{expo.title}</h3>
+                      <p className="text-lg text-primary mb-4">{expo.venue}</p>
                       
-                      <div className="flex flex-wrap gap-6 text-sm text-muted-foreground mb-8">
+                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
                         <span className="flex items-center gap-2">
-                          <MapPin size={16} strokeWidth={1.5} />
+                          <MapPin size={16} />
                           {expo.location}
                         </span>
                         <span className="flex items-center gap-2">
-                          <Calendar size={16} strokeWidth={1.5} />
+                          <Calendar size={16} />
                           {expo.date}
                         </span>
                       </div>
 
-                      <p className="text-foreground/70 leading-relaxed">
+                      <p className="text-foreground/80 leading-relaxed">
                         {expo.description}
                       </p>
                     </div>
@@ -124,14 +123,14 @@ const Expositions = () => {
       )}
 
       {/* Past Exhibitions */}
-      <section className="py-20">
+      <section className="py-16 bg-foreground/[0.02]">
         <div className="container-narrow">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-12"
+            transition={{ duration: 0.6 }}
+            className="text-2xl font-semibold mb-8"
           >
             Expositions passées
           </motion.h2>
@@ -143,26 +142,24 @@ const Expositions = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="group p-8 border border-border/50 hover:border-primary/30 transition-all duration-500"
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="border border-border p-6 hover:border-primary/30 transition-colors"
               >
-                <h3 className="text-xl tracking-wide mb-2 group-hover:text-primary transition-colors duration-300">
-                  {expo.title}
-                </h3>
-                <p className="text-primary/80 mb-4">{expo.venue}</p>
+                <h3 className="text-xl font-semibold mb-2">{expo.title}</h3>
+                <p className="text-primary mb-3">{expo.venue}</p>
                 
-                <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
+                <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
                   <span className="flex items-center gap-2">
-                    <MapPin size={14} strokeWidth={1.5} />
+                    <MapPin size={14} />
                     {expo.location}
                   </span>
                   <span className="flex items-center gap-2">
-                    <Calendar size={14} strokeWidth={1.5} />
+                    <Calendar size={14} />
                     {expo.date}
                   </span>
                 </div>
 
-                <p className="text-foreground/60 text-sm leading-relaxed">
+                <p className="text-foreground/70 text-sm leading-relaxed">
                   {expo.description}
                 </p>
               </motion.article>

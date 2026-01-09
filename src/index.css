@@ -1,7 +1,6 @@
 @import "@fontsource/cormorant-garamond/400.css";
 @import "@fontsource/cormorant-garamond/600.css";
 @import "@fontsource/cormorant-garamond/700.css";
-@import "@fontsource/lato/300.css";
 @import "@fontsource/lato/400.css";
 @import "@fontsource/lato/700.css";
 @import "@fontsource/playfair-display/400-italic.css";
@@ -12,36 +11,36 @@
 
 @layer base {
   :root {
-    /* Galerie Luxe - Dark & Gold Palette */
-    --background: 0 0% 4%; /* Noir profond #0A0A0A */
-    --foreground: 45 20% 95%; /* Ivoire clair #F7F5F0 */
+    /* Carrément Abstrait - Palette artistique */
+    --background: 40 33% 97%; /* Ivoire #FAF9F6 */
+    --foreground: 0 0% 10%; /* Noir profond #1A1A1A */
 
-    --card: 0 0% 7%;
-    --card-foreground: 45 20% 95%;
+    --card: 40 33% 97%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 7%;
-    --popover-foreground: 45 20% 95%;
+    --popover: 40 33% 97%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 42 78% 60%; /* Or lumineux #D4AF37 */
-    --primary-foreground: 0 0% 4%;
+    --primary: 220 100% 34%; /* Bleu cobalt #0047AB */
+    --primary-foreground: 40 33% 97%;
 
-    --secondary: 0 0% 12%; /* Charbon #1F1F1F */
-    --secondary-foreground: 45 20% 95%;
+    --secondary: 45 69% 46%; /* Or doux #C9A227 */
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 25%; /* Gris anthracite */
-    --muted-foreground: 0 0% 55%;
+    --muted: 30 5% 53%; /* Gris taupe #8A8583 */
+    --muted-foreground: 30 5% 40%;
 
-    --accent: 42 78% 60%; /* Or lumineux */
-    --accent-foreground: 0 0% 4%;
+    --accent: 349 75% 36%; /* Rouge carmin #9B1B30 */
+    --accent-foreground: 40 33% 97%;
 
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 45 20% 95%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 42 78% 60%;
+    --border: 30 10% 85%;
+    --input: 30 10% 85%;
+    --ring: 220 100% 34%;
 
-    --radius: 0rem;
+    --radius: 0.25rem;
 
     /* Typography */
     --font-heading: "Cormorant Garamond", Georgia, serif;
@@ -60,25 +59,16 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
-    font-weight: 300;
-    letter-spacing: 0.02em;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    font-weight: 400;
-    letter-spacing: 0.04em;
+    font-weight: 600;
   }
 
   .font-accent {
     font-family: var(--font-accent);
     font-style: italic;
-  }
-
-  /* Selection style */
-  ::selection {
-    background: hsl(42 78% 60% / 0.3);
-    color: hsl(45 20% 95%);
   }
 }
 
@@ -93,31 +83,11 @@
   
   .link-underline::after {
     content: '';
-    @apply absolute bottom-0 left-0 h-[1px] w-full scale-x-0 bg-primary origin-right transition-transform duration-500;
+    @apply absolute bottom-0 left-0 h-[1px] w-full scale-x-0 bg-foreground origin-right transition-transform duration-300;
   }
   
   .link-underline:hover::after {
     @apply scale-x-100 origin-left;
-  }
-
-  /* Gold gradient text */
-  .text-gold-gradient {
-    @apply bg-gradient-to-r from-primary via-yellow-300 to-primary bg-clip-text text-transparent;
-  }
-
-  /* Elegant border accent */
-  .border-gold {
-    @apply border-primary/30;
-  }
-
-  /* Subtle glow effect */
-  .glow-gold {
-    box-shadow: 0 0 60px -10px hsl(42 78% 60% / 0.15);
-  }
-
-  /* Glass effect for cards */
-  .glass-dark {
-    @apply bg-secondary/50 backdrop-blur-md border border-white/5;
   }
 }
 
