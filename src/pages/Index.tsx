@@ -7,13 +7,29 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="min-h-[80vh] flex items-center justify-center relative overflow-hidden">
-        <div className="container-narrow text-center">
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
+        
+        {/* Decorative elements */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-[100px]" />
+
+        <div className="container-narrow text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5 }}
+            className="mb-8"
+          >
+            <span className="inline-block w-px h-20 bg-gradient-to-b from-transparent via-primary to-transparent" />
+          </motion.div>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="font-accent text-lg md:text-xl text-muted-foreground mb-6"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="font-accent text-lg md:text-xl text-primary/80 mb-8"
           >
             « Là où la couleur devient émotion »
           </motion.p>
@@ -21,17 +37,19 @@ const Index = () => {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-6 tracking-tight"
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-5xl md:text-7xl lg:text-8xl mb-8 tracking-[0.08em]"
           >
-            Carrément Abstrait
+            <span className="text-primary">Carrément</span>
+            <br />
+            <span className="text-foreground">Abstrait</span>
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg md:text-xl text-muted-foreground mb-4"
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-lg md:text-xl text-foreground/60 mb-4"
           >
             Marie-Christine Chaillou
           </motion.p>
@@ -39,8 +57,8 @@ const Index = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-12"
+            transition={{ duration: 0.8, delay: 1 }}
+            className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-16"
           >
             Artiste peintre & sculptrice contemporaine
           </motion.p>
@@ -48,75 +66,81 @@ const Index = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
           >
             <Link
               to="/galerie"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm uppercase tracking-widest hover:bg-primary/90 transition-colors"
+              className="group inline-flex items-center gap-4 text-sm uppercase tracking-[0.2em] text-primary border border-primary/40 px-10 py-5 hover:bg-primary hover:text-background transition-all duration-500"
             >
               Découvrir les œuvres
-              <ArrowRight size={16} />
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </motion.div>
-        </div>
 
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-secondary/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-accent/10 rounded-full blur-2xl" />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 1.5 }}
+            className="mt-20"
+          >
+            <span className="inline-block w-px h-20 bg-gradient-to-b from-primary to-transparent" />
+          </motion.div>
+        </div>
       </section>
 
       {/* Introduction */}
-      <section className="py-20">
+      <section className="py-32">
         <div className="container-narrow max-w-3xl text-center">
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-lg md:text-xl leading-relaxed text-foreground/80"
+            transition={{ duration: 1 }}
+            className="text-xl md:text-2xl leading-relaxed text-foreground/70"
           >
             Bienvenue dans mon univers. Ici, les formes se libèrent, les couleurs dialoguent, 
             et chaque œuvre devient une invitation au voyage intérieur. J'explore l'abstraction 
-            avec audace et sensibilité, entre huile vibrante et béton ciré sculptural.
+            avec audace et sensibilité, entre <span className="text-primary">huile vibrante</span> et <span className="text-primary">béton ciré sculptural</span>.
           </motion.p>
         </div>
       </section>
 
       {/* Featured Works Preview */}
-      <section className="py-20 bg-foreground/[0.02]">
+      <section className="py-24">
         <div className="container-narrow">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Œuvres récentes</h2>
-            <p className="text-muted-foreground">Une sélection de mes dernières créations</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-primary mb-4">Collection</p>
+            <h2 className="text-4xl md:text-5xl tracking-wide">Œuvres récentes</h2>
           </motion.div>
 
-          {/* Placeholder for artworks - will be replaced with actual images */}
-          <div className="grid md:grid-cols-3 gap-8">
+          {/* Placeholder for artworks */}
+          <div className="grid md:grid-cols-3 gap-6">
             {[1, 2, 3].map((item) => (
               <motion.div
                 key={item}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: item * 0.1 }}
+                transition={{ duration: 0.8, delay: item * 0.15 }}
                 className="group cursor-pointer"
               >
-                <div className="aspect-[4/5] bg-gradient-to-br from-muted/30 to-muted/10 mb-4 overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center text-muted-foreground/50">
-                    <span className="text-sm">Œuvre {item}</span>
+                <div className="aspect-[4/5] bg-secondary/50 mb-6 overflow-hidden relative glow-gold">
+                  <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+                    <span className="text-sm tracking-widest uppercase">Œuvre {item}</span>
                   </div>
+                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                 </div>
-                <h3 className="font-semibold group-hover:text-primary transition-colors">
+                <h3 className="text-lg tracking-wide group-hover:text-primary transition-colors duration-300">
                   Titre de l'œuvre
                 </h3>
-                <p className="text-sm text-muted-foreground">Technique mixte</p>
+                <p className="text-sm text-muted-foreground mt-1">Technique mixte</p>
               </motion.div>
             ))}
           </div>
@@ -125,33 +149,38 @@ const Index = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center mt-12"
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-center mt-16"
           >
             <Link
               to="/galerie"
-              className="inline-flex items-center gap-2 text-sm uppercase tracking-widest hover:text-primary transition-colors link-underline"
+              className="inline-flex items-center gap-3 text-sm uppercase tracking-[0.2em] text-primary hover:text-foreground transition-colors duration-300 link-underline"
             >
               Voir toute la galerie
-              <ArrowRight size={14} />
+              <ArrowRight size={16} />
             </Link>
           </motion.div>
         </div>
       </section>
 
       {/* Quote Section */}
-      <section className="py-24">
-        <div className="container-narrow max-w-4xl text-center">
+      <section className="py-32 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/30 to-transparent" />
+        
+        <div className="container-narrow max-w-4xl text-center relative z-10">
           <motion.blockquote
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1 }}
           >
-            <p className="font-accent text-2xl md:text-3xl lg:text-4xl leading-relaxed text-foreground/90 mb-6">
-              « Je peins ce que les mots ne peuvent dire. Je sculpte ce que le regard cherche sans le savoir. »
+            <div className="mb-8">
+              <span className="text-6xl text-primary/30">"</span>
+            </div>
+            <p className="font-accent text-2xl md:text-3xl lg:text-4xl leading-relaxed text-foreground/90 mb-8">
+              Je peins ce que les mots ne peuvent dire. Je sculpte ce que le regard cherche sans le savoir.
             </p>
-            <cite className="text-sm uppercase tracking-widest text-muted-foreground not-italic">
+            <cite className="text-xs uppercase tracking-[0.3em] text-primary not-italic">
               — Marie-Christine Chaillou
             </cite>
           </motion.blockquote>
@@ -159,26 +188,28 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container-narrow text-center">
+      <section className="py-32">
+        <div className="container-narrow">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
+            className="relative p-12 md:p-20 text-center glass-dark glow-gold"
           >
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+            <p className="text-xs uppercase tracking-[0.4em] text-primary mb-6">Collaboration</p>
+            <h2 className="text-3xl md:text-4xl tracking-wide mb-6">
               Intéressé par une collaboration ?
             </h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
+            <p className="text-foreground/60 mb-10 max-w-xl mx-auto">
               Galeries, journalistes, amateurs d'art — je serais ravie d'échanger avec vous.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-4 text-sm uppercase tracking-widest hover:bg-background/90 transition-colors"
+              className="group inline-flex items-center gap-4 text-sm uppercase tracking-[0.2em] bg-primary text-background px-10 py-5 hover:bg-primary/90 transition-all duration-300"
             >
               Me contacter
-              <ArrowRight size={16} />
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </motion.div>
         </div>
