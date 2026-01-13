@@ -26,6 +26,12 @@ import sculptureColoree from "@/assets/artworks/sculpture-coloree.jpg";
 import sculptureNoire from "@/assets/artworks/sculpture-noire.jpg";
 import sculptureGeometrique from "@/assets/artworks/sculpture-geometrique.jpg";
 import sculptureElancee from "@/assets/artworks/sculpture-elancee.jpg";
+import sculptureSignee from "@/assets/artworks/sculpture-blanche-signee.jpg";
+import sculptureNoireDynamique from "@/assets/artworks/sculpture-noire-dynamique.jpg";
+import sculptureMonumentale from "@/assets/artworks/sculpture-monumentale.jpg";
+import sculptureArchitecturale from "@/assets/artworks/sculpture-architecturale.jpg";
+import sculptureFeminine from "@/assets/artworks/sculpture-feminine.jpg";
+import sculptureTotemique from "@/assets/artworks/sculpture-totemique.jpg";
 
 const artworks = [
   // Sculptures
@@ -78,6 +84,66 @@ const artworks = [
     year: "2024",
     description: "Une forme élancée qui aspire vers le ciel, alliant force et délicatesse.",
     image: sculptureElancee,
+  },
+  {
+    id: 22,
+    title: "Contemplation",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "30 × 20 × 15 cm",
+    year: "2021",
+    description: "Une silhouette méditative aux courbes épurées, signée par l'artiste.",
+    image: sculptureSignee,
+  },
+  {
+    id: 23,
+    title: "Envol",
+    category: "sculptures",
+    technique: "Bronze patiné noir",
+    dimensions: "35 × 30 × 25 cm",
+    year: "2025",
+    description: "Formes dynamiques s'élançant dans l'espace, capturant l'énergie du mouvement.",
+    image: sculptureNoireDynamique,
+  },
+  {
+    id: 24,
+    title: "Monument",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "60 × 35 × 30 cm",
+    year: "2020",
+    description: "Une pièce monumentale aux lignes architecturales affirmées.",
+    image: sculptureMonumentale,
+  },
+  {
+    id: 25,
+    title: "Édifice",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "45 × 20 × 15 cm",
+    year: "2019",
+    description: "Une sculpture architecturale jouant sur les pleins et les vides, évoquant une construction primitive.",
+    image: sculptureArchitecturale,
+  },
+  {
+    id: 26,
+    title: "Grâce",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "50 × 15 × 12 cm",
+    year: "2019",
+    description: "Une silhouette féminine élancée, entre présence et absence, forme et vide.",
+    image: sculptureFeminine,
+  },
+  {
+    id: 27,
+    title: "Gardien",
+    category: "sculptures",
+    technique: "Béton moucheté",
+    dimensions: "35 × 10 × 8 cm",
+    year: "2018",
+    description: "Un totem minimaliste, figure protectrice aux formes épurées.",
+    image: sculptureTotemique,
   },
   // Peintures
   {
