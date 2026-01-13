@@ -15,6 +15,11 @@ import huileTurquoise from "@/assets/artworks/huile-turquoise-2007.jpg";
 import quadriptyque from "@/assets/artworks/quadriptyque-2007.jpg";
 import huileBleuCreme from "@/assets/artworks/huile-bleu-creme-2006.jpg";
 import huileMarineOrange from "@/assets/artworks/huile-marine-orange-2006.jpg";
+import huileBleuOrange from "@/assets/artworks/huile-bleu-orange-2006.jpg";
+import huileGrisOrange from "@/assets/artworks/huile-gris-orange-2006.jpg";
+import huileOcreGris from "@/assets/artworks/huile-ocre-gris-2006.jpg";
+import huileBleuOcre from "@/assets/artworks/huile-bleu-ocre-2006.jpg";
+import huilePerspective from "@/assets/artworks/huile-perspective-2005.jpg";
 
 const artworks = [
   {
@@ -126,6 +131,56 @@ const artworks = [
     year: "2006",
     description: "Une composition dynamique où le bleu marine et l'orange s'affrontent dans une géométrie audacieuse.",
     image: huileMarineOrange,
+  },
+  {
+    id: 12,
+    title: "Ouverture",
+    category: "peintures",
+    technique: "Huile sur toile au couteau",
+    dimensions: "60 × 60 cm",
+    year: "2006",
+    description: "Le bleu profond encadre des formes orangées lumineuses, créant une fenêtre vers un espace vibrant de couleurs.",
+    image: huileBleuOrange,
+  },
+  {
+    id: 13,
+    title: "Métropole",
+    category: "peintures",
+    technique: "Huile sur toile au couteau",
+    dimensions: "60 × 60 cm",
+    year: "2006",
+    description: "Une composition urbaine où le gris industriel rencontre l'énergie du rouge et de l'orange.",
+    image: huileGrisOrange,
+  },
+  {
+    id: 14,
+    title: "Passage",
+    category: "peintures",
+    technique: "Huile sur toile au couteau",
+    dimensions: "60 × 60 cm",
+    year: "2006",
+    description: "Des teintes terreuses et grises s'ouvrent sur un chemin de lumière bleutée.",
+    image: huileOcreGris,
+  },
+  {
+    id: 15,
+    title: "Sentinelle",
+    category: "peintures",
+    technique: "Huile sur toile au couteau",
+    dimensions: "50 × 50 cm",
+    year: "2006",
+    description: "Une forme ocre s'élève au centre, gardienne silencieuse entre les bleus du ciel et de la mer.",
+    image: huileBleuOcre,
+  },
+  {
+    id: 16,
+    title: "Perspective",
+    category: "peintures",
+    technique: "Huile sur toile au couteau",
+    dimensions: "50 × 50 cm",
+    year: "2005",
+    description: "Des plans gris-bleu convergent vers un trait rouge central, créant une profondeur hypnotique.",
+    image: huilePerspective,
   },
 ];
 
