@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoMcc from "@/assets/logos/logo-mcc.png";
 
 const navigation = [
   { name: "Accueil", href: "/" },
@@ -20,13 +21,20 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm">
       <nav className="container-narrow flex items-center justify-between py-6">
         {/* Logo */}
-        <Link to="/" className="group">
-          <h1 className="text-xl md:text-2xl font-semibold tracking-wide">
-            Carrément Abstrait
-          </h1>
-          <p className="text-xs text-muted-foreground tracking-widest uppercase">
-            Marie-Christine Chaillou
-          </p>
+        <Link to="/" className="group flex items-center gap-3">
+          <img 
+            src={logoMcc} 
+            alt="Logo MCC" 
+            className="h-10 md:h-12 w-auto"
+          />
+          <div>
+            <h1 className="text-xl md:text-2xl font-semibold tracking-wide">
+              Carrément Abstrait
+            </h1>
+            <p className="text-xs text-muted-foreground tracking-widest uppercase">
+              Marie-Christine Chaillou
+            </p>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
