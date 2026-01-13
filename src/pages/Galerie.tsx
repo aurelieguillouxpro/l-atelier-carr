@@ -20,8 +20,66 @@ import huileGrisOrange from "@/assets/artworks/huile-gris-orange-2006.jpg";
 import huileOcreGris from "@/assets/artworks/huile-ocre-gris-2006.jpg";
 import huileBleuOcre from "@/assets/artworks/huile-bleu-ocre-2006.jpg";
 import huilePerspective from "@/assets/artworks/huile-perspective-2005.jpg";
+// Sculptures
+import sculptureBlanche from "@/assets/artworks/sculpture-blanche-organique.jpg";
+import sculptureColoree from "@/assets/artworks/sculpture-coloree.jpg";
+import sculptureNoire from "@/assets/artworks/sculpture-noire.jpg";
+import sculptureGeometrique from "@/assets/artworks/sculpture-geometrique.jpg";
+import sculptureElancee from "@/assets/artworks/sculpture-elancee.jpg";
 
 const artworks = [
+  // Sculptures
+  {
+    id: 17,
+    title: "Silhouette",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "35 × 12 × 10 cm",
+    year: "2023",
+    description: "Une forme féminine stylisée s'élève avec grâce, capturant le mouvement dans la pierre.",
+    image: sculptureBlanche,
+  },
+  {
+    id: 18,
+    title: "Vitrail",
+    category: "sculptures",
+    technique: "Bois peint",
+    dimensions: "45 × 15 × 8 cm",
+    year: "2022",
+    description: "Les couleurs primaires s'entrelacent sur le bois sculpté, créant un dialogue entre peinture et volume.",
+    image: sculptureColoree,
+  },
+  {
+    id: 19,
+    title: "Mouvement",
+    category: "sculptures",
+    technique: "Bronze patiné",
+    dimensions: "30 × 25 × 20 cm",
+    year: "2023",
+    description: "Des formes organiques s'entremêlent dans un équilibre dynamique, capturant l'instant suspendu.",
+    image: sculptureNoire,
+  },
+  {
+    id: 20,
+    title: "Architecture",
+    category: "sculptures",
+    technique: "Béton ciré bicolore",
+    dimensions: "40 × 20 × 15 cm",
+    year: "2024",
+    description: "Géométrie pure où les plans ocre et blanc créent un jeu d'ombres et de lumière.",
+    image: sculptureGeometrique,
+  },
+  {
+    id: 21,
+    title: "Élévation",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "38 × 12 × 10 cm",
+    year: "2024",
+    description: "Une forme élancée qui aspire vers le ciel, alliant force et délicatesse.",
+    image: sculptureElancee,
+  },
+  // Peintures
   {
     id: 1,
     title: "Tension Rouge",
