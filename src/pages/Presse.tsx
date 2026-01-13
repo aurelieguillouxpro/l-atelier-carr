@@ -68,17 +68,17 @@ const Presse = () => {
       </section>
 
       {/* Press Kit Download */}
-      <section className="pb-16">
+      <section className="pb-10 md:pb-16">
         <div className="container-narrow">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-primary text-primary-foreground p-8 md:p-12 text-center"
+            className="bg-primary text-primary-foreground p-6 md:p-8 lg:p-12 text-center"
           >
-            <h2 className="text-2xl font-semibold mb-4">Dossier de presse</h2>
-            <p className="text-primary-foreground/80 mb-6 max-w-xl mx-auto">
+            <h2 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">Dossier de presse</h2>
+            <p className="text-primary-foreground/80 mb-4 md:mb-6 max-w-xl mx-auto text-sm md:text-base">
               Téléchargez mon dossier de presse complet incluant biographie, 
               visuels haute définition et informations de contact.
             </p>
@@ -87,29 +87,30 @@ const Presse = () => {
               download
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-background text-foreground px-8 py-4 text-sm uppercase tracking-widest hover:bg-background/90 transition-colors"
+              className="inline-flex items-center gap-2 md:gap-3 bg-background text-foreground px-5 md:px-8 py-3 md:py-4 text-xs md:text-sm uppercase tracking-widest hover:bg-background/90 transition-colors"
             >
-              <Download size={18} />
-              Télécharger le dossier de presse
+              <Download size={16} className="md:w-[18px] md:h-[18px]" />
+              <span className="hidden sm:inline">Télécharger le dossier de presse</span>
+              <span className="sm:hidden">Télécharger</span>
             </a>
           </motion.div>
         </div>
       </section>
 
       {/* Articles */}
-      <section className="pb-20">
+      <section className="pb-12 md:pb-20">
         <div className="container-narrow">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-2xl font-semibold mb-8"
+            className="text-xl md:text-2xl font-semibold mb-6 md:mb-8"
           >
             Articles de presse
           </motion.h2>
 
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {pressArticles.map((article, index) => (
               <motion.article
                 key={article.id}
@@ -117,23 +118,23 @@ const Presse = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="border border-border p-6 md:p-8 hover:border-primary/30 transition-colors"
+                className="border border-border p-4 md:p-6 lg:p-8 hover:border-primary/30 transition-colors"
               >
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="flex flex-col gap-3 md:gap-4">
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 text-sm text-muted-foreground mb-2">
+                    <div className="flex flex-wrap items-center gap-2 md:gap-3 text-xs md:text-sm text-muted-foreground mb-2">
                       <span className="font-medium text-primary">{article.source}</span>
                       <span>•</span>
                       <span>{article.date}</span>
                     </div>
-                    <h3 className="text-xl font-semibold mb-3">{article.title}</h3>
-                    <p className="text-foreground/70 leading-relaxed">{article.excerpt}</p>
+                    <h3 className="text-base md:text-xl font-semibold mb-2 md:mb-3">{article.title}</h3>
+                    <p className="text-foreground/70 leading-relaxed text-sm md:text-base">{article.excerpt}</p>
                   </div>
                   <a
                     href={article.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-primary hover:underline whitespace-nowrap"
+                    className="inline-flex items-center gap-2 text-xs md:text-sm text-primary hover:underline whitespace-nowrap self-start"
                   >
                     Lire l'article
                     <ExternalLink size={14} />
@@ -146,19 +147,19 @@ const Presse = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-foreground/[0.02]">
+      <section className="py-12 md:py-20 bg-foreground/[0.02]">
         <div className="container-narrow">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-2xl font-semibold mb-12 text-center"
+            className="text-xl md:text-2xl font-semibold mb-8 md:mb-12 text-center"
           >
             Témoignages
           </motion.h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.blockquote
                 key={testimonial.id}
@@ -166,15 +167,15 @@ const Presse = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative p-8 bg-background border border-border"
+                className="relative p-5 md:p-8 bg-background border border-border"
               >
-                <Quote className="absolute top-6 left-6 text-primary/20" size={32} />
-                <p className="font-accent text-lg mb-6 pt-8 leading-relaxed">
+                <Quote className="absolute top-4 md:top-6 left-4 md:left-6 text-primary/20" size={24} />
+                <p className="font-accent text-base md:text-lg mb-4 md:mb-6 pt-6 md:pt-8 leading-relaxed">
                   "{testimonial.quote}"
                 </p>
                 <footer>
-                  <p className="font-semibold">{testimonial.author}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  <p className="font-semibold text-sm md:text-base">{testimonial.author}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">{testimonial.role}</p>
                 </footer>
               </motion.blockquote>
             ))}
@@ -183,14 +184,14 @@ const Presse = () => {
       </section>
 
       {/* Media Logos */}
-      <section className="py-16 bg-foreground/[0.02]">
+      <section className="py-10 md:py-16 bg-foreground/[0.02]">
         <div className="container-narrow">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center text-sm uppercase tracking-widest text-muted-foreground mb-10"
+            className="text-center text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-6 md:mb-10"
           >
             Ils ont parlé de mon travail
           </motion.p>
@@ -199,7 +200,7 @@ const Presse = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-wrap justify-center items-center gap-10 md:gap-16"
+            className="flex flex-wrap justify-center items-center gap-6 md:gap-10 lg:gap-16"
           >
             {/* Ouest-France */}
             <a 
@@ -211,7 +212,7 @@ const Presse = () => {
               <img 
                 src={ouestFranceLogo} 
                 alt="Ouest-France" 
-                className="h-[7.5rem] w-auto object-contain"
+                className="h-16 sm:h-20 md:h-[7.5rem] w-auto object-contain"
               />
             </a>
             
@@ -225,7 +226,7 @@ const Presse = () => {
               <img 
                 src={presseOceanLogo} 
                 alt="Presse Océan" 
-                className="h-24 w-auto object-contain"
+                className="h-14 sm:h-18 md:h-24 w-auto object-contain"
               />
             </a>
             
@@ -236,8 +237,8 @@ const Presse = () => {
               rel="noopener noreferrer"
               className="group flex flex-col items-center gap-2 grayscale hover:grayscale-0 transition-all duration-300"
             >
-              <div className="h-12 flex items-center justify-center px-4 py-2 border border-border rounded bg-background group-hover:border-primary/30 transition-colors">
-                <span className="font-serif text-xl font-bold text-foreground tracking-tight">
+              <div className="h-10 md:h-12 flex items-center justify-center px-3 md:px-4 py-2 border border-border rounded bg-background group-hover:border-primary/30 transition-colors">
+                <span className="font-serif text-base md:text-xl font-bold text-foreground tracking-tight">
                   Hippocampe Info
                 </span>
               </div>
