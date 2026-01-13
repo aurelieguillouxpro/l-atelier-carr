@@ -13,27 +13,27 @@ const pressArticles = [
   },
   {
     id: 2,
-    title: "Marie-Christine Chaillou à la Maison du patrimoine",
-    source: "Ouest-France",
-    date: "Novembre 2013",
-    excerpt: "Ses rouges et ses oranges sont magnifiques, et la matière est très présente sur ses toiles. Marie-Christine Chaillou utilise la technique de l'huile et manie surtout le couteau.",
-    link: "https://www.ouest-france.fr/pays-de-la-loire/la-baule-44500/marie-christine-chaillou-la-maison-du-patrimoine-1657843"
+    title: "Exposition municipale à la Chapelle Saint-Germain",
+    source: "Facebook",
+    date: "2024",
+    excerpt: "L'exposition municipale a lieu en ce moment à la Chapelle Saint-Germain à Saint-Julien-de-Concelles.",
+    link: "https://www.facebook.com/100083966103967/posts/732054606270070/"
   },
   {
     id: 3,
-    title: "L'équilibre scriptural de Marie-Christine Chaillou",
-    source: "Ouest-France",
-    date: "Octobre 2016",
-    excerpt: "Ses dessins sont réalisés d'une manière géométrique et équilibrée. L'artiste applique ensuite des couleurs chatoyantes, « qui donnent de l'énergie ».",
-    link: "https://www.ouest-france.fr/pays-de-la-loire/ancenis-saint-gereon-44150/l-equilibre-scriptural-de-marie-christine-chaillou-4551918"
-  },
-  {
-    id: 4,
     title: "Regarder l'exposition de Marie-Christine Chaillou",
     source: "Ouest-France",
     date: "Avril 2017",
     excerpt: "L'artiste peint et sculpte avec équilibre et force. Deux puissances qui se dégagent aussi bien de ses toiles travaillées à l'huile que de ses sculptures faites de béton ciré.",
     link: "https://www.ouest-france.fr/pays-de-la-loire/regarder-l-exposition-de-marie-christine-chaillou-4900841"
+  },
+  {
+    id: 4,
+    title: "L'équilibre scriptural de Marie-Christine Chaillou",
+    source: "Ouest-France",
+    date: "Octobre 2016",
+    excerpt: "Ses dessins sont réalisés d'une manière géométrique et équilibrée. L'artiste applique ensuite des couleurs chatoyantes, « qui donnent de l'énergie ».",
+    link: "https://www.ouest-france.fr/pays-de-la-loire/ancenis-saint-gereon-44150/l-equilibre-scriptural-de-marie-christine-chaillou-4551918"
   },
   {
     id: 5,
@@ -45,19 +45,19 @@ const pressArticles = [
   },
   {
     id: 6,
+    title: "Marie-Christine Chaillou à la Maison du patrimoine",
+    source: "Ouest-France",
+    date: "Novembre 2013",
+    excerpt: "Ses rouges et ses oranges sont magnifiques, et la matière est très présente sur ses toiles. Marie-Christine Chaillou utilise la technique de l'huile et manie surtout le couteau.",
+    link: "https://www.ouest-france.fr/pays-de-la-loire/la-baule-44500/marie-christine-chaillou-la-maison-du-patrimoine-1657843"
+  },
+  {
+    id: 7,
     title: "Un art concrètement abstrait",
     source: "Hippocampe Info",
     date: "Octobre 2013",
     excerpt: "Marie-Christine Chaillou pare ses sentiments de couleurs. Ses œuvres abstraites sont très suggestives et ouvrent un nouvel horizon que recherchent les amateurs d'art.",
     link: "https://hippocampeinfo2.over-blog.com/article-marie-christine-chaillou-55497952.html"
-  },
-  {
-    id: 7,
-    title: "Exposition municipale à la Chapelle Saint-Germain",
-    source: "Facebook",
-    date: "2024",
-    excerpt: "L'exposition municipale a lieu en ce moment à la Chapelle Saint-Germain à Saint-Julien-de-Concelles.",
-    link: "https://www.facebook.com/100083966103967/posts/732054606270070/"
   },
 ];
 
