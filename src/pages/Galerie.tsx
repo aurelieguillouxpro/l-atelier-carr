@@ -10,6 +10,11 @@ import huileBleuJaune from "@/assets/artworks/huile-bleu-jaune-2007.jpg";
 import huileOrange from "@/assets/artworks/huile-orange-2007.jpg";
 import huileJauneBleu from "@/assets/artworks/huile-jaune-bleu-2007.jpg";
 import encreGestuelle from "@/assets/artworks/encre-gestuelle.jpg";
+import huileRougeGris from "@/assets/artworks/huile-rouge-gris-2007.jpg";
+import huileTurquoise from "@/assets/artworks/huile-turquoise-2007.jpg";
+import quadriptyque from "@/assets/artworks/quadriptyque-2007.jpg";
+import huileBleuCreme from "@/assets/artworks/huile-bleu-creme-2006.jpg";
+import huileMarineOrange from "@/assets/artworks/huile-marine-orange-2006.jpg";
 
 const artworks = [
   {
@@ -71,6 +76,56 @@ const artworks = [
     year: "2023",
     description: "La spontanéité du geste capturée dans l'encre, où chaque trait révèle l'instant de sa création.",
     image: encreGestuelle,
+  },
+  {
+    id: 7,
+    title: "Verticalité",
+    category: "peintures",
+    technique: "Huile sur toile au couteau",
+    dimensions: "60 × 60 cm",
+    year: "2007",
+    description: "Le rouge s'élève en lignes verticales sur un fond de gris nuancés, créant une tension entre stabilité et mouvement.",
+    image: huileRougeGris,
+  },
+  {
+    id: 8,
+    title: "Archipel",
+    category: "peintures",
+    technique: "Huile sur toile au couteau",
+    dimensions: "50 × 50 cm",
+    year: "2007",
+    description: "Des îlots de turquoise flottent dans un océan de gris et de noir, évoquant des paysages imaginaires.",
+    image: huileTurquoise,
+  },
+  {
+    id: 9,
+    title: "Quadriptyque Urbain",
+    category: "peintures",
+    technique: "Huile sur toile au couteau",
+    dimensions: "4 × 40 × 40 cm",
+    year: "2007",
+    description: "Quatre tableaux qui dialoguent entre eux, comme les fenêtres d'une ville abstraite baignée de rouge et de gris.",
+    image: quadriptyque,
+  },
+  {
+    id: 10,
+    title: "Horizon",
+    category: "peintures",
+    technique: "Huile sur toile au couteau",
+    dimensions: "60 × 60 cm",
+    year: "2006",
+    description: "Le bleu profond et les tons crème se rencontrent, séparés par un trait de rouge vibrant.",
+    image: huileBleuCreme,
+  },
+  {
+    id: 11,
+    title: "Architecture Marine",
+    category: "peintures",
+    technique: "Huile sur toile au couteau",
+    dimensions: "60 × 60 cm",
+    year: "2006",
+    description: "Une composition dynamique où le bleu marine et l'orange s'affrontent dans une géométrie audacieuse.",
+    image: huileMarineOrange,
   },
 ];
 
