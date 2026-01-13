@@ -2,23 +2,38 @@ import { motion } from "framer-motion";
 import { ExternalLink, Download, Quote } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 
-// Placeholder data
 const pressArticles = [
   {
     id: 1,
-    title: "L'abstraction selon Marie-Christine Chaillou",
-    source: "Art Magazine",
-    date: "Décembre 2024",
-    excerpt: "Une exploration lumineuse de l'art abstrait contemporain, où la couleur devient le vecteur d'émotions profondes.",
-    link: "#"
+    title: "Regarder l'exposition de Marie-Christine Chaillou",
+    source: "Ouest-France",
+    date: "Avril 2017",
+    excerpt: "L'artiste peint et sculpte avec équilibre et force. Deux puissances qui se dégagent aussi bien de ses toiles travaillées à l'huile que de ses sculptures faites de béton ciré.",
+    link: "https://www.ouest-france.fr/pays-de-la-loire/regarder-l-exposition-de-marie-christine-chaillou-4900841"
   },
   {
     id: 2,
-    title: "Rencontre avec une artiste nantaise",
-    source: "Ouest-France",
-    date: "Octobre 2024",
-    excerpt: "Dans son atelier baigné de lumière, Marie-Christine Chaillou nous dévoile les secrets de sa création.",
-    link: "#"
+    title: "Sautron. Une expo « Carré'Ment abstrait »",
+    source: "Presse Océan",
+    date: "Décembre 2014",
+    excerpt: "Elle propose des toiles hautes en couleur qui dégagent énergie et puissance, avec des pigments forts et des traits nets et assumés.",
+    link: "https://saint-nazaire.maville.com/actu/actudet_-sautron.-une-expo-carre-ment-abstrait-_dep-7102158_actu.Htm"
+  },
+  {
+    id: 3,
+    title: "Un art concrètement abstrait",
+    source: "Hippocampe Info",
+    date: "Octobre 2013",
+    excerpt: "Marie-Christine Chaillou pare ses sentiments de couleurs. Ses œuvres abstraites sont pourtant très suggestives et ouvrent un nouvel horizon que recherchent les amateurs d'art.",
+    link: "https://hippocampeinfo2.over-blog.com/article-marie-christine-chaillou-55497952.html"
+  },
+  {
+    id: 4,
+    title: "Exposition municipale à la Chapelle Saint-Germain",
+    source: "Facebook",
+    date: "2024",
+    excerpt: "L'exposition municipale a lieu en ce moment à la Chapelle Saint-Germain à Saint-Julien-de-Concelles.",
+    link: "https://www.facebook.com/100083966103967/posts/732054606270070/"
   },
 ];
 
