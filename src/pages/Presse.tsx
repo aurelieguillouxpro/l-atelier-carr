@@ -84,7 +84,9 @@ const Presse = () => {
             </p>
             <a 
               href="/documents/dossier-presse-chaillou.pdf"
-              download="Dossier-Presse-Marie-Christine-Chaillou.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-background text-foreground px-8 py-4 text-sm uppercase tracking-widest hover:bg-background/90 transition-colors"
             >
               <Download size={18} />
