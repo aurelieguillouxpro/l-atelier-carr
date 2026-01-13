@@ -34,7 +34,16 @@ const Index = () => {
     <Layout>
       {/* Hero Section */}
       <section className="min-h-[80vh] flex items-center justify-center relative overflow-hidden">
-        <div className="container-narrow text-center">
+        {/* Background image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${huileOrange})` }}
+        />
+        
+        {/* Ivory overlay */}
+        <div className="absolute inset-0 bg-background/85" />
+        
+        <div className="container-narrow text-center relative z-10">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -85,11 +94,6 @@ const Index = () => {
             </Link>
           </motion.div>
         </div>
-
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-secondary/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-accent/10 rounded-full blur-2xl" />
       </section>
 
       {/* Introduction */}
