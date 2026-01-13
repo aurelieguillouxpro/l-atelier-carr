@@ -41,7 +41,7 @@ const Index = () => {
         />
         
         {/* Ivory overlay */}
-        <div className="absolute inset-0 bg-background/70" />
+        <div className="absolute inset-0 bg-background/50" />
         
         <div className="container-narrow text-center relative z-10">
           <motion.p
