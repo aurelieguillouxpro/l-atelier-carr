@@ -359,13 +359,13 @@ const Galerie = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center gap-4 mb-16"
+            className="flex justify-center gap-2 sm:gap-4 mb-8 md:mb-16"
           >
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-6 py-2 text-sm uppercase tracking-widest transition-colors ${
+                className={`px-3 sm:px-6 py-2 text-xs sm:text-sm uppercase tracking-widest transition-colors ${
                   activeCategory === cat.id
                     ? "bg-foreground text-background"
                     : "bg-transparent text-foreground hover:bg-foreground/10"
@@ -381,7 +381,7 @@ const Galerie = () => {
       {/* Gallery Grid */}
       <section className="pb-20">
         <div className="container-narrow">
-          <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div layout className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
             <AnimatePresence mode="popLayout">
               {filteredArtworks.map((artwork, index) => (
                 <motion.article
@@ -402,10 +402,10 @@ const Galerie = () => {
                     />
                     <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors" />
                   </div>
-                  <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
+                  <h3 className="font-semibold text-sm sm:text-lg group-hover:text-primary transition-colors">
                     {artwork.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs sm:text-sm text-muted-foreground hidden sm:block">
                     {artwork.technique} — {artwork.dimensions}
                   </p>
                 </motion.article>
@@ -458,27 +458,27 @@ const Galerie = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="max-w-5xl w-full grid lg:grid-cols-2 gap-8 items-center"
+              className="max-w-5xl w-full flex flex-col lg:grid lg:grid-cols-2 gap-4 md:gap-8 items-center max-h-[85vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="aspect-square overflow-hidden">
+              <div className="aspect-square overflow-hidden w-full max-w-md lg:max-w-none">
                 <img
                   src={selectedArtwork.image}
                   alt={selectedArtwork.title}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="text-background">
-                <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+              <div className="text-background text-center lg:text-left px-4 lg:px-0">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-2 md:mb-4">
                   {selectedArtwork.title}
                 </h2>
-                <p className="text-background/60 mb-2">
+                <p className="text-background/60 text-sm md:text-base mb-1 md:mb-2">
                   {selectedArtwork.technique} — {selectedArtwork.year}
                 </p>
-                <p className="text-background/60 mb-6">
+                <p className="text-background/60 text-sm md:text-base mb-4 md:mb-6">
                   {selectedArtwork.dimensions}
                 </p>
-                <p className="font-accent text-lg text-background/80 leading-relaxed">
+                <p className="font-accent text-base md:text-lg text-background/80 leading-relaxed">
                   {selectedArtwork.description}
                 </p>
               </div>
