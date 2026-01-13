@@ -3,55 +3,74 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 
-// Placeholder data - to be replaced with actual artworks
+// Import artwork images
+import huileRougeNoir from "@/assets/artworks/huile-rouge-noir-2010.jpg";
+import huileGrisRouge from "@/assets/artworks/huile-gris-rouge-2010.jpg";
+import huileBleuJaune from "@/assets/artworks/huile-bleu-jaune-2007.jpg";
+import huileOrange from "@/assets/artworks/huile-orange-2007.jpg";
+import huileJauneBleu from "@/assets/artworks/huile-jaune-bleu-2007.jpg";
+import encreGestuelle from "@/assets/artworks/encre-gestuelle.jpg";
+
 const artworks = [
   {
     id: 1,
-    title: "Éclat d'aurore",
+    title: "Tension Rouge",
     category: "peintures",
     technique: "Huile sur toile",
-    dimensions: "80 × 100 cm",
-    description: "Une explosion de jaunes et d'orangés, comme un soleil naissant sur une mer d'encre."
+    dimensions: "50 × 50 cm",
+    year: "2010",
+    description: "Une confrontation audacieuse entre le rouge vibrant et le noir profond, où les formes géométriques s'imbriquent dans un dialogue de couleurs intenses.",
+    image: huileRougeNoir,
   },
   {
     id: 2,
-    title: "Murmures de pierre",
-    category: "sculptures",
-    technique: "Béton ciré",
-    dimensions: "45 × 30 × 25 cm",
-    description: "Formes organiques qui invitent au toucher, entre douceur et solidité."
+    title: "Équilibre",
+    category: "peintures",
+    technique: "Huile sur toile",
+    dimensions: "50 × 50 cm",
+    year: "2010",
+    description: "Jeu subtil de gris et de touches de rouge qui créent une harmonie visuelle entre légèreté et profondeur.",
+    image: huileGrisRouge,
   },
   {
     id: 3,
-    title: "Dialogue intérieur",
+    title: "Symphonie Colorée",
     category: "peintures",
-    technique: "Huile sur toile",
-    dimensions: "120 × 100 cm",
-    description: "Bleus profonds et touches de carmin en conversation silencieuse."
+    technique: "Huile sur toile au couteau",
+    dimensions: "80 × 80 cm",
+    year: "2007",
+    description: "Une explosion de couleurs où le bleu profond dialogue avec le jaune lumineux et l'orange chaleureux.",
+    image: huileBleuJaune,
   },
   {
     id: 4,
-    title: "Équilibre suspendu",
-    category: "sculptures",
-    technique: "Béton ciré",
-    dimensions: "60 × 40 × 35 cm",
-    description: "La gravité apprivoisée, une méditation sur la légèreté."
+    title: "Crépuscule",
+    category: "peintures",
+    technique: "Huile sur toile au couteau",
+    dimensions: "80 × 80 cm",
+    year: "2007",
+    description: "Les teintes chaudes de l'orange et du brun créent une atmosphère enveloppante, évoquant les dernières lueurs du jour.",
+    image: huileOrange,
   },
   {
     id: 5,
-    title: "Fragments d'horizon",
+    title: "Dynamique Primaire",
     category: "peintures",
-    technique: "Technique mixte",
-    dimensions: "100 × 80 cm",
-    description: "Là où le ciel rencontre la terre dans un éclat de cobalt."
+    technique: "Huile sur toile au couteau",
+    dimensions: "80 × 80 cm",
+    year: "2007",
+    description: "Les couleurs primaires s'affrontent et s'enlacent dans une composition vibrante d'énergie.",
+    image: huileJauneBleu,
   },
   {
     id: 6,
-    title: "Silence doré",
+    title: "Geste Noir",
     category: "peintures",
-    technique: "Huile sur toile",
-    dimensions: "90 × 90 cm",
-    description: "L'or se pose délicatement sur un océan de nuances subtiles."
+    technique: "Encre sur papier",
+    dimensions: "40 × 50 cm",
+    year: "2023",
+    description: "La spontanéité du geste capturée dans l'encre, où chaque trait révèle l'instant de sa création.",
+    image: encreGestuelle,
   },
 ];
 
@@ -141,10 +160,12 @@ const Galerie = () => {
                   className="group cursor-pointer"
                   onClick={() => setSelectedArtwork(artwork)}
                 >
-                  <div className="aspect-[4/5] bg-gradient-to-br from-muted/30 to-muted/10 mb-4 overflow-hidden relative">
-                    <div className="w-full h-full flex items-center justify-center text-muted-foreground/50">
-                      <span className="text-sm">Image</span>
-                    </div>
+                  <div className="aspect-square bg-muted/10 mb-4 overflow-hidden relative">
+                    <img
+                      src={artwork.image}
+                      alt={artwork.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                     <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors" />
                   </div>
                   <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
@@ -206,15 +227,19 @@ const Galerie = () => {
               className="max-w-5xl w-full grid lg:grid-cols-2 gap-8 items-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="aspect-[4/5] bg-muted/20 flex items-center justify-center text-background/50">
-                <span>Image de l'œuvre</span>
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src={selectedArtwork.image}
+                  alt={selectedArtwork.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="text-background">
                 <h2 className="text-3xl md:text-4xl font-semibold mb-4">
                   {selectedArtwork.title}
                 </h2>
                 <p className="text-background/60 mb-2">
-                  {selectedArtwork.technique}
+                  {selectedArtwork.technique} — {selectedArtwork.year}
                 </p>
                 <p className="text-background/60 mb-6">
                   {selectedArtwork.dimensions}

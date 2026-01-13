@@ -3,6 +3,32 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 
+// Import artwork images
+import huileRougeNoir from "@/assets/artworks/huile-rouge-noir-2010.jpg";
+import huileGrisRouge from "@/assets/artworks/huile-gris-rouge-2010.jpg";
+import huileOrange from "@/assets/artworks/huile-orange-2007.jpg";
+
+const featuredWorks = [
+  {
+    id: 1,
+    title: "Tension Rouge",
+    technique: "Huile sur toile, 50×50 cm",
+    image: huileRougeNoir,
+  },
+  {
+    id: 2,
+    title: "Équilibre",
+    technique: "Huile sur toile, 50×50 cm",
+    image: huileGrisRouge,
+  },
+  {
+    id: 3,
+    title: "Crépuscule",
+    technique: "Huile sur toile au couteau, 80×80 cm",
+    image: huileOrange,
+  },
+];
+
 const Index = () => {
   return (
     <Layout>
@@ -97,26 +123,29 @@ const Index = () => {
             <p className="text-muted-foreground">Une sélection de mes dernières créations</p>
           </motion.div>
 
-          {/* Placeholder for artworks - will be replaced with actual images */}
           <div className="grid md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
+            {featuredWorks.map((work, index) => (
               <motion.div
-                key={item}
+                key={work.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: item * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group cursor-pointer"
               >
-                <div className="aspect-[4/5] bg-gradient-to-br from-muted/30 to-muted/10 mb-4 overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center text-muted-foreground/50">
-                    <span className="text-sm">Œuvre {item}</span>
+                <Link to="/galerie">
+                  <div className="aspect-square bg-muted/10 mb-4 overflow-hidden">
+                    <img
+                      src={work.image}
+                      alt={work.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
-                </div>
-                <h3 className="font-semibold group-hover:text-primary transition-colors">
-                  Titre de l'œuvre
-                </h3>
-                <p className="text-sm text-muted-foreground">Technique mixte</p>
+                  <h3 className="font-semibold group-hover:text-primary transition-colors">
+                    {work.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">{work.technique}</p>
+                </Link>
               </motion.div>
             ))}
           </div>
