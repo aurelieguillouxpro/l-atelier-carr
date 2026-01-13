@@ -28,14 +28,14 @@ const APropos = () => {
       {/* Biography */}
       <section className="pb-20">
         <div className="container-narrow">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Photo placeholder */}
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+            {/* Photo */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="aspect-[4/5] bg-gradient-to-br from-muted/30 to-muted/10 sticky top-32 overflow-hidden"
+              className="w-full max-w-sm mx-auto lg:max-w-none lg:aspect-[4/5] aspect-[3/4] bg-gradient-to-br from-muted/30 to-muted/10 lg:sticky lg:top-32 overflow-hidden"
             >
               <img 
                 src={portraitArtiste} 
