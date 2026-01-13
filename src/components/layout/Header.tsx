@@ -25,7 +25,7 @@ const Header = () => {
           <img 
             src={logoMcc} 
             alt="Logo MCC" 
-            className="h-10 md:h-12 w-auto"
+            className="h-14 md:h-18 w-auto"
           />
           <div>
             <h1 className="text-xl md:text-2xl font-semibold tracking-wide">
