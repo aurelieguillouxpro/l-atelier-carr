@@ -102,9 +102,10 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="text-lg md:text-xl leading-relaxed text-foreground/80"
           >
-            Bienvenue dans mon univers. Ici, les formes se libèrent, les couleurs dialoguent, 
-            et chaque œuvre devient une invitation au voyage intérieur. J'explore l'abstraction 
-            avec audace et sensibilité, entre huile vibrante et béton ciré sculptural.
+            Mon atmosphère artistique se traduit au travers de tableaux abstraits colorés, 
+            laissant libre cours à votre imaginaire. Le rythme est insufflé par la dynamique 
+            de la composition, l'animation des couleurs et des formes. Il est la résonance 
+            visuelle retenue par l'œil qui s'y attarde.
           </motion.p>
         </div>
       </section>
@@ -178,7 +179,7 @@ const Index = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="font-accent text-2xl md:text-3xl lg:text-4xl leading-relaxed text-foreground/90 mb-6">
-              « Je peins ce que les mots ne peuvent dire. Je sculpte ce que le regard cherche sans le savoir. »
+              « Ce qui m'intéresse, c'est le voyage que chacun entreprend devant mon travail. »
             </p>
             <cite className="text-sm uppercase tracking-widest text-muted-foreground not-italic">
               — Marie-Christine Chaillou

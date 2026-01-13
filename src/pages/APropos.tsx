@@ -53,27 +53,36 @@ const APropos = () => {
               className="space-y-6"
             >
               <p className="text-lg leading-relaxed">
-                Je suis artiste contemporaine, basée à Nantes. Mon œuvre se situe à la croisée 
-                de la peinture abstraite et de la sculpture. Formée aux arts plastiques et nourrie 
-                par une curiosité insatiable pour la matière, je développe un langage visuel unique, 
-                où la couleur explose et le béton s'adoucit.
+                Je vis et travaille à Nantes. Depuis plus de 20 ans, j'évolue dans l'abstraction 
+                avec des toiles travaillées à l'huile et des sculptures en béton ciré. J'ai suivi 
+                une formation aux Beaux-Arts de Nantes pendant cinq ans, puis fréquenté les ateliers 
+                de la Gobinière où j'ai appris la rigueur dans la réalisation des œuvres.
               </p>
 
               <p className="text-lg leading-relaxed">
-                Mon travail, profondément intuitif, naît d'un dialogue permanent entre geste spontané 
-                et réflexion contemplative. Chaque toile, chaque sculpture, est une exploration des 
-                émotions enfouies, une traduction plastique de l'indicible.
+                J'ai commencé par peindre des paysages figuratifs avant de me consacrer entièrement 
+                à l'abstraction géométrique. Aujourd'hui, rien de figuratif dans mon travail — 
+                règnent la couleur, le trait, et avant tout la composition. J'utilise principalement 
+                la technique de l'huile, plus contraignante que l'acrylique, et je manie surtout le couteau.
               </p>
 
               <blockquote className="border-l-4 border-primary pl-6 py-4 my-8">
                 <p className="font-accent text-xl md:text-2xl text-foreground/90">
-                  « Je peins ce que les mots ne peuvent dire. Je sculpte ce que le regard cherche sans le savoir. »
+                  « Ce qui m'intéresse, c'est le voyage que chacun entreprend devant mon travail. »
                 </p>
               </blockquote>
 
               <p className="text-lg leading-relaxed">
-                Exposée en galeries et salons d'art contemporain, je poursuis ma quête d'un art vivant, 
-                vibrant, résolument abstrait.
+                Mes tableaux ne portent volontairement aucun titre — une manière de laisser 
+                libre cours à l'interprétation et à la lecture de chacun. Seules restent des 
+                impressions, des portes intérieures s'ouvrent en grand, les images emplissent 
+                l'espace intime au-delà des mots.
+              </p>
+
+              <p className="text-lg leading-relaxed">
+                Porteuse de rêve, de poésie et de douceur, l'abstraction développe l'imaginaire 
+                et l'imagination. Je vous conduis aussi bien au cœur du réel qu'au seuil du rêve, 
+                selon votre humeur, le voyage entrepris...
               </p>
 
               {/* Techniques */}
@@ -121,16 +130,16 @@ const APropos = () => {
           <div className="grid md:grid-cols-3 gap-12">
             {[
               {
-                title: "L'intuition",
-                description: "Chaque œuvre naît d'une impulsion, d'un geste premier qui guide la composition. Je laisse la matière me parler."
+                title: "L'équilibre",
+                description: "Mes dessins sont réalisés d'une manière géométrique et équilibrée. On peut y sentir l'influence de Mondrian, mais j'évolue dans un univers qui m'est propre."
               },
               {
                 title: "La couleur",
-                description: "Vibrante, audacieuse, la couleur est au cœur de mon expression. Elle porte l'émotion là où les formes restent silencieuses."
+                description: "Des couleurs chatoyantes qui donnent de l'énergie. Mes rouges et mes oranges sont intenses, et la matière est très présente sur mes toiles."
               },
               {
-                title: "La matière",
-                description: "De l'huile au béton ciré, j'explore les textures pour créer un dialogue entre le lisse et le rugueux, le léger et le dense."
+                title: "La liberté",
+                description: "C'est une peinture abstraite mais sereine, qui ne choque pas le regard et l'esprit. Elle laisse libre cours à l'imaginaire du visiteur."
               }
             ].map((item, index) => (
               <motion.div
