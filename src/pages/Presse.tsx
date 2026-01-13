@@ -208,7 +208,7 @@ const Presse = () => {
               <img 
                 src={ouestFranceLogo} 
                 alt="Ouest-France" 
-                className="h-16 w-auto object-contain"
+                className="h-24 w-auto object-contain"
               />
             </a>
             
