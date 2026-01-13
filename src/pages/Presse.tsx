@@ -179,25 +179,67 @@ const Presse = () => {
         </div>
       </section>
 
-      {/* Media Logos Placeholder */}
-      <section className="py-16">
+      {/* Media Logos */}
+      <section className="py-16 bg-foreground/[0.02]">
         <div className="container-narrow">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center text-sm uppercase tracking-widest text-muted-foreground mb-8"
+            className="text-center text-sm uppercase tracking-widest text-muted-foreground mb-10"
           >
             Ils ont parlé de mon travail
           </motion.p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-50">
-            {["Média 1", "Média 2", "Média 3", "Média 4"].map((media) => (
-              <span key={media} className="text-muted-foreground">
-                {media}
-              </span>
-            ))}
-          </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-wrap justify-center items-center gap-10 md:gap-16"
+          >
+            {/* Ouest-France */}
+            <a 
+              href="https://www.ouest-france.fr" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-2 grayscale hover:grayscale-0 transition-all duration-300"
+            >
+              <div className="h-12 flex items-center justify-center px-4 py-2 border border-border rounded bg-background group-hover:border-primary/30 transition-colors">
+                <span className="font-serif text-xl font-bold text-foreground tracking-tight">
+                  Ouest-France
+                </span>
+              </div>
+            </a>
+            
+            {/* Presse Océan */}
+            <a 
+              href="https://www.ouest-france.fr/pays-de-la-loire/nantes-44000/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-2 grayscale hover:grayscale-0 transition-all duration-300"
+            >
+              <div className="h-12 flex items-center justify-center px-4 py-2 border border-border rounded bg-background group-hover:border-primary/30 transition-colors">
+                <span className="font-serif text-xl font-bold text-foreground tracking-tight">
+                  Presse Océan
+                </span>
+              </div>
+            </a>
+            
+            {/* Hippocampe Info */}
+            <a 
+              href="https://hippocampeinfo2.over-blog.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-2 grayscale hover:grayscale-0 transition-all duration-300"
+            >
+              <div className="h-12 flex items-center justify-center px-4 py-2 border border-border rounded bg-background group-hover:border-primary/30 transition-colors">
+                <span className="font-serif text-xl font-bold text-foreground tracking-tight">
+                  Hippocampe Info
+                </span>
+              </div>
+            </a>
+          </motion.div>
         </div>
       </section>
     </Layout>
