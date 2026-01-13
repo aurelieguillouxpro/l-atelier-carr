@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Download, Quote } from "lucide-react";
 import Layout from "@/components/layout/Layout";
-
+import ouestFranceLogo from "@/assets/logos/ouest-france.png";
 const pressArticles = [
   {
     id: 1,
@@ -203,13 +203,13 @@ const Presse = () => {
               href="https://www.ouest-france.fr" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group flex flex-col items-center gap-2 grayscale hover:grayscale-0 transition-all duration-300"
+              className="group grayscale hover:grayscale-0 transition-all duration-300"
             >
-              <div className="h-12 flex items-center justify-center px-4 py-2 border border-border rounded bg-background group-hover:border-primary/30 transition-colors">
-                <span className="font-serif text-xl font-bold text-foreground tracking-tight">
-                  Ouest-France
-                </span>
-              </div>
+              <img 
+                src={ouestFranceLogo} 
+                alt="Ouest-France" 
+                className="h-10 w-auto object-contain"
+              />
             </a>
             
             {/* Presse Océan */}
