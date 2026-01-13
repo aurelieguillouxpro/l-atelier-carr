@@ -74,10 +74,14 @@ const Presse = () => {
               Téléchargez mon dossier de presse complet incluant biographie, 
               visuels haute définition et informations de contact.
             </p>
-            <button className="inline-flex items-center gap-3 bg-background text-foreground px-8 py-4 text-sm uppercase tracking-widest hover:bg-background/90 transition-colors">
+            <a 
+              href="/documents/dossier-presse-chaillou.pdf"
+              download="Dossier-Presse-Marie-Christine-Chaillou.pdf"
+              className="inline-flex items-center gap-3 bg-background text-foreground px-8 py-4 text-sm uppercase tracking-widest hover:bg-background/90 transition-colors"
+            >
               <Download size={18} />
               Télécharger le dossier de presse
-            </button>
+            </a>
           </motion.div>
         </div>
       </section>
