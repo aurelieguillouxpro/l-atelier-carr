@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import portraitArtiste from "@/assets/portrait-artiste.jpg";
 
 const APropos = () => {
   return (
@@ -34,11 +35,13 @@ const APropos = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="aspect-[4/5] bg-gradient-to-br from-muted/30 to-muted/10 sticky top-32"
+              className="aspect-[4/5] bg-gradient-to-br from-muted/30 to-muted/10 sticky top-32 overflow-hidden"
             >
-              <div className="w-full h-full flex items-center justify-center text-muted-foreground/50">
-                <span className="text-sm">Portrait de l'artiste</span>
-              </div>
+              <img 
+                src={portraitArtiste} 
+                alt="Marie-Christine Chaillou, artiste contemporaine" 
+                className="w-full h-full object-cover object-top"
+              />
             </motion.div>
 
             {/* Text content */}
