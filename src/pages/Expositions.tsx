@@ -3,51 +3,18 @@ import { Calendar, MapPin } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 
 const exhibitions = {
-  upcoming: [
-    {
-      id: 1,
-      title: "L'art abstrait ouvre la saison",
-      venue: "Maison du patrimoine",
-      location: "Mesquer (44)",
-      date: "Avril 2025",
-      description: "Troisième exposition dans ce lieu privilégié. « C'est un endroit que j'adore, la maison est belle et mon travail y est bien mis en valeur. »"
-    },
-  ],
+  upcoming: [],
   past: [
     {
-      id: 2,
-      title: "Exposition municipale",
-      venue: "Chapelle Saint-Germain",
-      location: "Saint-Julien-de-Concelles (44)",
-      date: "2024",
-      description: "Exposition personnelle dans la belle chapelle de Saint-Julien-de-Concelles, mettant en valeur peintures et sculptures."
-    },
-    {
-      id: 3,
-      title: "Équilibre et force",
-      venue: "Galerie",
-      location: "Ancenis-Saint-Géréon (44)",
-      date: "Avril 2017",
-      description: "L'artiste peint et sculpte avec équilibre et force. Deux puissances qui se dégagent aussi bien de ses toiles travaillées à l'huile que de ses sculptures faites de béton ciré."
-    },
-    {
-      id: 4,
-      title: "L'équilibre scriptural",
-      venue: "Espace culturel",
-      location: "Ancenis-Saint-Géréon (44)",
-      date: "Octobre 2016",
-      description: "Dessins réalisés d'une manière géométrique et équilibrée, avec des couleurs chatoyantes « qui donnent de l'énergie »."
-    },
-    {
-      id: 5,
+      id: 1,
       title: "Carré'Ment abstrait",
-      venue: "Salle d'exposition",
+      venue: "Le Musée",
       location: "Sautron (44)",
       date: "Décembre 2014",
-      description: "Toiles hautes en couleur qui dégagent énergie et puissance, avec des pigments forts et des traits nets et assumés."
+      description: "Toiles hautes en couleur qui dégagent énergie et puissance, avec des pigments forts et des traits nets et assumés. Peinture abstraite mais sereine, qui ne choque pas le regard et l'esprit."
     },
     {
-      id: 6,
+      id: 2,
       title: "Marie-Christine Chaillou expose",
       venue: "Maison du patrimoine",
       location: "Mesquer (44)",
@@ -55,9 +22,9 @@ const exhibitions = {
       description: "Ses rouges et ses oranges sont magnifiques, et la matière est très présente sur ses toiles. Marie-Christine Chaillou utilise la technique de l'huile et manie surtout le couteau."
     },
     {
-      id: 7,
+      id: 3,
       title: "Un art concrètement abstrait",
-      venue: "Galerie Hippocampe",
+      venue: "Galerie",
       location: "La Baule (44)",
       date: "Octobre 2013",
       description: "Marie-Christine Chaillou pare ses sentiments de couleurs. Ses œuvres abstraites sont très suggestives et ouvrent un nouvel horizon que recherchent les amateurs d'art."
