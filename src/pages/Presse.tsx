@@ -5,46 +5,14 @@ import Layout from "@/components/layout/Layout";
 const pressArticles = [
   {
     id: 1,
-    title: "L'art abstrait ouvre la saison à la Maison du patrimoine de Mesquer",
-    source: "Ouest-France",
-    date: "Avril 2025",
-    excerpt: "C'est la troisième fois que Marie-Christine Chaillou expose à la Maison du patrimoine de Mesquer. « C'est un endroit que j'adore, la maison est belle et mon travail y est bien mis en valeur. »",
-    link: "https://www.ouest-france.fr/pays-de-la-loire/mesquer-44420/lart-abstrait-ouvre-la-saison-a-la-maison-du-patrimoine-de-mesquer-653085e4-0e19-11f0-ae86-6d5913869474"
-  },
-  {
-    id: 2,
-    title: "Exposition municipale à la Chapelle Saint-Germain",
-    source: "Facebook",
-    date: "2024",
-    excerpt: "L'exposition municipale a lieu en ce moment à la Chapelle Saint-Germain à Saint-Julien-de-Concelles.",
-    link: "https://www.facebook.com/100083966103967/posts/732054606270070/"
-  },
-  {
-    id: 3,
-    title: "Regarder l'exposition de Marie-Christine Chaillou",
-    source: "Ouest-France",
-    date: "Avril 2017",
-    excerpt: "L'artiste peint et sculpte avec équilibre et force. Deux puissances qui se dégagent aussi bien de ses toiles travaillées à l'huile que de ses sculptures faites de béton ciré.",
-    link: "https://www.ouest-france.fr/pays-de-la-loire/regarder-l-exposition-de-marie-christine-chaillou-4900841"
-  },
-  {
-    id: 4,
-    title: "L'équilibre scriptural de Marie-Christine Chaillou",
-    source: "Ouest-France",
-    date: "Octobre 2016",
-    excerpt: "Ses dessins sont réalisés d'une manière géométrique et équilibrée. L'artiste applique ensuite des couleurs chatoyantes, « qui donnent de l'énergie ».",
-    link: "https://www.ouest-france.fr/pays-de-la-loire/ancenis-saint-gereon-44150/l-equilibre-scriptural-de-marie-christine-chaillou-4551918"
-  },
-  {
-    id: 5,
     title: "Sautron. Une expo « Carré'Ment abstrait »",
     source: "Presse Océan",
     date: "Décembre 2014",
-    excerpt: "Elle propose des toiles hautes en couleur qui dégagent énergie et puissance, avec des pigments forts et des traits nets et assumés.",
+    excerpt: "Elle propose des toiles hautes en couleur qui dégagent énergie et puissance, avec des pigments forts et des traits nets et assumés. C'est une peinture abstraite mais sereine, qui ne choque pas le regard et l'esprit.",
     link: "https://saint-nazaire.maville.com/actu/actudet_-sautron.-une-expo-carre-ment-abstrait-_dep-7102158_actu.Htm"
   },
   {
-    id: 6,
+    id: 2,
     title: "Marie-Christine Chaillou à la Maison du patrimoine",
     source: "Ouest-France",
     date: "Novembre 2013",
@@ -52,7 +20,7 @@ const pressArticles = [
     link: "https://www.ouest-france.fr/pays-de-la-loire/la-baule-44500/marie-christine-chaillou-la-maison-du-patrimoine-1657843"
   },
   {
-    id: 7,
+    id: 3,
     title: "Un art concrètement abstrait",
     source: "Hippocampe Info",
     date: "Octobre 2013",
