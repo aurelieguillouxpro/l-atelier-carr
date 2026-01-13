@@ -21,7 +21,7 @@
     --popover: 40 33% 97%;
     --popover-foreground: 0 0% 10%;
 
-    --primary: 220 100% 34%; /* Bleu cobalt #0047AB */
+    --primary: 355 78% 55%; /* Rouge vermillon #E63946 */
     --primary-foreground: 40 33% 97%;
 
     --secondary: 45 69% 46%; /* Or doux #C9A227 */
@@ -38,7 +38,7 @@
 
     --border: 30 10% 85%;
     --input: 30 10% 85%;
-    --ring: 220 100% 34%;
+    --ring: 355 78% 55%;
 
     --radius: 0.25rem;
 
