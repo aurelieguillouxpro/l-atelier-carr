@@ -5,6 +5,30 @@ import Layout from "@/components/layout/Layout";
 const pressArticles = [
   {
     id: 1,
+    title: "L'art abstrait ouvre la saison à la Maison du patrimoine de Mesquer",
+    source: "Ouest-France",
+    date: "Avril 2025",
+    excerpt: "C'est la troisième fois que Marie-Christine Chaillou expose à la Maison du patrimoine de Mesquer. « C'est un endroit que j'adore, la maison est belle et mon travail y est bien mis en valeur. »",
+    link: "https://www.ouest-france.fr/pays-de-la-loire/mesquer-44420/lart-abstrait-ouvre-la-saison-a-la-maison-du-patrimoine-de-mesquer-653085e4-0e19-11f0-ae86-6d5913869474"
+  },
+  {
+    id: 2,
+    title: "Marie-Christine Chaillou à la Maison du patrimoine",
+    source: "Ouest-France",
+    date: "Novembre 2013",
+    excerpt: "Ses rouges et ses oranges sont magnifiques, et la matière est très présente sur ses toiles. Marie-Christine Chaillou utilise la technique de l'huile et manie surtout le couteau.",
+    link: "https://www.ouest-france.fr/pays-de-la-loire/la-baule-44500/marie-christine-chaillou-la-maison-du-patrimoine-1657843"
+  },
+  {
+    id: 3,
+    title: "L'équilibre scriptural de Marie-Christine Chaillou",
+    source: "Ouest-France",
+    date: "Octobre 2016",
+    excerpt: "Ses dessins sont réalisés d'une manière géométrique et équilibrée. L'artiste applique ensuite des couleurs chatoyantes, « qui donnent de l'énergie ».",
+    link: "https://www.ouest-france.fr/pays-de-la-loire/ancenis-saint-gereon-44150/l-equilibre-scriptural-de-marie-christine-chaillou-4551918"
+  },
+  {
+    id: 4,
     title: "Regarder l'exposition de Marie-Christine Chaillou",
     source: "Ouest-France",
     date: "Avril 2017",
@@ -12,7 +36,7 @@ const pressArticles = [
     link: "https://www.ouest-france.fr/pays-de-la-loire/regarder-l-exposition-de-marie-christine-chaillou-4900841"
   },
   {
-    id: 2,
+    id: 5,
     title: "Sautron. Une expo « Carré'Ment abstrait »",
     source: "Presse Océan",
     date: "Décembre 2014",
@@ -20,15 +44,15 @@ const pressArticles = [
     link: "https://saint-nazaire.maville.com/actu/actudet_-sautron.-une-expo-carre-ment-abstrait-_dep-7102158_actu.Htm"
   },
   {
-    id: 3,
+    id: 6,
     title: "Un art concrètement abstrait",
     source: "Hippocampe Info",
     date: "Octobre 2013",
-    excerpt: "Marie-Christine Chaillou pare ses sentiments de couleurs. Ses œuvres abstraites sont pourtant très suggestives et ouvrent un nouvel horizon que recherchent les amateurs d'art.",
+    excerpt: "Marie-Christine Chaillou pare ses sentiments de couleurs. Ses œuvres abstraites sont très suggestives et ouvrent un nouvel horizon que recherchent les amateurs d'art.",
     link: "https://hippocampeinfo2.over-blog.com/article-marie-christine-chaillou-55497952.html"
   },
   {
-    id: 4,
+    id: 7,
     title: "Exposition municipale à la Chapelle Saint-Germain",
     source: "Facebook",
     date: "2024",
@@ -40,15 +64,15 @@ const pressArticles = [
 const testimonials = [
   {
     id: 1,
-    quote: "Une artiste qui ose, qui explore, qui nous transporte dans un univers où la couleur vibre d'une intensité rare.",
-    author: "Jean Dupont",
-    role: "Directeur de galerie"
+    quote: "L'art pratiqué par Marie-Christine Chaillou est toujours en mouvement, très vivant, à l'image de ce que disait Auguste Rodin : « Un art qui a de la vie ne reproduit pas le passé, il le continue ».",
+    author: "Padraig De Chemoulin",
+    role: "Hippocampe Info"
   },
   {
     id: 2,
-    quote: "Le travail de Marie-Christine Chaillou nous rappelle que l'abstraction n'est pas une fuite du réel, mais une plongée dans l'essentiel.",
-    author: "Marie Martin",
-    role: "Critique d'art"
+    quote: "On sent l'influence des œuvres de Mondrian dans sa démarche, mais Marie-Christine Chaillou évolue dans un univers qui lui est propre.",
+    author: "Ouest-France",
+    role: "Article de presse"
   },
 ];
 
