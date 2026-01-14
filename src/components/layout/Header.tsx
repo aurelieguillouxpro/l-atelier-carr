@@ -20,30 +20,43 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm">
       <nav className="container-narrow flex items-center justify-between py-6">
-        {/* Logo */}
+        {/* Logo with animation */}
         <Link to="/" className="group flex items-center gap-3">
-          <img 
+          <motion.img 
             src={logoMcc} 
             alt="Logo MCC" 
             className="h-14 md:h-18 w-auto"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            whileHover={{ scale: 1.05 }}
           />
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             <h1 className="text-xl md:text-2xl font-semibold tracking-wide">
               Carrément Abstrait
             </h1>
-            <p className="text-xs text-muted-foreground tracking-widest uppercase">
+            <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase">
               Marie-Christine Chaillou
             </p>
-          </div>
+          </motion.div>
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navigation.map((item) => (
-            <li key={item.name}>
+        <ul className="hidden md:flex items-center gap-10">
+          {navigation.map((item, index) => (
+            <motion.li 
+              key={item.name}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+            >
               <Link
                 to={item.href}
-                className={`link-underline text-sm tracking-wide transition-colors ${
+                className={`link-underline text-sm tracking-wide transition-colors duration-300 ${
                   location.pathname === item.href
                     ? "text-primary"
                     : "text-foreground hover:text-primary"
@@ -51,7 +64,7 @@ const Header = () => {
               >
                 {item.name}
               </Link>
-            </li>
+            </motion.li>
           ))}
         </ul>
 
@@ -72,15 +85,21 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
             className="md:hidden bg-background border-t border-border"
           >
-            <ul className="container-narrow py-6 space-y-4">
-              {navigation.map((item) => (
-                <li key={item.name}>
+            <ul className="container-narrow py-8 space-y-5">
+              {navigation.map((item, index) => (
+                <motion.li 
+                  key={item.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                >
                   <Link
                     to={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block text-lg ${
+                    className={`block text-lg tracking-wide ${
                       location.pathname === item.href
                         ? "text-primary"
                         : "text-foreground"
@@ -88,7 +107,7 @@ const Header = () => {
                   >
                     {item.name}
                   </Link>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </motion.div>

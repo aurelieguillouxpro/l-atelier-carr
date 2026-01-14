@@ -11,34 +11,34 @@
 
 @layer base {
   :root {
-    /* Carrément Abstrait - Palette artistique */
+    /* Carrément Abstrait - Palette élégante et sereine */
     --background: 40 33% 97%; /* Ivoire #FAF9F6 */
-    --foreground: 0 0% 10%; /* Noir profond #1A1A1A */
+    --foreground: 0 0% 15%; /* Anthracite profond #262626 */
 
     --card: 40 33% 97%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 0 0% 15%;
 
     --popover: 40 33% 97%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 0 0% 15%;
 
-    --primary: 355 78% 55%; /* Rouge vermillon #E63946 */
+    --primary: 25 25% 45%; /* Bronze doré #8B7355 */
     --primary-foreground: 40 33% 97%;
 
-    --secondary: 45 69% 46%; /* Or doux #C9A227 */
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 30 15% 60%; /* Taupe chaud #9A8B7A */
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 30 5% 53%; /* Gris taupe #8A8583 */
-    --muted-foreground: 30 5% 40%;
+    --muted: 30 8% 70%; /* Gris taupe clair */
+    --muted-foreground: 30 8% 45%;
 
-    --accent: 349 75% 36%; /* Rouge carmin #9B1B30 */
+    --accent: 15 35% 35%; /* Terre de Sienne subtil #A0522D */
     --accent-foreground: 40 33% 97%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 40 33% 97%;
 
-    --border: 30 10% 85%;
-    --input: 30 10% 85%;
-    --ring: 355 78% 55%;
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 25 25% 45%;
 
     --radius: 0.25rem;
 
@@ -64,6 +64,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 600;
+    letter-spacing: 0.02em;
   }
 
   .font-accent {
@@ -88,6 +89,22 @@
   
   .link-underline:hover::after {
     @apply scale-x-100 origin-left;
+  }
+
+  /* Scroll indicator animation */
+  @keyframes scroll-hint {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(8px);
+      opacity: 0.5;
+    }
+  }
+
+  .animate-scroll-hint {
+    animation: scroll-hint 2s ease-in-out infinite;
   }
 }
 
