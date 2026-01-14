@@ -6,7 +6,7 @@ import portraitArtiste from "@/assets/portrait-artiste.jpg";
 const APropos = () => {
   return (
     <Layout>
-      {/* Hero - Simplifié */}
+      {/* Hero */}
       <section className="py-20 md:py-28">
         <div className="container-narrow">
           <motion.div
@@ -19,7 +19,7 @@ const APropos = () => {
               Mon parcours
             </h1>
             <p className="text-muted-foreground text-lg">
-              Plus de 20 ans dans l'abstraction
+              L'art comme langage de l'invisible
             </p>
           </motion.div>
         </div>
@@ -56,24 +56,35 @@ const APropos = () => {
             >
               <p className="text-lg md:text-xl leading-relaxed">
                 Je vis et travaille à Nantes. Depuis plus de 20 ans, j'évolue dans l'abstraction 
-                avec des toiles travaillées à l'huile et des sculptures en béton ciré.
-              </p>
-
-              <p className="text-lg leading-relaxed text-foreground/80">
-                J'ai suivi une formation aux Beaux-Arts de Nantes pendant cinq ans, puis fréquenté 
-                les ateliers de la Gobinière où j'ai appris la rigueur dans la réalisation des œuvres.
+                avec des toiles travaillées à l'huile et des sculptures en béton ciré. J'ai suivi 
+                une formation aux Beaux-Arts de Nantes pendant cinq ans, puis fréquenté les ateliers 
+                de la Gobinière où j'ai appris la rigueur dans la réalisation des œuvres.
               </p>
 
               <p className="text-lg leading-relaxed text-foreground/80">
                 J'ai commencé par peindre des paysages figuratifs avant de me consacrer entièrement 
                 à l'abstraction géométrique. Aujourd'hui, rien de figuratif dans mon travail — 
-                règnent la couleur, le trait, et avant tout la composition.
+                règnent la couleur, le trait, et avant tout la composition. J'utilise principalement 
+                la technique de l'huile, plus contraignante que l'acrylique, et je manie surtout le couteau.
+              </p>
+
+              <blockquote className="border-l-4 border-primary pl-6 py-4 my-8">
+                <p className="font-accent text-xl md:text-2xl text-foreground/90">
+                  « Ce qui m'intéresse, c'est le voyage que chacun entreprend devant mon travail. »
+                </p>
+              </blockquote>
+
+              <p className="text-lg leading-relaxed text-foreground/80">
+                Mes tableaux ne portent volontairement aucun titre — une manière de laisser 
+                libre cours à l'interprétation et à la lecture de chacun. Seules restent des 
+                impressions, des portes intérieures s'ouvrent en grand, les images emplissent 
+                l'espace intime au-delà des mots.
               </p>
 
               <p className="text-lg leading-relaxed text-foreground/80">
-                J'utilise principalement la technique de l'huile, plus contraignante que l'acrylique, 
-                et je manie surtout le couteau. Mes tableaux ne portent volontairement aucun titre — 
-                une manière de laisser libre cours à l'interprétation de chacun.
+                Porteuse de rêve, de poésie et de douceur, l'abstraction développe l'imaginaire 
+                et l'imagination. Je vous conduis aussi bien au cœur du réel qu'au seuil du rêve, 
+                selon votre humeur, le voyage entrepris...
               </p>
 
               {/* Techniques */}
@@ -108,7 +119,7 @@ const APropos = () => {
         </div>
       </section>
 
-      {/* Values / Approach - Simplifié */}
+      {/* Values / Approach */}
       <section className="py-24 bg-foreground/[0.02]">
         <div className="container-narrow">
           <motion.h2
@@ -118,22 +129,22 @@ const APropos = () => {
             transition={{ duration: 0.6 }}
             className="text-3xl md:text-5xl font-semibold text-center mb-20"
           >
-            Ma démarche
+            Ma démarche artistique
           </motion.h2>
 
           <div className="grid md:grid-cols-3 gap-16">
             {[
               {
                 title: "L'équilibre",
-                description: "Une approche géométrique où chaque forme trouve sa place. L'influence de Mondrian est présente, dans un univers qui m'est propre."
+                description: "Mes dessins sont réalisés d'une manière géométrique et équilibrée. On peut y sentir l'influence de Mondrian, mais j'évolue dans un univers qui m'est propre."
               },
               {
                 title: "La couleur",
-                description: "Des couleurs vibrantes qui donnent de l'énergie. La matière est très présente sur mes toiles, travaillée au couteau."
+                description: "Des couleurs chatoyantes qui donnent de l'énergie. Mes rouges et mes oranges sont intenses, et la matière est très présente sur mes toiles."
               },
               {
                 title: "La liberté",
-                description: "Une peinture sereine qui laisse libre cours à l'imaginaire. Chaque spectateur y trouve sa propre lecture."
+                description: "C'est une peinture abstraite mais sereine, qui ne choque pas le regard et l'esprit. Elle laisse libre cours à l'imaginaire du visiteur."
               }
             ].map((item, index) => (
               <motion.div

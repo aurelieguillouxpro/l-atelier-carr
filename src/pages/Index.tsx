@@ -48,10 +48,19 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/50 to-background/70" />
         
         <div className="container-narrow text-center relative z-10">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="font-accent text-lg md:text-xl text-foreground/80 mb-8"
+          >
+            « Là où la couleur devient émotion »
+          </motion.p>
+          
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
             className="text-5xl md:text-7xl lg:text-8xl font-semibold mb-8 tracking-tight"
           >
             Carrément Abstrait
@@ -60,7 +69,7 @@ const Index = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
             className="text-lg md:text-xl text-foreground/80 mb-3"
           >
             Marie-Christine Chaillou
@@ -69,10 +78,10 @@ const Index = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+            transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
             className="text-sm uppercase tracking-[0.4em] text-muted-foreground mb-16"
           >
-            Artiste peintre & sculptrice
+            Artiste peintre & sculptrice contemporaine
           </motion.p>
 
           <motion.div
@@ -103,7 +112,7 @@ const Index = () => {
         </motion.button>
       </section>
 
-      {/* Introduction - Sobre et factuelle */}
+      {/* Introduction */}
       <section className="py-28">
         <div className="container-narrow max-w-3xl text-center">
           <motion.p
@@ -113,9 +122,10 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="text-xl md:text-2xl leading-relaxed text-foreground/80"
           >
-            Artiste contemporaine basée à Nantes, je crée des tableaux abstraits 
-            et des sculptures en béton ciré depuis plus de 20 ans. Mon travail 
-            explore l'équilibre des formes et l'harmonie des couleurs.
+            Mon atmosphère artistique se traduit au travers de tableaux abstraits colorés, 
+            laissant libre cours à votre imaginaire. Le rythme est insufflé par la dynamique 
+            de la composition, l'animation des couleurs et des formes. Il est la résonance 
+            visuelle retenue par l'œil qui s'y attarde.
           </motion.p>
         </div>
       </section>
@@ -131,7 +141,7 @@ const Index = () => {
             className="text-center mb-20"
           >
             <h2 className="text-3xl md:text-5xl font-semibold mb-4">Œuvres récentes</h2>
-            <p className="text-muted-foreground text-lg">Une sélection de mes créations</p>
+            <p className="text-muted-foreground text-lg">Une sélection de mes dernières créations</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-10">
@@ -181,7 +191,26 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section - Épuré */}
+      {/* Quote Section */}
+      <section className="py-28">
+        <div className="container-narrow max-w-4xl text-center">
+          <motion.blockquote
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="font-accent text-2xl md:text-3xl lg:text-4xl leading-relaxed text-foreground/90 mb-6">
+              « Ce qui m'intéresse, c'est le voyage que chacun entreprend devant mon travail. »
+            </p>
+            <cite className="text-sm uppercase tracking-[0.2em] text-muted-foreground not-italic">
+              — Marie-Christine Chaillou
+            </cite>
+          </motion.blockquote>
+        </div>
+      </section>
+
+      {/* CTA Section */}
       <section className="py-28 bg-foreground text-background">
         <div className="container-narrow text-center">
           <motion.div
@@ -191,10 +220,10 @@ const Index = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-              Intéressé par mon travail ?
+              Intéressé par une collaboration ?
             </h2>
             <p className="text-background/70 mb-10 max-w-xl mx-auto text-lg">
-              Galeries, collectionneurs, journalistes — n'hésitez pas à me contacter.
+              Galeries, journalistes, amateurs d'art — je serais ravie d'échanger avec vous.
             </p>
             <Link
               to="/contact"
