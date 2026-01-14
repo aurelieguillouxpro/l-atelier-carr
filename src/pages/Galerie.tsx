@@ -42,6 +42,7 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "35 × 12 × 10 cm",
     year: "2023",
+    description: "Une forme féminine stylisée s'élève avec grâce, capturant le mouvement dans la pierre.",
     image: sculptureBlanche,
   },
   {
@@ -51,6 +52,7 @@ const artworks = [
     technique: "Bois peint",
     dimensions: "45 × 15 × 8 cm",
     year: "2022",
+    description: "Les couleurs primaires s'entrelacent sur le bois sculpté, créant un dialogue entre peinture et volume.",
     image: sculptureColoree,
   },
   {
@@ -60,6 +62,7 @@ const artworks = [
     technique: "Bronze patiné",
     dimensions: "30 × 25 × 20 cm",
     year: "2023",
+    description: "Des formes organiques s'entremêlent dans un équilibre dynamique, capturant l'instant suspendu.",
     image: sculptureNoire,
   },
   {
@@ -69,6 +72,7 @@ const artworks = [
     technique: "Béton ciré bicolore",
     dimensions: "40 × 20 × 15 cm",
     year: "2024",
+    description: "Géométrie pure où les plans ocre et blanc créent un jeu d'ombres et de lumière.",
     image: sculptureGeometrique,
   },
   {
@@ -78,6 +82,7 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "38 × 12 × 10 cm",
     year: "2024",
+    description: "Une forme élancée qui aspire vers le ciel, alliant force et délicatesse.",
     image: sculptureElancee,
   },
   {
@@ -87,6 +92,7 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "30 × 20 × 15 cm",
     year: "2021",
+    description: "Une silhouette méditative aux courbes épurées, signée par l'artiste.",
     image: sculptureSignee,
   },
   {
@@ -96,6 +102,7 @@ const artworks = [
     technique: "Bronze patiné noir",
     dimensions: "35 × 30 × 25 cm",
     year: "2025",
+    description: "Formes dynamiques s'élançant dans l'espace, capturant l'énergie du mouvement.",
     image: sculptureNoireDynamique,
   },
   {
@@ -105,6 +112,7 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "60 × 35 × 30 cm",
     year: "2020",
+    description: "Une pièce monumentale aux lignes architecturales affirmées.",
     image: sculptureMonumentale,
   },
   {
@@ -114,6 +122,7 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "45 × 20 × 15 cm",
     year: "2019",
+    description: "Une sculpture architecturale jouant sur les pleins et les vides, évoquant une construction primitive.",
     image: sculptureArchitecturale,
   },
   {
@@ -123,6 +132,7 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "50 × 15 × 12 cm",
     year: "2019",
+    description: "Une silhouette féminine élancée, entre présence et absence, forme et vide.",
     image: sculptureFeminine,
   },
   {
@@ -132,6 +142,7 @@ const artworks = [
     technique: "Béton moucheté",
     dimensions: "35 × 10 × 8 cm",
     year: "2018",
+    description: "Un totem minimaliste, figure protectrice aux formes épurées.",
     image: sculptureTotemique,
   },
   // Peintures
@@ -142,6 +153,7 @@ const artworks = [
     technique: "Huile sur toile",
     dimensions: "50 × 50 cm",
     year: "2010",
+    description: "Une confrontation audacieuse entre le rouge vibrant et le noir profond, où les formes géométriques s'imbriquent dans un dialogue de couleurs intenses.",
     image: huileRougeNoir,
   },
   {
@@ -151,6 +163,7 @@ const artworks = [
     technique: "Huile sur toile",
     dimensions: "50 × 50 cm",
     year: "2010",
+    description: "Jeu subtil de gris et de touches de rouge qui créent une harmonie visuelle entre légèreté et profondeur.",
     image: huileGrisRouge,
   },
   {
@@ -160,6 +173,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "80 × 80 cm",
     year: "2007",
+    description: "Une explosion de couleurs où le bleu profond dialogue avec le jaune lumineux et l'orange chaleureux.",
     image: huileBleuJaune,
   },
   {
@@ -169,6 +183,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "80 × 80 cm",
     year: "2007",
+    description: "Les teintes chaudes de l'orange et du brun créent une atmosphère enveloppante, évoquant les dernières lueurs du jour.",
     image: huileOrange,
   },
   {
@@ -178,6 +193,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "80 × 80 cm",
     year: "2007",
+    description: "Les couleurs primaires s'affrontent et s'enlacent dans une composition vibrante d'énergie.",
     image: huileJauneBleu,
   },
   {
@@ -187,6 +203,7 @@ const artworks = [
     technique: "Encre sur papier",
     dimensions: "40 × 50 cm",
     year: "2023",
+    description: "La spontanéité du geste capturée dans l'encre, où chaque trait révèle l'instant de sa création.",
     image: encreGestuelle,
   },
   {
@@ -196,6 +213,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2007",
+    description: "Le rouge s'élève en lignes verticales sur un fond de gris nuancés, créant une tension entre stabilité et mouvement.",
     image: huileRougeGris,
   },
   {
@@ -205,6 +223,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "50 × 50 cm",
     year: "2007",
+    description: "Des îlots de turquoise flottent dans un océan de gris et de noir, évoquant des paysages imaginaires.",
     image: huileTurquoise,
   },
   {
@@ -214,6 +233,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "4 × 40 × 40 cm",
     year: "2007",
+    description: "Quatre tableaux qui dialoguent entre eux, comme les fenêtres d'une ville abstraite baignée de rouge et de gris.",
     image: quadriptyque,
   },
   {
@@ -223,6 +243,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2006",
+    description: "Le bleu profond et les tons crème se rencontrent, séparés par un trait de rouge vibrant.",
     image: huileBleuCreme,
   },
   {
@@ -232,6 +253,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2006",
+    description: "Une composition dynamique où le bleu marine et l'orange s'affrontent dans une géométrie audacieuse.",
     image: huileMarineOrange,
   },
   {
@@ -241,6 +263,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2006",
+    description: "Le bleu profond encadre des formes orangées lumineuses, créant une fenêtre vers un espace vibrant de couleurs.",
     image: huileBleuOrange,
   },
   {
@@ -250,6 +273,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2006",
+    description: "Une composition urbaine où le gris industriel rencontre l'énergie du rouge et de l'orange.",
     image: huileGrisOrange,
   },
   {
@@ -259,6 +283,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2006",
+    description: "Des teintes terreuses et grises s'ouvrent sur un chemin de lumière bleutée.",
     image: huileOcreGris,
   },
   {
@@ -268,6 +293,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "50 × 50 cm",
     year: "2006",
+    description: "Une forme ocre s'élève au centre, gardienne silencieuse entre les bleus du ciel et de la mer.",
     image: huileBleuOcre,
   },
   {
@@ -277,6 +303,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "50 × 50 cm",
     year: "2005",
+    description: "Des plans gris-bleu convergent vers un trait rouge central, créant une profondeur hypnotique.",
     image: huilePerspective,
   },
 ];
@@ -322,8 +349,9 @@ const Galerie = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-4">
               Galerie
             </h1>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-              Peintures à l'huile et sculptures en béton ciré
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Mes peintures sont des fenêtres ouvertes sur l'invisible. 
+              Mes sculptures invitent au toucher, à la contemplation.
             </p>
           </motion.div>
 
@@ -383,7 +411,7 @@ const Galerie = () => {
                     {artwork.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-muted-foreground">
-                    {artwork.technique}
+                    {artwork.technique} — {artwork.dimensions}
                   </p>
                 </motion.article>
               ))}
@@ -481,8 +509,11 @@ const Galerie = () => {
                   <p className="text-white/50 text-sm md:text-base mb-1">
                     {selectedArtwork.dimensions}
                   </p>
-                  <p className="text-white/50 text-sm md:text-base">
+                  <p className="text-white/50 text-sm md:text-base mb-6">
                     {selectedArtwork.year}
+                  </p>
+                  <p className="text-white/70 text-sm md:text-base leading-relaxed">
+                    {selectedArtwork.description}
                   </p>
                 </div>
               )}
