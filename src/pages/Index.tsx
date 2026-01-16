@@ -180,8 +180,9 @@ const Index = () => {
                   <div className="aspect-square bg-muted/10 mb-6 overflow-hidden">
                     <motion.img
                       src={work.image}
-                      alt={work.title}
+                      alt={`${work.title} - ${work.technique} par Marie-Christine Chaillou, artiste peintre contemporaine Nantes`}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.6, ease: "easeOut" }}
                     />
