@@ -48,55 +48,58 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/50 to-background/70" />
         
         <div className="container-narrow text-center relative z-10">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="font-accent text-lg md:text-xl text-foreground/80 mb-8"
-          >
-            « Là où la couleur devient émotion »
-          </motion.p>
-          
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-            className="text-5xl md:text-7xl lg:text-8xl font-semibold mb-8 tracking-tight"
-          >
-            Carrément Abstrait
-          </motion.h1>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-            className="text-lg md:text-xl text-foreground/80 mb-3"
-          >
-            Marie-Christine Chaillou
-          </motion.p>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
-            className="text-sm uppercase tracking-[0.4em] text-muted-foreground mb-16"
-          >
-            Artiste peintre & sculptrice contemporaine
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-          >
-            <Link
-              to="/galerie"
-              className="inline-flex items-center gap-3 bg-foreground text-background px-10 py-5 text-sm uppercase tracking-[0.2em] hover:bg-foreground/90 transition-all duration-300 hover:gap-4"
+          {/* Fond semi-transparent pour améliorer la lisibilité */}
+          <div className="bg-background/60 backdrop-blur-sm px-8 py-12 md:px-16 md:py-16 rounded-sm">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="font-accent text-lg md:text-xl text-foreground mb-8"
             >
-              Découvrir les œuvres
-              <ArrowRight size={18} />
-            </Link>
-          </motion.div>
+              « Là où la couleur devient émotion »
+            </motion.p>
+            
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+              className="text-5xl md:text-7xl lg:text-8xl font-semibold mb-8 tracking-tight"
+            >
+              Carrément Abstrait
+            </motion.h1>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+              className="text-lg md:text-xl text-foreground mb-3"
+            >
+              Marie-Christine Chaillou
+            </motion.p>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
+              className="text-sm uppercase tracking-[0.3em] text-foreground/70 mb-16"
+            >
+              Artiste peintre & sculptrice contemporaine
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1 }}
+            >
+              <Link
+                to="/galerie"
+                className="inline-flex items-center gap-3 bg-foreground text-background px-10 py-5 text-sm uppercase tracking-[0.2em] hover:bg-foreground/90 transition-all duration-300 hover:gap-4"
+              >
+                Découvrir les œuvres
+                <ArrowRight size={18} />
+              </Link>
+            </motion.div>
+          </div>
         </div>
 
         {/* Scroll indicator */}
