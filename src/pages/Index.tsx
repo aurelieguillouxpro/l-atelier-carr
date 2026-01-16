@@ -234,23 +234,33 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-28 bg-foreground text-background">
-        <div className="container-narrow text-center">
+      <section className="py-32 bg-primary text-primary-foreground relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-64 h-64 bg-background rounded-full -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-background rounded-full translate-x-1/3 translate-y-1/3" />
+        </div>
+        
+        <div className="container-narrow text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+            <span className="inline-block text-xs uppercase tracking-[0.3em] text-primary-foreground/70 mb-6">
+              Collaborations & Expositions
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-8">
               Intéressé par une collaboration ?
             </h2>
-            <p className="text-background/70 mb-10 max-w-xl mx-auto text-lg">
-              Galeries, journalistes, amateurs d'art — je serais ravie d'échanger avec vous.
+            <p className="text-primary-foreground/80 mb-12 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
+              Galeries, journalistes, amateurs d'art — je serais ravie d'échanger avec vous 
+              autour d'un projet d'exposition ou d'une collaboration artistique.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 bg-background text-foreground px-10 py-5 text-sm uppercase tracking-[0.2em] hover:bg-background/90 transition-all duration-300 hover:gap-4"
+              className="inline-flex items-center gap-3 bg-background text-foreground px-12 py-5 text-sm uppercase tracking-[0.2em] hover:bg-background/90 transition-all duration-300 hover:gap-4 shadow-lg"
             >
               Me contacter
               <ArrowRight size={18} />
