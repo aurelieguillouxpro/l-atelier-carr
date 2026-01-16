@@ -72,8 +72,9 @@ const APropos = () => {
             >
               <motion.img 
                 src={portraitArtiste} 
-                alt="Marie-Christine Chaillou, artiste contemporaine" 
+                alt="Portrait de Marie-Christine Chaillou, artiste peintre et sculptrice contemporaine basée à Nantes, spécialisée dans l'art abstrait géométrique" 
                 className="w-full h-full object-cover object-top"
+                loading="lazy"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.6 }}
               />

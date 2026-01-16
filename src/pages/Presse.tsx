@@ -245,8 +245,9 @@ const Presse = () => {
             >
               <img 
                 src={ouestFranceLogo} 
-                alt="Ouest-France" 
+                alt="Logo Ouest-France - Journal régional ayant publié des articles sur Marie-Christine Chaillou" 
                 className="h-16 sm:h-20 md:h-[7.5rem] w-auto object-contain"
+                loading="lazy"
               />
             </a>
             
@@ -259,8 +260,9 @@ const Presse = () => {
             >
               <img 
                 src={presseOceanLogo} 
-                alt="Presse Océan" 
+                alt="Logo Presse Océan - Média nantais ayant couvert les expositions de l'artiste" 
                 className="h-14 sm:h-18 md:h-24 w-auto object-contain"
+                loading="lazy"
               />
             </a>
             

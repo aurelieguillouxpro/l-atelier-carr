@@ -336,7 +336,7 @@ const Galerie = () => {
     setSelectedArtwork(filteredArtworks[newIndex]);
   };
 
-  const gallerySchema = {
+const gallerySchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Galerie - Peintures et Sculptures",
@@ -345,7 +345,25 @@ const Galerie = () => {
       "@type": "Person",
       "name": "Marie-Christine Chaillou"
     },
-    "numberOfItems": artworks.length
+    "numberOfItems": artworks.length,
+    "mainEntity": {
+      "@type": "ImageGallery",
+      "name": "Galerie d'art abstrait Marie-Christine Chaillou",
+      "image": filteredArtworks.slice(0, 10).map((artwork) => ({
+        "@type": "VisualArtwork",
+        "name": artwork.title,
+        "artist": {
+          "@type": "Person",
+          "name": "Marie-Christine Chaillou"
+        },
+        "artMedium": artwork.technique,
+        "artworkSurface": artwork.category === "peintures" ? "Toile" : "Béton ciré",
+        "width": artwork.dimensions.split("×")[0]?.trim(),
+        "height": artwork.dimensions.split("×")[1]?.split("cm")[0]?.trim(),
+        "dateCreated": artwork.year,
+        "description": artwork.description
+      }))
+    }
   };
 
   return (
@@ -415,10 +433,11 @@ const Galerie = () => {
                   onClick={() => setSelectedArtwork(artwork)}
                 >
                   <div className="aspect-square bg-muted/10 mb-4 overflow-hidden relative">
-                    <motion.img
+                  <motion.img
                       src={artwork.image}
-                      alt={artwork.title}
+                      alt={`${artwork.title} - ${artwork.technique} ${artwork.dimensions} par Marie-Christine Chaillou, artiste Nantes`}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.6, ease: "easeOut" }}
                     />

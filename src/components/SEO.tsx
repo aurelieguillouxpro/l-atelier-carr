@@ -13,7 +13,7 @@ interface SEOProps {
 const defaultMeta = {
   title: "Carrément Abstrait | Marie-Christine Chaillou",
   description: "Découvrez l'univers abstrait et coloré de Marie-Christine Chaillou, artiste peintre et sculptrice contemporaine basée à Nantes. Peintures à l'huile et sculptures en béton ciré.",
-  image: "https://lovable.dev/opengraph-image-p98pqg.png",
+  image: "https://carrementabstrait.com/og-image.jpg",
   siteUrl: "https://carrementabstrait.com",
 };
 
