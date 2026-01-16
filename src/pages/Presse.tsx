@@ -5,20 +5,20 @@ import ouestFranceLogo from "@/assets/logos/ouest-france.png";
 import presseOceanLogo from "@/assets/logos/presse-ocean.svg";
 const pressArticles = [
   {
+    id: 1,
+    title: "Sautron. Une expo « Carré'Ment abstrait »",
+    source: "Presse Océan",
+    date: "Décembre 2025",
+    excerpt: "Elle propose des toiles hautes en couleur qui dégagent énergie et puissance, avec des pigments forts et des traits nets et assumés. C'est une peinture abstraite mais sereine, qui ne choque pas le regard et l'esprit.",
+    link: "https://saint-nazaire.maville.com/actu/actudet_-sautron.-une-expo-carre-ment-abstrait-_dep-7102158_actu.Htm"
+  },
+  {
     id: 0,
     title: "L'art abstrait ouvre la saison à la Maison du patrimoine de Mesquer",
     source: "Ouest-France",
     date: "Avril 2025",
     excerpt: "C'est la troisième fois que Marie-Christine Chaillou expose à la Maison du patrimoine de Mesquer. « C'est un endroit que j'adore, la maison est belle et mon travail y est bien mis en valeur. »",
     link: "https://www.ouest-france.fr/pays-de-la-loire/mesquer-44420/lart-abstrait-ouvre-la-saison-a-la-maison-du-patrimoine-de-mesquer-653085e4-0e19-11f0-ae86-6d5913869474"
-  },
-  {
-    id: 1,
-    title: "Sautron. Une expo « Carré'Ment abstrait »",
-    source: "Presse Océan",
-    date: "Décembre 2014",
-    excerpt: "Elle propose des toiles hautes en couleur qui dégagent énergie et puissance, avec des pigments forts et des traits nets et assumés. C'est une peinture abstraite mais sereine, qui ne choque pas le regard et l'esprit.",
-    link: "https://saint-nazaire.maville.com/actu/actudet_-sautron.-une-expo-carre-ment-abstrait-_dep-7102158_actu.Htm"
   },
   {
     id: 2,
