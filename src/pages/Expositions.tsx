@@ -181,10 +181,10 @@ const Expositions = () => {
                   <div className="relative bg-foreground text-background overflow-hidden">
                     <div className="flex flex-col lg:flex-row">
                       {/* Date column */}
-                      <div className="lg:w-48 flex-shrink-0 bg-primary/10 p-6 lg:p-8 flex flex-col justify-center items-center text-center border-b lg:border-b-0 lg:border-r border-background/10">
-                        <span className="text-4xl lg:text-5xl font-bold text-primary">15</span>
-                        <span className="text-lg uppercase tracking-wider text-primary/80">Mars</span>
-                        <span className="text-sm text-background/50 mt-1">2026</span>
+                      <div className="lg:w-56 flex-shrink-0 bg-primary p-6 lg:p-8 flex flex-col justify-center items-center text-center">
+                        <span className="text-5xl lg:text-6xl font-bold text-background">15</span>
+                        <span className="text-xl uppercase tracking-widest text-background/90 mt-1">Mars</span>
+                        <span className="text-sm text-background/60 mt-2 border-t border-background/20 pt-2 px-4">2026</span>
                       </div>
                       
                       {/* Content */}
@@ -213,10 +213,9 @@ const Expositions = () => {
                           <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                               <Button 
-                                variant="outline" 
-                                className="bg-transparent border-primary/40 text-primary hover:bg-primary/10 hover:border-primary gap-2"
+                                className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 font-medium shadow-lg shadow-primary/30"
                               >
-                                <Plus size={16} />
+                                <Plus size={18} />
                                 Ajouter à l'agenda
                               </Button>
                             </DropdownMenuTrigger>
