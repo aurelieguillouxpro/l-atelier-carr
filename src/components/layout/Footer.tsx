@@ -74,6 +74,15 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-background/20 text-center text-sm opacity-50">
           <p>© {currentYear} Marie-Christine Chaillou — Tous droits réservés</p>
+          <div className="flex justify-center gap-4 mt-4">
+            <Link to="/mentions-legales" className="hover:opacity-70 transition-opacity">
+              Mentions légales
+            </Link>
+            <span>|</span>
+            <Link to="/politique-confidentialite" className="hover:opacity-70 transition-opacity">
+              Politique de confidentialité
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
