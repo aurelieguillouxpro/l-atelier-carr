@@ -3,7 +3,18 @@ import { Calendar, MapPin } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 
 const exhibitions = {
-  upcoming: [],
+  upcoming: [
+    {
+      id: 0,
+      title: "Couleurs en mouvement",
+      venue: "Galerie L'Atelier",
+      location: "Nantes (44)",
+      date: "Mars 2026",
+      dateRange: "15 mars - 30 avril 2026",
+      description: "Une nouvelle série d'œuvres explorant le dialogue entre la peinture gestuelle et la sculpture monumentale. Vernissage le 15 mars à 18h.",
+      highlight: "Vernissage le 15 mars à 18h"
+    }
+  ],
   past: [
     {
       id: 1,
@@ -62,55 +73,80 @@ const Expositions = () => {
         </div>
       </section>
 
-      {/* Upcoming Exhibitions */}
+      {/* Upcoming Exhibitions - Featured Section */}
       {exhibitions.upcoming.length > 0 && (
-        <section className="pb-16">
+        <section className="pb-20">
           <div className="container-narrow">
-            <motion.h2
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-2xl font-semibold mb-8 flex items-center gap-3"
+              className="flex items-center gap-4 mb-10"
             >
-              <span className="w-3 h-3 bg-accent rounded-full animate-pulse" />
-              À venir
-            </motion.h2>
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <h2 className="text-sm uppercase tracking-[0.2em] text-primary font-medium">
+                À venir
+              </h2>
+              <div className="flex-1 h-px bg-primary/20" />
+            </motion.div>
 
-            <div className="space-y-8">
+            <div className="space-y-10">
               {exhibitions.upcoming.map((expo, index) => (
                 <motion.article
                   key={expo.id}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="border border-accent/30 bg-accent/5 p-8"
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="relative"
                 >
-                  <div className="grid lg:grid-cols-3 gap-8">
-                    {/* Image placeholder */}
-                    <div className="aspect-[16/9] lg:aspect-square bg-gradient-to-br from-muted/30 to-muted/10 flex items-center justify-center text-muted-foreground/50">
-                      <span className="text-sm">Visuel</span>
-                    </div>
+                  {/* Card with gradient border effect */}
+                  <div className="relative bg-foreground text-background overflow-hidden">
+                    <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent" />
+                    
+                    <div className="relative p-8 md:p-12 lg:p-16">
+                      <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                        {/* Content */}
+                        <div>
+                          <p className="text-primary text-sm uppercase tracking-[0.15em] mb-4">
+                            {expo.dateRange}
+                          </p>
+                          
+                          <h3 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 leading-tight">
+                            {expo.title}
+                          </h3>
+                          
+                          <p className="text-xl text-background/80 mb-2">{expo.venue}</p>
+                          
+                          <div className="flex items-center gap-2 text-background/60 mb-8">
+                            <MapPin size={16} />
+                            <span>{expo.location}</span>
+                          </div>
 
-                    <div className="lg:col-span-2">
-                      <h3 className="text-2xl font-semibold mb-2">{expo.title}</h3>
-                      <p className="text-lg text-primary mb-4">{expo.venue}</p>
-                      
-                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
-                        <span className="flex items-center gap-2">
-                          <MapPin size={16} />
-                          {expo.location}
-                        </span>
-                        <span className="flex items-center gap-2">
-                          <Calendar size={16} />
-                          {expo.date}
-                        </span>
+                          <p className="text-background/70 leading-relaxed mb-8 max-w-lg">
+                            {expo.description}
+                          </p>
+
+                          {expo.highlight && (
+                            <div className="inline-flex items-center gap-3 bg-primary/20 border border-primary/30 px-6 py-3">
+                              <Calendar size={18} className="text-primary" />
+                              <span className="text-primary font-medium">{expo.highlight}</span>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Visual element */}
+                        <div className="hidden lg:flex items-center justify-center">
+                          <div className="relative">
+                            <div className="w-48 h-48 border border-primary/30 rotate-45" />
+                            <div className="absolute inset-4 border border-primary/20 rotate-45" />
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <span className="text-6xl font-light text-primary/40">MC</span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-
-                      <p className="text-foreground/80 leading-relaxed">
-                        {expo.description}
-                      </p>
                     </div>
                   </div>
                 </motion.article>
