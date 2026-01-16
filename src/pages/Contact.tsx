@@ -79,7 +79,7 @@ const Contact = () => {
                     <MapPin className="text-primary mt-1" size={20} />
                     <div>
                       <p className="font-medium">Atelier</p>
-                      <p className="text-muted-foreground">Nantes, France</p>
+                      <p className="text-muted-foreground">43 rue Léon Jost<br />44300 Nantes</p>
                     </div>
                   </div>
 
@@ -87,7 +87,9 @@ const Contact = () => {
                     <Mail className="text-primary mt-1" size={20} />
                     <div>
                       <p className="font-medium">Email</p>
-                      <p className="text-muted-foreground">contact@carrementabstrait.com</p>
+                      <a href="mailto:mc.chaillou@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                        mc.chaillou@gmail.com
+                      </a>
                     </div>
                   </div>
                 </div>
