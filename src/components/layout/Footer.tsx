@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Instagram } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,7 +18,7 @@ const Footer = () => {
       "addressRegion": "Loire-Atlantique",
       "addressCountry": "France"
     },
-    "sameAs": []
+    "sameAs": ["https://www.instagram.com/chaillou.mariechristine/"]
   };
 
   return (
@@ -35,13 +36,24 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-2" itemProp="name">
               Marie-Christine Chaillou
             </h3>
-            <p className="text-sm opacity-70">
+            <p className="text-sm opacity-70 mb-4">
               <span itemProp="jobTitle">Artiste peintre &amp; sculptrice</span>
               <br />
               <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
                 <span itemProp="addressLocality">Nantes</span>, <span itemProp="addressCountry">France</span>
               </span>
             </p>
+            {/* Social links */}
+            <a
+              href="https://www.instagram.com/chaillou.mariechristine/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm opacity-70 hover:opacity-100 transition-opacity"
+              aria-label="Suivre Marie-Christine Chaillou sur Instagram"
+            >
+              <Instagram size={20} />
+              <span className="sr-only">Instagram</span>
+            </a>
           </div>
 
           {/* Navigation */}
