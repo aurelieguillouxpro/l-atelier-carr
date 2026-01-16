@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 
 // Import artwork images - tons neutres privilégiés
 import huileRougeNoir from "@/assets/artworks/huile-rouge-noir-2010.jpg";
@@ -29,6 +30,19 @@ const featuredWorks = [
   },
 ];
 
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Carrément Abstrait",
+  "url": "https://carrementabstrait.com",
+  "description": "Portfolio de Marie-Christine Chaillou, artiste peintre et sculptrice contemporaine",
+  "author": {
+    "@type": "Person",
+    "name": "Marie-Christine Chaillou",
+    "jobTitle": "Artiste peintre et sculptrice"
+  }
+};
+
 const Index = () => {
   const scrollToContent = () => {
     window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
@@ -36,6 +50,11 @@ const Index = () => {
 
   return (
     <Layout>
+      <SEO 
+        canonical="/"
+        keywords="art abstrait, peinture contemporaine, sculpture béton ciré, artiste Nantes, Marie-Christine Chaillou, huile sur toile, art géométrique"
+        schema={homeSchema}
+      />
       {/* Hero Section - Full screen, immersif */}
       <section className="h-screen flex items-center justify-center relative overflow-hidden">
         {/* Background image - tons neutres */}

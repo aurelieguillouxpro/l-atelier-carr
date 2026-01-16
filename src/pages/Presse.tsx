@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Download, Quote } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import ouestFranceLogo from "@/assets/logos/ouest-france.png";
 import presseOceanLogo from "@/assets/logos/presse-ocean.svg";
 const pressArticles = [
@@ -53,9 +54,34 @@ const testimonials = [
   },
 ];
 
+const pressSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Presse - Marie-Christine Chaillou",
+  "description": "Revue de presse et témoignages sur le travail de Marie-Christine Chaillou",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": pressArticles.map((article, index) => ({
+      "@type": "NewsArticle",
+      "position": index + 1,
+      "headline": article.title,
+      "publisher": article.source,
+      "datePublished": article.date,
+      "description": article.excerpt
+    }))
+  }
+};
+
 const Presse = () => {
   return (
     <Layout>
+      <SEO 
+        title="Presse"
+        description="Revue de presse de Marie-Christine Chaillou. Articles Ouest-France, Presse Océan et témoignages sur son travail d'artiste peintre et sculptrice."
+        canonical="/presse"
+        keywords="presse artiste, Ouest-France, Presse Océan, articles art abstrait, témoignages, dossier presse"
+        schema={pressSchema}
+      />
       {/* Hero */}
       <section className="py-16 md:py-24">
         <div className="container-narrow">

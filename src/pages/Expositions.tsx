@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Plus, ExternalLink } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -127,9 +128,47 @@ const exhibitions = {
   ]
 };
 
+const exhibitionsSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Expositions de Marie-Christine Chaillou",
+  "description": "Liste des expositions passées et à venir de l'artiste",
+  "itemListElement": [
+    ...exhibitions.upcoming.map((expo, index) => ({
+      "@type": "Event",
+      "position": index + 1,
+      "name": expo.title,
+      "location": {
+        "@type": "Place",
+        "name": expo.venue,
+        "address": expo.location
+      },
+      "description": expo.description
+    })),
+    ...exhibitions.past.map((expo, index) => ({
+      "@type": "Event",
+      "position": exhibitions.upcoming.length + index + 1,
+      "name": expo.title,
+      "location": {
+        "@type": "Place",
+        "name": expo.venue,
+        "address": expo.location
+      },
+      "description": expo.description
+    }))
+  ]
+};
+
 const Expositions = () => {
   return (
     <Layout>
+      <SEO 
+        title="Expositions"
+        description="Retrouvez les expositions passées et à venir de Marie-Christine Chaillou. Galeries, salons et événements artistiques en Loire-Atlantique et Bretagne."
+        canonical="/expositions"
+        keywords="expositions art abstrait, vernissage Nantes, salon artiste, galerie Loire-Atlantique, événements artistiques"
+        schema={exhibitionsSchema}
+      />
       {/* Hero */}
       <section className="py-16 md:py-24">
         <div className="container-narrow">
