@@ -1,6 +1,78 @@
 import { motion } from "framer-motion";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, Plus, ExternalLink } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+
+// Helper functions for calendar links
+const formatDateForGoogle = (date: Date) => {
+  return date.toISOString().replace(/-|:|\.\d{3}/g, '').slice(0, 15) + 'Z';
+};
+
+const generateGoogleCalendarUrl = (event: {
+  title: string;
+  venue: string;
+  location: string;
+  startDate: Date;
+  endDate: Date;
+  description: string;
+}) => {
+  const params = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: `${event.title} - ${event.venue}`,
+    dates: `${formatDateForGoogle(event.startDate)}/${formatDateForGoogle(event.endDate)}`,
+    details: event.description,
+    location: `${event.venue}, ${event.location}`,
+  });
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+};
+
+const generateICalContent = (event: {
+  title: string;
+  venue: string;
+  location: string;
+  startDate: Date;
+  endDate: Date;
+  description: string;
+}) => {
+  const formatDate = (date: Date) => date.toISOString().replace(/-|:|\.\d{3}/g, '').slice(0, 15) + 'Z';
+  
+  return `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:${formatDate(event.startDate)}
+DTEND:${formatDate(event.endDate)}
+SUMMARY:${event.title} - ${event.venue}
+DESCRIPTION:${event.description}
+LOCATION:${event.venue}, ${event.location}
+END:VEVENT
+END:VCALENDAR`;
+};
+
+const downloadICalFile = (event: {
+  title: string;
+  venue: string;
+  location: string;
+  startDate: Date;
+  endDate: Date;
+  description: string;
+}) => {
+  const content = generateICalContent(event);
+  const blob = new Blob([content], { type: 'text/calendar;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = `${event.title.replace(/\s+/g, '-')}.ics`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+};
 
 const exhibitions = {
   upcoming: [
@@ -11,6 +83,10 @@ const exhibitions = {
       location: "Nantes (44)",
       date: "Mars 2026",
       dateRange: "15 mars - 30 avril 2026",
+      startDate: new Date('2026-03-15T18:00:00'),
+      endDate: new Date('2026-04-30T20:00:00'),
+      vernissageDate: new Date('2026-03-15T18:00:00'),
+      vernissageEndDate: new Date('2026-03-15T21:00:00'),
       description: "Une nouvelle série d'œuvres explorant le dialogue entre la peinture gestuelle et la sculpture monumentale. Vernissage le 15 mars à 18h.",
       highlight: "Vernissage le 15 mars à 18h"
     }
@@ -91,60 +167,97 @@ const Expositions = () => {
               <div className="flex-1 h-px bg-primary/20" />
             </motion.div>
 
-            <div className="space-y-10">
+            <div className="space-y-6">
               {exhibitions.upcoming.map((expo, index) => (
                 <motion.article
                   key={expo.id}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="relative"
+                  transition={{ duration: 0.7, delay: index * 0.1 }}
+                  className="relative group"
                 >
-                  {/* Card with gradient border effect */}
+                  {/* Horizontal card */}
                   <div className="relative bg-foreground text-background overflow-hidden">
-                    <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent" />
-                    
-                    <div className="relative p-8 md:p-12 lg:p-16">
-                      <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-                        {/* Content */}
-                        <div>
-                          <p className="text-primary text-sm uppercase tracking-[0.15em] mb-4">
-                            {expo.dateRange}
-                          </p>
-                          
-                          <h3 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 leading-tight">
+                    <div className="flex flex-col lg:flex-row">
+                      {/* Date column */}
+                      <div className="lg:w-48 flex-shrink-0 bg-primary/10 p-6 lg:p-8 flex flex-col justify-center items-center text-center border-b lg:border-b-0 lg:border-r border-background/10">
+                        <span className="text-4xl lg:text-5xl font-bold text-primary">15</span>
+                        <span className="text-lg uppercase tracking-wider text-primary/80">Mars</span>
+                        <span className="text-sm text-background/50 mt-1">2026</span>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="flex-1 p-6 lg:p-8 flex flex-col lg:flex-row lg:items-center gap-6">
+                        <div className="flex-1">
+                          <h3 className="text-2xl lg:text-3xl font-semibold mb-2">
                             {expo.title}
                           </h3>
                           
-                          <p className="text-xl text-background/80 mb-2">{expo.venue}</p>
+                          <p className="text-lg text-background/80 mb-1">{expo.venue}</p>
                           
-                          <div className="flex items-center gap-2 text-background/60 mb-8">
-                            <MapPin size={16} />
-                            <span>{expo.location}</span>
+                          <div className="flex items-center gap-2 text-background/60 mb-4">
+                            <MapPin size={14} />
+                            <span className="text-sm">{expo.location}</span>
+                            <span className="text-background/30 mx-2">•</span>
+                            <span className="text-sm">{expo.dateRange}</span>
                           </div>
 
-                          <p className="text-background/70 leading-relaxed mb-8 max-w-lg">
+                          <p className="text-background/60 text-sm leading-relaxed max-w-xl hidden md:block">
                             {expo.description}
                           </p>
-
-                          {expo.highlight && (
-                            <div className="inline-flex items-center gap-3 bg-primary/20 border border-primary/30 px-6 py-3">
-                              <Calendar size={18} className="text-primary" />
-                              <span className="text-primary font-medium">{expo.highlight}</span>
-                            </div>
-                          )}
                         </div>
 
-                        {/* Visual element */}
-                        <div className="hidden lg:flex items-center justify-center">
-                          <div className="relative">
-                            <div className="w-48 h-48 border border-primary/30 rotate-45" />
-                            <div className="absolute inset-4 border border-primary/20 rotate-45" />
-                            <div className="absolute inset-0 flex items-center justify-center">
-                              <span className="text-6xl font-light text-primary/40">MC</span>
+                        {/* Actions */}
+                        <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:w-52 flex-shrink-0">
+                          <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                              <Button 
+                                variant="outline" 
+                                className="bg-transparent border-primary/40 text-primary hover:bg-primary/10 hover:border-primary gap-2"
+                              >
+                                <Plus size={16} />
+                                Ajouter à l'agenda
+                              </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end" className="w-56">
+                              <DropdownMenuItem
+                                onClick={() => window.open(generateGoogleCalendarUrl({
+                                  title: expo.title,
+                                  venue: expo.venue,
+                                  location: expo.location,
+                                  startDate: expo.vernissageDate,
+                                  endDate: expo.vernissageEndDate,
+                                  description: expo.description
+                                }), '_blank')}
+                                className="gap-2 cursor-pointer"
+                              >
+                                <ExternalLink size={14} />
+                                Google Calendar (Vernissage)
+                              </DropdownMenuItem>
+                              <DropdownMenuItem
+                                onClick={() => downloadICalFile({
+                                  title: expo.title,
+                                  venue: expo.venue,
+                                  location: expo.location,
+                                  startDate: expo.vernissageDate,
+                                  endDate: expo.vernissageEndDate,
+                                  description: expo.description
+                                })}
+                                className="gap-2 cursor-pointer"
+                              >
+                                <Calendar size={14} />
+                                Apple / Outlook (iCal)
+                              </DropdownMenuItem>
+                            </DropdownMenuContent>
+                          </DropdownMenu>
+
+                          {expo.highlight && (
+                            <div className="flex items-center justify-center gap-2 bg-primary/20 px-4 py-2 text-sm">
+                              <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
+                              <span className="text-primary text-xs uppercase tracking-wider">Vernissage 18h</span>
                             </div>
-                          </div>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -159,17 +272,20 @@ const Expositions = () => {
       {/* Past Exhibitions */}
       <section className="py-16 bg-foreground/[0.02]">
         <div className="container-narrow">
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-2xl font-semibold mb-8"
+            className="flex items-center gap-4 mb-10"
           >
-            Expositions passées
-          </motion.h2>
+            <h2 className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-medium">
+              Expositions passées
+            </h2>
+            <div className="flex-1 h-px bg-border" />
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {exhibitions.past.map((expo, index) => (
               <motion.article
                 key={expo.id}
@@ -177,23 +293,25 @@ const Expositions = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="border border-border p-6 hover:border-primary/30 transition-colors"
+                className="group border border-border p-6 hover:border-primary/30 transition-all duration-300 hover:bg-foreground/[0.02]"
               >
-                <h3 className="text-xl font-semibold mb-2">{expo.title}</h3>
-                <p className="text-primary mb-3">{expo.venue}</p>
-                
-                <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
-                  <span className="flex items-center gap-2">
-                    <MapPin size={14} />
-                    {expo.location}
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <Calendar size={14} />
-                    {expo.date}
-                  </span>
+                <div className="flex gap-4">
+                  <div className="w-16 h-16 flex-shrink-0 bg-muted/50 flex flex-col items-center justify-center text-center">
+                    <span className="text-lg font-semibold text-foreground/70">{expo.date.split(' ')[0].slice(0, 3)}</span>
+                    <span className="text-xs text-muted-foreground">{expo.date.split(' ')[1]}</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">{expo.title}</h3>
+                    <p className="text-primary/80 text-sm mb-2">{expo.venue}</p>
+                    
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <MapPin size={12} />
+                      <span>{expo.location}</span>
+                    </div>
+                  </div>
                 </div>
 
-                <p className="text-foreground/70 text-sm leading-relaxed">
+                <p className="text-foreground/60 text-sm leading-relaxed mt-4 line-clamp-2">
                   {expo.description}
                 </p>
               </motion.article>
