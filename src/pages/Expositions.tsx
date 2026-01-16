@@ -10,11 +10,19 @@ const exhibitions = {
       title: "Carré'Ment abstrait",
       venue: "Le Musée",
       location: "Sautron (44)",
-      date: "Décembre 2014",
+      date: "Décembre 2025",
       description: "Toiles hautes en couleur qui dégagent énergie et puissance, avec des pigments forts et des traits nets et assumés. Peinture abstraite mais sereine, qui ne choque pas le regard et l'esprit."
     },
     {
       id: 2,
+      title: "L'art abstrait ouvre la saison",
+      venue: "Maison du patrimoine",
+      location: "Mesquer (44)",
+      date: "Avril 2025",
+      description: "C'est la troisième fois que Marie-Christine Chaillou expose à la Maison du patrimoine de Mesquer. « C'est un endroit que j'adore, la maison est belle et mon travail y est bien mis en valeur. »"
+    },
+    {
+      id: 3,
       title: "Marie-Christine Chaillou expose",
       venue: "Maison du patrimoine",
       location: "Mesquer (44)",
@@ -22,7 +30,7 @@ const exhibitions = {
       description: "Ses rouges et ses oranges sont magnifiques, et la matière est très présente sur ses toiles. Marie-Christine Chaillou utilise la technique de l'huile et manie surtout le couteau."
     },
     {
-      id: 3,
+      id: 4,
       title: "Un art concrètement abstrait",
       venue: "Galerie",
       location: "La Baule (44)",
