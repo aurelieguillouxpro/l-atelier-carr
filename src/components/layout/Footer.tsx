@@ -22,7 +22,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-foreground text-background py-12 mt-24" role="contentinfo">
+    <footer className="bg-foreground text-background py-12" role="contentinfo">
       {/* JSON-LD Schema for SEO */}
       <script
         type="application/ld+json"
