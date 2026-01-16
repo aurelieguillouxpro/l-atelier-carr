@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 
 // Import artwork images
 import huileRougeNoir from "@/assets/artworks/huile-rouge-noir-2010.jpg";
@@ -335,9 +336,27 @@ const Galerie = () => {
     setSelectedArtwork(filteredArtworks[newIndex]);
   };
 
+  const gallerySchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Galerie - Peintures et Sculptures",
+    "description": "Collection complète des œuvres de Marie-Christine Chaillou : peintures à l'huile abstraites et sculptures en béton ciré",
+    "author": {
+      "@type": "Person",
+      "name": "Marie-Christine Chaillou"
+    },
+    "numberOfItems": artworks.length
+  };
+
   return (
     <Layout>
-      {/* Hero */}
+      <SEO 
+        title="Galerie"
+        description="Explorez la collection de peintures abstraites et sculptures en béton ciré de Marie-Christine Chaillou. Œuvres à l'huile au couteau, formes géométriques et couleurs vibrantes."
+        canonical="/galerie"
+        keywords="galerie art abstrait, peintures huile, sculptures béton ciré, art contemporain Nantes, œuvres Marie-Christine Chaillou"
+        schema={gallerySchema}
+      />
       <section className="py-20 md:py-28">
         <div className="container-narrow">
           <motion.div

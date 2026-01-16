@@ -1,11 +1,44 @@
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import portraitArtiste from "@/assets/portrait-artiste.jpg";
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Marie-Christine Chaillou",
+    "jobTitle": "Artiste peintre et sculptrice",
+    "description": "Artiste contemporaine spécialisée dans l'abstraction géométrique, travaillant l'huile sur toile et le béton ciré depuis plus de 20 ans à Nantes.",
+    "knowsAbout": ["Peinture à l'huile", "Sculpture béton ciré", "Art abstrait géométrique", "Techniques mixtes"],
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Beaux-Arts de Nantes"
+    },
+    "workLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nantes",
+        "addressCountry": "France"
+      }
+    }
+  }
+};
 
 const APropos = () => {
   return (
     <Layout>
+      <SEO 
+        title="À Propos"
+        description="Découvrez le parcours de Marie-Christine Chaillou, artiste peintre et sculptrice nantaise. Formation aux Beaux-Arts, 20 ans d'expérience en abstraction géométrique."
+        canonical="/a-propos"
+        type="profile"
+        keywords="biographie artiste, Marie-Christine Chaillou, Beaux-Arts Nantes, peintre abstrait, sculptrice contemporaine"
+        schema={aboutSchema}
+      />
       {/* Hero */}
       <section className="py-20 md:py-28">
         <div className="container-narrow">

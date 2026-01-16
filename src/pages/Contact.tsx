@@ -3,7 +3,24 @@ import { motion } from "framer-motion";
 import { Send, MapPin, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Marie-Christine Chaillou",
+    "email": "mc.chaillou@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "43 rue Léon Jost",
+      "addressLocality": "Nantes",
+      "postalCode": "44300",
+      "addressCountry": "FR"
+    }
+  }
+};
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -39,6 +56,14 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="Contact"
+        description="Contactez Marie-Christine Chaillou pour une exposition, collaboration artistique ou demande d'information. Atelier à Nantes, disponible pour galeries et professionnels."
+        canonical="/contact"
+        keywords="contact artiste, atelier Nantes, collaboration artistique, exposition peinture, commande œuvre art"
+        schema={contactSchema}
+      />
+      {/* Hero */}
       {/* Hero */}
       <section className="py-16 md:py-24">
         <div className="container-narrow">
