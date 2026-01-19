@@ -46,6 +46,7 @@ const artworks = [
     year: "2023",
     description: "Une forme féminine stylisée s'élève avec grâce, capturant le mouvement dans la pierre.",
     image: sculptureBlanche,
+    zoom: 1.4,
   },
   {
     id: 18,
@@ -56,6 +57,7 @@ const artworks = [
     year: "2022",
     description: "Les couleurs primaires s'entrelacent sur le bois sculpté, créant un dialogue entre peinture et volume.",
     image: sculptureColoree,
+    zoom: 1.3,
   },
   {
     id: 19,
@@ -66,6 +68,7 @@ const artworks = [
     year: "2023",
     description: "Des formes organiques s'entremêlent dans un équilibre dynamique, capturant l'instant suspendu.",
     image: sculptureNoire,
+    zoom: 1.6,
   },
   {
     id: 20,
@@ -76,6 +79,7 @@ const artworks = [
     year: "2024",
     description: "Géométrie pure où les plans ocre et blanc créent un jeu d'ombres et de lumière.",
     image: sculptureGeometrique,
+    zoom: 1.3,
   },
   {
     id: 21,
@@ -86,6 +90,7 @@ const artworks = [
     year: "2024",
     description: "Une forme élancée qui aspire vers le ciel, alliant force et délicatesse.",
     image: sculptureElancee,
+    zoom: 1.4,
   },
   {
     id: 22,
@@ -96,6 +101,7 @@ const artworks = [
     year: "2021",
     description: "Une silhouette méditative aux courbes épurées, signée par l'artiste.",
     image: sculptureSignee,
+    zoom: 1.5,
   },
   {
     id: 23,
@@ -106,6 +112,7 @@ const artworks = [
     year: "2025",
     description: "Formes dynamiques s'élançant dans l'espace, capturant l'énergie du mouvement.",
     image: sculptureNoireDynamique,
+    zoom: 1.5,
   },
   {
     id: 24,
@@ -116,6 +123,7 @@ const artworks = [
     year: "2020",
     description: "Une pièce monumentale aux lignes architecturales affirmées.",
     image: sculptureMonumentale,
+    zoom: 1.3,
   },
   {
     id: 25,
@@ -126,6 +134,7 @@ const artworks = [
     year: "2019",
     description: "Une sculpture architecturale jouant sur les pleins et les vides, évoquant une construction primitive.",
     image: sculptureArchitecturale,
+    zoom: 1.4,
   },
   {
     id: 26,
@@ -136,6 +145,7 @@ const artworks = [
     year: "2019",
     description: "Une silhouette féminine élancée, entre présence et absence, forme et vide.",
     image: sculptureFeminine,
+    zoom: 1.4,
   },
   {
     id: 27,
@@ -146,6 +156,7 @@ const artworks = [
     year: "2018",
     description: "Un totem minimaliste, figure protectrice aux formes épurées.",
     image: sculptureTotemique,
+    zoom: 1.5,
   },
   // Peintures
   {
@@ -437,8 +448,10 @@ const gallerySchema = {
                   <OptimizedImage
                       src={artwork.image}
                       alt={`${artwork.title} - ${artwork.technique} ${artwork.dimensions} par Marie-Christine Chaillou, artiste Nantes`}
-                      className="w-full h-full object-cover object-center scale-110"
-                      whileHover={{ scale: 1.15 }}
+                      className="w-full h-full object-cover object-center"
+                      containerClassName="w-full h-full"
+                      style={{ transform: `scale(${artwork.zoom || 1})` }}
+                      whileHover={{ scale: (artwork.zoom || 1) * 1.05 }}
                       transition={{ duration: 0.6, ease: "easeOut" }}
                     />
                     <motion.div 
