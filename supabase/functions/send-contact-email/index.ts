@@ -1,10 +1,26 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Client-Info, Apikey",
-};
+// Allowed origins for CORS
+const ALLOWED_ORIGINS = [
+  "https://carrementabstrait.com",
+  "https://www.carrementabstrait.com",
+  "https://carrementabstrait.lovable.app",
+  "https://id-preview--c4e47dcd-63ce-4f28-9e64-802a4f178eec.lovable.app",
+  "http://localhost:8080",
+  "http://localhost:5173",
+];
+
+function getCorsHeaders(origin: string | null): Record<string, string> {
+  const allowedOrigin = origin && ALLOWED_ORIGINS.includes(origin) 
+    ? origin 
+    : ALLOWED_ORIGINS[0];
+  
+  return {
+    "Access-Control-Allow-Origin": allowedOrigin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Client-Info, Apikey",
+  };
+}
 
 interface ContactFormData {
   name: string;
@@ -14,6 +30,9 @@ interface ContactFormData {
 }
 
 Deno.serve(async (req: Request) => {
+  const origin = req.headers.get("origin");
+  const corsHeaders = getCorsHeaders(origin);
+
   if (req.method === "OPTIONS") {
     return new Response(null, {
       status: 200,
@@ -125,11 +144,13 @@ Envoyé depuis carrementabstrait.com
     );
 
   } catch (error) {
-    console.error("Erreur:", error);
+    // Log detailed error server-side only for debugging
+    console.error("Contact form error:", error instanceof Error ? error.message : error);
+    
+    // Return generic error message to client (no internal details)
     return new Response(
       JSON.stringify({
-        error: "Une erreur est survenue lors de l'envoi du message",
-        details: error instanceof Error ? error.message : "Erreur inconnue"
+        error: "Une erreur est survenue lors de l'envoi du message"
       }),
       {
         status: 500,

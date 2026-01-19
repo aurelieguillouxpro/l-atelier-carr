@@ -98,13 +98,16 @@ export const queries = {
     "image": image.asset->url
   }`,
   
-  pageContent: (pageId: string) => `*[_type == "pageContent" && pageId == "${pageId}"][0] {
-    _id,
-    pageId,
-    title,
-    subtitle,
-    content,
-    quote,
-    quoteAuthor
-  }`,
+  pageContent: (pageId: string) => ({
+    query: `*[_type == "pageContent" && pageId == $pageId][0] {
+      _id,
+      pageId,
+      title,
+      subtitle,
+      content,
+      quote,
+      quoteAuthor
+    }`,
+    params: { pageId }
+  }),
 };
