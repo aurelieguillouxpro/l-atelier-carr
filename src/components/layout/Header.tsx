@@ -109,11 +109,12 @@ const Header = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden fixed inset-0 z-[60] flex flex-col bg-[#FAF9F6]"
+            className="md:hidden fixed inset-0 z-[60] flex flex-col"
+            style={{ backgroundColor: '#FAF9F6' }}
           >
             {/* Header area in menu */}
             <div className="h-[72px] flex-shrink-0" />
