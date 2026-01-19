@@ -69,7 +69,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <motion.button
-          className="md:hidden p-2 relative z-50"
+          className="md:hidden p-2 relative z-[70]"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Menu"
           whileTap={{ scale: 0.9 }}
@@ -109,15 +109,17 @@ const Header = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden fixed inset-x-0 top-0 bottom-0 z-40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden fixed inset-0 z-[60] flex flex-col shadow-2xl"
             style={{ backgroundColor: '#FAF9F6' }}
           >
+            {/* Header area in menu */}
+            <div className="h-[72px] flex-shrink-0" />
             <motion.ul 
-              className="container-narrow pt-24 pb-12 space-y-6"
+              className="container-narrow py-8 space-y-6 flex-1"
               initial="closed"
               animate="open"
               exit="closed"
