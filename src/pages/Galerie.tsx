@@ -14,6 +14,19 @@ import blancAcrylique2024_60x60 from "@/assets/artworks/2024-blanc-acrylique-60x
 import blancAcrylique2024_40x40 from "@/assets/artworks/2024-blanc-acrylique-40x40.jpg";
 import blancAcrylique2024_40x40_2 from "@/assets/artworks/2024-blanc-acrylique-40x40-2.jpg";
 import acrylique2024_80x80 from "@/assets/artworks/2024-acrylique-80x80.jpg";
+import acrylique2024_60x60 from "@/assets/artworks/2024-acrylique-60x60.jpg";
+import acrylique2024_20x20 from "@/assets/artworks/2024-acrylique-20x20.jpg";
+// 2023
+import acrylique2023_80x80 from "@/assets/artworks/2023-acrylique-80x80.jpg";
+import acrylique2023_80x80_2 from "@/assets/artworks/2023-acrylique-80x80-2.jpg";
+import acrylique2023_40x40 from "@/assets/artworks/2023-acrylique-40x40.jpg";
+// 2020
+import acrylique2020_80x80 from "@/assets/artworks/2020-acrylique-80x80.jpg";
+import acrylique2020_40x40 from "@/assets/artworks/2020-acrylique-40x40.jpg";
+import acrylique2020_20x20 from "@/assets/artworks/2020-acrylique-20x20.jpg";
+// 2017
+import acrylique2017_80x80 from "@/assets/artworks/2017-acrylique-80x80.jpg";
+import acrylique2017_80x80_2 from "@/assets/artworks/2017-acrylique-80x80-2.jpg";
 // 2010
 import huileRougeNoir from "@/assets/artworks/huile-rouge-noir-2010.jpg";
 import huileGrisRouge from "@/assets/artworks/huile-gris-rouge-2010.jpg";
@@ -117,6 +130,24 @@ const artworks = [
     year: "2024",
     image: blancAcrylique2024_40x40_2,
   },
+  {
+    id: 38,
+    title: "Nocturne I",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "60 × 60 cm",
+    year: "2024",
+    image: acrylique2024_60x60,
+  },
+  {
+    id: 39,
+    title: "Nocturne II",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "20 × 20 cm",
+    year: "2024",
+    image: acrylique2024_20x20,
+  },
   // 2023
   {
     id: 6,
@@ -126,6 +157,80 @@ const artworks = [
     dimensions: "40 × 50 cm",
     year: "2023",
     image: encreGestuelle,
+  },
+  {
+    id: 40,
+    title: "Géométrie Rouge I",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "80 × 80 cm",
+    year: "2023",
+    image: acrylique2023_80x80,
+  },
+  {
+    id: 41,
+    title: "Géométrie Rouge II",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "80 × 80 cm",
+    year: "2023",
+    image: acrylique2023_80x80_2,
+  },
+  {
+    id: 42,
+    title: "Géométrie Rouge III",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "40 × 40 cm",
+    year: "2023",
+    image: acrylique2023_40x40,
+  },
+  // 2020
+  {
+    id: 43,
+    title: "Trame Urbaine I",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "80 × 80 cm",
+    year: "2020",
+    image: acrylique2020_80x80,
+  },
+  {
+    id: 44,
+    title: "Trame Urbaine II",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "40 × 40 cm",
+    year: "2020",
+    image: acrylique2020_40x40,
+  },
+  {
+    id: 45,
+    title: "Trame Urbaine III",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "20 × 20 cm",
+    year: "2020",
+    image: acrylique2020_20x20,
+  },
+  // 2017
+  {
+    id: 46,
+    title: "Espace Coloré I",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "80 × 80 cm",
+    year: "2017",
+    image: acrylique2017_80x80,
+  },
+  {
+    id: 47,
+    title: "Espace Coloré II",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "80 × 80 cm",
+    year: "2017",
+    image: acrylique2017_80x80_2,
   },
   // 2010
   {
