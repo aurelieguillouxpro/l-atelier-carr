@@ -96,7 +96,7 @@ const Index = () => {
               transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
               className="text-5xl md:text-7xl lg:text-8xl font-semibold mb-8 tracking-tight"
             >
-              Carrément Abstrait
+              CARR<span className="lowercase">é</span>MENT ABSTRAIT
             </motion.h1>
             
             <motion.p
