@@ -11,7 +11,7 @@ const pressArticles = [
     source: "Presse Océan",
     date: "Décembre 2025",
     excerpt: "Elle propose des toiles hautes en couleur qui dégagent énergie et puissance, avec des pigments forts et des traits nets et assumés. C'est une peinture abstraite mais sereine, qui ne choque pas le regard et l'esprit.",
-    link: "https://saint-nazaire.maville.com/actu/actudet_-sautron.-une-expo-carre-ment-abstrait-_dep-7102158_actu.Htm"
+    link: "https://vertou.fr/exposition-carrement-abstrait/"
   },
   {
     id: 0,
