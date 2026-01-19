@@ -8,16 +8,38 @@ import SEO from "@/components/SEO";
 const contactSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
+  "@id": "https://carrementabstrait.com/contact/#page",
+  "name": "Contact Marie-Christine Chaillou - Artiste Peintre Nantes",
+  "description": "Contactez Marie-Christine Chaillou pour une exposition, collaboration artistique ou commande d'œuvre. Atelier situé à Nantes.",
+  "url": "https://carrementabstrait.com/contact",
   "mainEntity": {
     "@type": "Person",
+    "@id": "https://carrementabstrait.com/#artist",
     "name": "Marie-Christine Chaillou",
     "email": "mc.chaillou@gmail.com",
+    "contactType": "customer service",
+    "availableLanguage": "French",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "43 rue Léon Jost",
       "addressLocality": "Nantes",
       "postalCode": "44300",
+      "addressRegion": "Loire-Atlantique",
       "addressCountry": "FR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 47.2184,
+      "longitude": -1.5536
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 47.2184,
+        "longitude": -1.5536
+      },
+      "geoRadius": "150000"
     }
   }
 };
@@ -86,10 +108,10 @@ const Contact = () => {
   return (
     <Layout>
       <SEO 
-        title="Contact"
-        description="Contactez Marie-Christine Chaillou pour une exposition, collaboration artistique ou demande d'information. Atelier à Nantes, disponible pour galeries et professionnels."
+        title="Contact - Atelier et Collaborations"
+        description="Contactez Marie-Christine Chaillou pour une exposition, collaboration artistique, commande d'œuvre ou visite d'atelier. Atelier à Nantes, disponible pour galeries et professionnels de l'art."
         canonical="/contact"
-        keywords="contact artiste, atelier Nantes, collaboration artistique, exposition peinture, commande œuvre art"
+        keywords="contact artiste Nantes, atelier peinture Nantes, collaboration artistique, exposition peinture Loire-Atlantique, commande œuvre art abstrait, visite atelier"
         schema={contactSchema}
       />
       {/* Hero */}

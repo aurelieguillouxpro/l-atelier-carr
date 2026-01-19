@@ -65,17 +65,30 @@ const testimonials = [
 const pressSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Presse - Marie-Christine Chaillou",
-  "description": "Revue de presse et témoignages sur le travail de Marie-Christine Chaillou",
+  "@id": "https://carrementabstrait.com/presse/#page",
+  "name": "Presse - Revue de presse Marie-Christine Chaillou",
+  "description": "Articles de presse et témoignages sur le travail de Marie-Christine Chaillou, artiste peintre et sculptrice contemporaine à Nantes",
+  "url": "https://carrementabstrait.com/presse",
   "mainEntity": {
     "@type": "ItemList",
+    "name": "Articles de presse",
+    "numberOfItems": pressArticles.length,
     "itemListElement": pressArticles.map((article, index) => ({
       "@type": "NewsArticle",
       "position": index + 1,
       "headline": article.title,
-      "publisher": article.source,
+      "description": article.excerpt,
       "datePublished": article.date,
-      "description": article.excerpt
+      "url": article.link,
+      "publisher": {
+        "@type": "Organization",
+        "name": article.source
+      },
+      "about": {
+        "@type": "Person",
+        "@id": "https://carrementabstrait.com/#artist",
+        "name": "Marie-Christine Chaillou"
+      }
     }))
   }
 };
@@ -84,10 +97,10 @@ const Presse = () => {
   return (
     <Layout>
       <SEO 
-        title="Presse"
-        description="Revue de presse de Marie-Christine Chaillou. Articles Ouest-France, Presse Océan et témoignages sur son travail d'artiste peintre et sculptrice."
+        title="Presse - Articles et Témoignages"
+        description="Revue de presse de Marie-Christine Chaillou : articles Ouest-France, Presse Océan, Hippocampe Info. Témoignages et dossier de presse de l'artiste peintre et sculptrice nantaise."
         canonical="/presse"
-        keywords="presse artiste, Ouest-France, Presse Océan, articles art abstrait, témoignages, dossier presse"
+        keywords="presse artiste Nantes, Ouest-France art abstrait, Presse Océan exposition, articles art contemporain, témoignages, dossier presse artiste, médias Loire-Atlantique"
         schema={pressSchema}
       />
       {/* Hero */}

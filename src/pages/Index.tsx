@@ -32,14 +32,25 @@ const featuredWorks = [
 
 const homeSchema = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Carrément Abstrait",
+  "@type": "WebPage",
+  "@id": "https://carrementabstrait.com/#webpage",
+  "name": "Carrément Abstrait - Marie-Christine Chaillou",
   "url": "https://carrementabstrait.com",
-  "description": "Portfolio de Marie-Christine Chaillou, artiste peintre et sculptrice contemporaine",
-  "author": {
+  "description": "Portfolio officiel de Marie-Christine Chaillou, artiste peintre et sculptrice contemporaine spécialisée dans l'abstraction géométrique à Nantes",
+  "isPartOf": {
+    "@id": "https://carrementabstrait.com/#website"
+  },
+  "about": {
     "@type": "Person",
+    "@id": "https://carrementabstrait.com/#artist",
     "name": "Marie-Christine Chaillou",
-    "jobTitle": "Artiste peintre et sculptrice"
+    "jobTitle": "Artiste peintre et sculptrice",
+    "knowsAbout": ["Art abstrait", "Peinture à l'huile", "Sculpture béton ciré"]
+  },
+  "mainEntity": {
+    "@type": "ImageGallery",
+    "name": "Œuvres récentes de Marie-Christine Chaillou",
+    "description": "Sélection de peintures abstraites et sculptures contemporaines"
   }
 };
 
@@ -52,7 +63,8 @@ const Index = () => {
     <Layout>
       <SEO 
         canonical="/"
-        keywords="art abstrait, peinture contemporaine, sculpture béton ciré, artiste Nantes, Marie-Christine Chaillou, huile sur toile, art géométrique"
+        description="Découvrez l'univers abstrait de Marie-Christine Chaillou, artiste peintre et sculptrice à Nantes. Peintures à l'huile au couteau, sculptures béton ciré. Expositions en Loire-Atlantique."
+        keywords="art abstrait Nantes, peinture contemporaine, sculpture béton ciré, artiste Nantes, Marie-Christine Chaillou, huile sur toile, art géométrique, galerie Loire-Atlantique"
         schema={homeSchema}
       />
       {/* Hero Section - Full screen, immersif */}

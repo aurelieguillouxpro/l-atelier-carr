@@ -324,28 +324,49 @@ const Galerie = () => {
 const gallerySchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Galerie - Peintures et Sculptures",
-    "description": "Collection complète des œuvres de Marie-Christine Chaillou : peintures à l'huile abstraites et sculptures en béton ciré",
+    "@id": "https://carrementabstrait.com/galerie/#collection",
+    "name": "Galerie d'Art Abstrait - Peintures et Sculptures",
+    "description": "Collection complète des œuvres de Marie-Christine Chaillou : peintures à l'huile abstraites au couteau et sculptures en béton ciré. Art contemporain à Nantes.",
+    "url": "https://carrementabstrait.com/galerie",
     "author": {
       "@type": "Person",
+      "@id": "https://carrementabstrait.com/#artist",
       "name": "Marie-Christine Chaillou"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "Art abstrait contemporain"
     },
     "numberOfItems": artworks.length,
     "mainEntity": {
       "@type": "ImageGallery",
       "name": "Galerie d'art abstrait Marie-Christine Chaillou",
-      "image": filteredArtworks.slice(0, 10).map((artwork) => ({
+      "description": "Peintures à l'huile au couteau et sculptures en béton ciré",
+      "image": filteredArtworks.slice(0, 12).map((artwork) => ({
         "@type": "VisualArtwork",
         "name": artwork.title,
+        "alternateName": `${artwork.technique} - ${artwork.title}`,
         "artist": {
           "@type": "Person",
+          "@id": "https://carrementabstrait.com/#artist",
           "name": "Marie-Christine Chaillou"
         },
         "artMedium": artwork.technique,
+        "artform": artwork.category === "peintures" ? "Peinture abstraite" : "Sculpture contemporaine",
         "artworkSurface": artwork.category === "peintures" ? "Toile" : "Béton ciré",
-        "width": artwork.dimensions.split("×")[0]?.trim(),
-        "height": artwork.dimensions.split("×")[1]?.split("cm")[0]?.trim(),
-        "dateCreated": artwork.year
+        "width": {
+          "@type": "Distance",
+          "name": artwork.dimensions.split("×")[0]?.trim() + " cm"
+        },
+        "height": {
+          "@type": "Distance", 
+          "name": artwork.dimensions.split("×")[1]?.split("cm")[0]?.trim() + " cm"
+        },
+        "dateCreated": artwork.year,
+        "creator": {
+          "@type": "Person",
+          "name": "Marie-Christine Chaillou"
+        }
       }))
     }
   };
@@ -353,10 +374,10 @@ const gallerySchema = {
   return (
     <Layout>
       <SEO 
-        title="Galerie"
-        description="Explorez la collection de peintures abstraites et sculptures en béton ciré de Marie-Christine Chaillou. Œuvres à l'huile au couteau, formes géométriques et couleurs vibrantes."
+        title="Galerie - Peintures Abstraites et Sculptures"
+        description="Explorez la galerie de Marie-Christine Chaillou : peintures abstraites à l'huile au couteau et sculptures en béton ciré. Œuvres géométriques aux couleurs vibrantes. Art contemporain Nantes."
         canonical="/galerie"
-        keywords="galerie art abstrait, peintures huile, sculptures béton ciré, art contemporain Nantes, œuvres Marie-Christine Chaillou"
+        keywords="galerie art abstrait Nantes, peintures huile couteau, sculptures béton ciré, art contemporain Loire-Atlantique, œuvres Marie-Christine Chaillou, art géométrique, tableau abstrait"
         schema={gallerySchema}
       />
       <section className="py-20 md:py-28">
