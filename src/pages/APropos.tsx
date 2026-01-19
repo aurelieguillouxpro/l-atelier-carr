@@ -117,13 +117,13 @@ const APropos = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-8"
             >
-              <p className="text-lg md:text-xl leading-relaxed">
+              <p className="text-base md:text-lg leading-relaxed">
                 Marie-Christine CHAILLOU vit et travaille à Nantes depuis plus de 25 ans, 
                 elle a suivi une formation à l'école des beaux-arts de Nantes ainsi que dans 
                 divers ateliers où elle a appris la rigueur dans la réalisation des œuvres.
               </p>
 
-              <p className="text-lg md:text-xl leading-relaxed">
+              <p className="text-base md:text-lg leading-relaxed">
                 Elle évolue dans l'abstraction tant au travers de ses toiles que de ses sculptures. 
                 Elle nous conduit aussi bien au cœur du réel, qu'au seuil du rêve, selon l'humeur 
                 du passant, le voyage entrepris….
