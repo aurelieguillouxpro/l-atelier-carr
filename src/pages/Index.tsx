@@ -8,25 +8,25 @@ import OptimizedImage from "@/components/OptimizedImage";
 // Import artwork images
 import encreGestuelle from "@/assets/artworks/encre-gestuelle.jpg";
 import sculptureNoireDynamique from "@/assets/artworks/sculpture-noire-dynamique.jpg";
-import sculptureGeometrique from "@/assets/artworks/sculpture-geometrique.jpg";
+import acrylique2025_80x80 from "@/assets/artworks/2025-acrylique-80x80.jpg";
+import acrylique2024_40x40 from "@/assets/artworks/2024-blanc-acrylique-40x40.jpg";
 
 const featuredWorks = [
   {
     id: 1,
+    technique: "Acrylique sur toile — 40×40 cm — 2024",
+    image: acrylique2024_40x40,
+  },
+  {
+    id: 2,
     technique: "Bronze patiné noir — 35×30×25 cm",
     image: sculptureNoireDynamique,
     zoom: 1.5,
   },
   {
-    id: 2,
-    technique: "Encre sur papier — 40×50 cm",
-    image: encreGestuelle,
-  },
-  {
     id: 3,
-    technique: "Béton ciré bicolore — 40×20×15 cm",
-    image: sculptureGeometrique,
-    zoom: 1.3,
+    technique: "Acrylique sur toile — 80×80 cm — 2025",
+    image: acrylique2025_80x80,
   },
 ];
 
