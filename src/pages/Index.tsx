@@ -9,29 +9,22 @@ import OptimizedImage from "@/components/OptimizedImage";
 import encreGestuelle from "@/assets/artworks/encre-gestuelle.jpg";
 import sculptureNoireDynamique from "@/assets/artworks/sculpture-noire-dynamique.jpg";
 import sculptureGeometrique from "@/assets/artworks/sculpture-geometrique.jpg";
-import sculptureElancee from "@/assets/artworks/sculpture-elancee.jpg";
 
 const featuredWorks = [
   {
     id: 1,
-    title: "Envol",
-    technique: "Bronze patiné noir, 35×30×25 cm",
-    year: "2025",
+    technique: "Bronze patiné noir — 35×30×25 cm",
     image: sculptureNoireDynamique,
   },
   {
     id: 2,
-    title: "Architecture",
-    technique: "Béton ciré bicolore, 40×20×15 cm",
-    year: "2024",
-    image: sculptureGeometrique,
+    technique: "Encre sur papier — 40×50 cm",
+    image: encreGestuelle,
   },
   {
     id: 3,
-    title: "Élévation",
-    technique: "Béton ciré blanc, 38×12×10 cm",
-    year: "2024",
-    image: sculptureElancee,
+    technique: "Béton ciré bicolore — 40×20×15 cm",
+    image: sculptureGeometrique,
   },
 ];
 
@@ -182,18 +175,15 @@ const Index = () => {
                 className="group cursor-pointer"
               >
                 <Link to="/galerie">
-                  <div className="aspect-square bg-muted/10 mb-6 overflow-hidden">
+                  <div className="aspect-square bg-muted/10 mb-4 overflow-hidden">
                     <OptimizedImage
                       src={work.image}
-                      alt={`${work.title} - ${work.technique} par Marie-Christine Chaillou, artiste peintre contemporaine Nantes`}
+                      alt={`${work.technique} par Marie-Christine Chaillou, artiste peintre contemporaine Nantes`}
                       className="w-full h-full object-cover"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.6, ease: "easeOut" }}
                     />
                   </div>
-                  <h3 className="text-lg font-semibold group-hover:text-primary transition-colors duration-300">
-                    {work.title}
-                  </h3>
                   <p className="text-sm text-muted-foreground">{work.technique}</p>
                 </Link>
               </motion.div>
