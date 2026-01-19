@@ -15,6 +15,7 @@ const featuredWorks = [
     id: 1,
     technique: "Bronze patiné noir — 35×30×25 cm",
     image: sculptureNoireDynamique,
+    zoom: 1.5,
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ const featuredWorks = [
     id: 3,
     technique: "Béton ciré bicolore — 40×20×15 cm",
     image: sculptureGeometrique,
+    zoom: 1.3,
   },
 ];
 
@@ -180,7 +182,9 @@ const Index = () => {
                       src={work.image}
                       alt={`${work.technique} par Marie-Christine Chaillou, artiste peintre contemporaine Nantes`}
                       className="w-full h-full object-cover"
-                      whileHover={{ scale: 1.05 }}
+                      containerClassName="w-full h-full"
+                      style={{ transform: `scale(${work.zoom || 1})` }}
+                      whileHover={{ scale: (work.zoom || 1) * 1.05 }}
                       transition={{ duration: 0.6, ease: "easeOut" }}
                     />
                   </div>
