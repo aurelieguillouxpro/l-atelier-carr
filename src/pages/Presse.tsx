@@ -245,7 +245,7 @@ const Presse = () => {
             className="flex flex-wrap justify-center items-center gap-6 md:gap-10 lg:gap-16"
           >
             {/* Ouest-France */}
-            <div className="grayscale-0">
+            <div className="transition-all duration-300 hover:scale-105 hover:drop-shadow-lg">
               <img 
                 src={ouestFranceLogo} 
                 alt="Logo Ouest-France - Journal régional ayant publié des articles sur Marie-Christine Chaillou" 
@@ -255,7 +255,7 @@ const Presse = () => {
             </div>
             
             {/* Presse Océan */}
-            <div className="grayscale-0">
+            <div className="transition-all duration-300 hover:scale-105 hover:drop-shadow-lg">
               <img 
                 src={presseOceanLogo} 
                 alt="Logo Presse Océan - Média nantais ayant couvert les expositions de l'artiste" 
@@ -265,8 +265,8 @@ const Presse = () => {
             </div>
             
             {/* Hippocampe Info */}
-            <div className="flex flex-col items-center gap-2">
-              <div className="h-10 md:h-12 flex items-center justify-center px-3 md:px-4 py-2 border border-border rounded bg-background">
+            <div className="flex flex-col items-center gap-2 transition-all duration-300 hover:scale-105">
+              <div className="h-10 md:h-12 flex items-center justify-center px-3 md:px-4 py-2 border border-border rounded bg-background transition-shadow duration-300 hover:shadow-md hover:border-primary/30">
                 <span className="font-serif text-base md:text-xl font-bold text-foreground tracking-tight">
                   Hippocampe Info
                 </span>
