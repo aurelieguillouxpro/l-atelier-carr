@@ -371,8 +371,7 @@ const gallerySchema = {
               Galerie
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Mes peintures sont des fenêtres ouvertes sur l'invisible. 
-              Mes sculptures invitent au toucher, à la contemplation.
+              Un univers abstrait où chaque œuvre invite à l'interprétation.
             </p>
           </motion.div>
 
