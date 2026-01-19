@@ -113,7 +113,7 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden fixed inset-x-0 top-[72px] bottom-0 bg-background/98 backdrop-blur-md"
+            className="md:hidden fixed inset-x-0 top-[72px] bottom-0 bg-background z-40"
           >
             <motion.ul 
               className="container-narrow py-12 space-y-6"
