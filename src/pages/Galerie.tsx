@@ -27,9 +27,32 @@ import acrylique2020_20x20 from "@/assets/artworks/2020-acrylique-20x20.jpg";
 // 2017
 import acrylique2017_80x80 from "@/assets/artworks/2017-acrylique-80x80.jpg";
 import acrylique2017_80x80_2 from "@/assets/artworks/2017-acrylique-80x80-2.jpg";
+import acrylique2017_80x80_3 from "@/assets/artworks/2017-acrylique-80x80-3.jpg";
+// 2013
+import huileEmpatement2013_80x80 from "@/assets/artworks/2013-huile-empatement-80x80.jpg";
+import huileEmpatement2013_80x80_2 from "@/assets/artworks/2013-huile-empatement-80x80-2.jpg";
+import huileEmpatement2013_60x60 from "@/assets/artworks/2013-huile-empatement-60x60.jpg";
+// 2012
+import huileEmpatement2012_80x80 from "@/assets/artworks/2012-huile-empatement-80x80.jpg";
+import huileEmpatement2012_80x80_2 from "@/assets/artworks/2012-huile-empatement-80x80-2.jpg";
+import huileEmpatement2012_50x50 from "@/assets/artworks/2012-huile-empatement-50x50.jpg";
+import huile2012_50x50 from "@/assets/artworks/2012-huile-50x50.jpg";
+import huile2012_60x60 from "@/assets/artworks/2012-huile-60x60.jpg";
+import huile2012_60x60_2 from "@/assets/artworks/2012-huile-60x60-2.jpg";
 // 2010
 import huileRougeNoir from "@/assets/artworks/huile-rouge-noir-2010.jpg";
 import huileGrisRouge from "@/assets/artworks/huile-gris-rouge-2010.jpg";
+import glacisBois2010_30x30 from "@/assets/artworks/2010-glacis-bois-30x30.jpg";
+import glacisToile2010_30x30 from "@/assets/artworks/2010-glacis-toile-30x30.jpg";
+import glacisToile2010_60x60 from "@/assets/artworks/2010-glacis-toile-60x60.jpg";
+// 2009
+import techniqueMixte2009 from "@/assets/artworks/2009-technique-mixte.jpg";
+import techniqueMixte2009_2 from "@/assets/artworks/2009-technique-mixte-2.jpg";
+import techniqueMixte2009_3 from "@/assets/artworks/2009-technique-mixte-3.jpg";
+// 2008
+import huile2008_60x60 from "@/assets/artworks/2008-huile-60x60.jpg";
+import huile2008_60x60_2 from "@/assets/artworks/2008-huile-60x60-2.jpg";
+import huile2008_80x80 from "@/assets/artworks/2008-huile-80x80.jpg";
 // 2007
 import huileBleuJaune from "@/assets/artworks/huile-bleu-jaune-2007.jpg";
 import huileOrange from "@/assets/artworks/huile-orange-2007.jpg";
@@ -232,6 +255,98 @@ const artworks = [
     year: "2017",
     image: acrylique2017_80x80_2,
   },
+  {
+    id: 48,
+    title: "Espace Coloré III",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "80 × 80 cm",
+    year: "2017",
+    image: acrylique2017_80x80_3,
+  },
+  // 2013
+  {
+    id: 49,
+    title: "Matière Vibrante I",
+    category: "peintures",
+    technique: "Huile sur toile avec empâtement",
+    dimensions: "80 × 80 cm",
+    year: "2013",
+    image: huileEmpatement2013_80x80,
+  },
+  {
+    id: 50,
+    title: "Matière Vibrante II",
+    category: "peintures",
+    technique: "Huile sur toile avec empâtement",
+    dimensions: "80 × 80 cm",
+    year: "2013",
+    image: huileEmpatement2013_80x80_2,
+  },
+  {
+    id: 51,
+    title: "Matière Vibrante III",
+    category: "peintures",
+    technique: "Huile sur toile avec empâtement",
+    dimensions: "60 × 60 cm",
+    year: "2013",
+    image: huileEmpatement2013_60x60,
+  },
+  // 2012
+  {
+    id: 52,
+    title: "Relief I",
+    category: "peintures",
+    technique: "Huile sur toile avec empâtement",
+    dimensions: "80 × 80 cm",
+    year: "2012",
+    image: huileEmpatement2012_80x80,
+  },
+  {
+    id: 53,
+    title: "Relief II",
+    category: "peintures",
+    technique: "Huile sur toile avec empâtement",
+    dimensions: "80 × 80 cm",
+    year: "2012",
+    image: huileEmpatement2012_80x80_2,
+  },
+  {
+    id: 54,
+    title: "Relief III",
+    category: "peintures",
+    technique: "Huile sur toile avec empâtement",
+    dimensions: "50 × 50 cm",
+    year: "2012",
+    image: huileEmpatement2012_50x50,
+  },
+  {
+    id: 55,
+    title: "Abstraction I",
+    category: "peintures",
+    technique: "Huile sur toile",
+    dimensions: "50 × 50 cm",
+    year: "2012",
+    image: huile2012_50x50,
+  },
+  {
+    id: 56,
+    title: "Abstraction II",
+    category: "peintures",
+    technique: "Huile sur toile",
+    dimensions: "60 × 60 cm",
+    year: "2012",
+    image: huile2012_60x60,
+  },
+  {
+    id: 57,
+    title: "Abstraction III",
+    category: "peintures",
+    technique: "Huile sur toile",
+    dimensions: "60 × 60 cm",
+    year: "2012",
+    image: huile2012_60x60_2,
+  },
   // 2010
   {
     id: 1,
@@ -250,6 +365,89 @@ const artworks = [
     dimensions: "50 × 50 cm",
     year: "2010",
     image: huileGrisRouge,
+  },
+  {
+    id: 58,
+    title: "Glacis I",
+    category: "peintures",
+    technique: "Glacis à l'huile avec empâtement sur bois",
+    dimensions: "30 × 30 cm",
+    year: "2010",
+    image: glacisBois2010_30x30,
+  },
+  {
+    id: 59,
+    title: "Glacis II",
+    category: "peintures",
+    technique: "Glacis à l'huile avec empâtement sur toile",
+    dimensions: "30 × 30 cm",
+    year: "2010",
+    image: glacisToile2010_30x30,
+  },
+  {
+    id: 60,
+    title: "Glacis III",
+    category: "peintures",
+    technique: "Glacis à l'huile avec empâtement sur toile",
+    dimensions: "60 × 60 cm",
+    year: "2010",
+    image: glacisToile2010_60x60,
+  },
+  // 2009
+  {
+    id: 61,
+    title: "Composition Mixte I",
+    category: "peintures",
+    technique: "Technique mixte",
+    dimensions: "50 × 65 cm",
+    year: "2009",
+    image: techniqueMixte2009,
+  },
+  {
+    id: 62,
+    title: "Composition Mixte II",
+    category: "peintures",
+    technique: "Technique mixte",
+    dimensions: "50 × 65 cm",
+    year: "2009",
+    image: techniqueMixte2009_2,
+  },
+  {
+    id: 63,
+    title: "Composition Mixte III",
+    category: "peintures",
+    technique: "Technique mixte",
+    dimensions: "50 × 65 cm",
+    year: "2009",
+    image: techniqueMixte2009_3,
+  },
+  // 2008
+  {
+    id: 64,
+    title: "Structure Noire I",
+    category: "peintures",
+    technique: "Huile sur toile",
+    dimensions: "60 × 60 cm",
+    year: "2008",
+    image: huile2008_60x60,
+  },
+  {
+    id: 65,
+    title: "Structure Noire II",
+    category: "peintures",
+    technique: "Huile sur toile",
+    dimensions: "60 × 60 cm",
+    year: "2008",
+    image: huile2008_60x60_2,
+  },
+  {
+    id: 66,
+    title: "Structure Noire III",
+    category: "peintures",
+    technique: "Huile sur toile",
+    dimensions: "80 × 80 cm",
+    year: "2008",
+    image: huile2008_80x80,
   },
   // 2007
   {
