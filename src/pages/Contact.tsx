@@ -176,8 +176,8 @@ const Contact = () => {
                   Pour les professionnels
                 </h3>
                 <p className="text-foreground/70 text-sm leading-relaxed">
-                  Je suis disponible pour des expositions personnelles ou collectives, 
-                  des commandes sur mesure, et des collaborations artistiques.
+                  Je suis disponible pour des expositions personnelles ou collectives 
+                  et des collaborations artistiques.
                 </p>
               </div>
             </motion.div>
