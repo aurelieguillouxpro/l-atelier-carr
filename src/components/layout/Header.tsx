@@ -24,7 +24,7 @@ const Header = () => {
           <motion.img 
             src={logoMcc} 
             alt="Logo MCC" 
-            className="h-8 sm:h-10 lg:h-18 w-auto"
+            className="h-8 sm:h-10 md:h-8 lg:h-18 w-auto"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -35,10 +35,10 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h1 className="text-sm sm:text-base lg:text-2xl font-semibold tracking-wide whitespace-nowrap">
+            <h1 className="text-sm sm:text-base md:text-sm lg:text-2xl font-semibold tracking-wide whitespace-nowrap">
               CARRéMENT ABSTRAIT
             </h1>
-            <p className="text-[9px] sm:text-[10px] lg:text-xs text-muted-foreground tracking-[0.1em] sm:tracking-[0.15em] lg:tracking-[0.35em] uppercase whitespace-nowrap">
+            <p className="text-[9px] sm:text-[10px] md:text-[9px] lg:text-xs text-muted-foreground tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.1em] lg:tracking-[0.35em] uppercase whitespace-nowrap">
               Marie-Christine Chaillou
             </p>
           </motion.div>
