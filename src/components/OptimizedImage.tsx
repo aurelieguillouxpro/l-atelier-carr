@@ -11,6 +11,7 @@ interface OptimizedImageProps {
   onLoad?: () => void;
   whileHover?: TargetAndTransition;
   transition?: object;
+  style?: React.CSSProperties;
 }
 
 const OptimizedImage = ({
@@ -22,6 +23,7 @@ const OptimizedImage = ({
   onLoad,
   whileHover,
   transition,
+  style,
 }: OptimizedImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
@@ -68,6 +70,7 @@ const OptimizedImage = ({
             isLoaded ? "opacity-100" : "opacity-0",
             className
           )}
+          style={style}
           loading={loading}
           decoding="async"
           onLoad={handleLoad}
