@@ -160,8 +160,8 @@ const Header = () => {
                       onClick={() => setMobileMenuOpen(false)}
                       className={`block text-lg font-light tracking-wide py-2.5 transition-all duration-300 ${
                         location.pathname === item.href
-                          ? "text-primary"
-                          : "text-foreground hover:text-primary"
+                          ? "text-[#8B7355]"
+                          : "text-[#2C2C2C] hover:text-[#8B7355]"
                       }`}
                     >
                       {item.name}
