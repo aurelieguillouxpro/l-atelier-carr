@@ -123,7 +123,7 @@ const APropos = () => {
                 divers ateliers où elle a appris la rigueur dans la réalisation des œuvres.
               </p>
 
-              <p className="text-lg leading-relaxed text-foreground/80">
+              <p className="text-lg md:text-xl leading-relaxed">
                 Elle évolue dans l'abstraction tant au travers de ses toiles que de ses sculptures. 
                 Elle nous conduit aussi bien au cœur du réel, qu'au seuil du rêve, selon l'humeur 
                 du passant, le voyage entrepris….
