@@ -17,7 +17,7 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAF9F6]/95 backdrop-blur-sm">
       <nav className="container-narrow flex items-center justify-between py-6">
         {/* Logo with animation */}
         <Link to="/" className="group flex items-center gap-2 sm:gap-3">
