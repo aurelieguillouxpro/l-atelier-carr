@@ -5,9 +5,19 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import OptimizedImage from "@/components/OptimizedImage";
 
-// Import artwork images
+// Import artwork images - 2025
+import acrylique2025_80x80 from "@/assets/artworks/2025-acrylique-80x80.jpg";
+import acrylique2025_60x60 from "@/assets/artworks/2025-acrylique-60x60.jpg";
+import acrylique2025_40x40 from "@/assets/artworks/2025-acrylique-40x40.jpg";
+// 2024
+import blancAcrylique2024_60x60 from "@/assets/artworks/2024-blanc-acrylique-60x60.jpg";
+import blancAcrylique2024_40x40 from "@/assets/artworks/2024-blanc-acrylique-40x40.jpg";
+import blancAcrylique2024_40x40_2 from "@/assets/artworks/2024-blanc-acrylique-40x40-2.jpg";
+import acrylique2024_80x80 from "@/assets/artworks/2024-acrylique-80x80.jpg";
+// 2010
 import huileRougeNoir from "@/assets/artworks/huile-rouge-noir-2010.jpg";
 import huileGrisRouge from "@/assets/artworks/huile-gris-rouge-2010.jpg";
+// 2007
 import huileBleuJaune from "@/assets/artworks/huile-bleu-jaune-2007.jpg";
 import huileOrange from "@/assets/artworks/huile-orange-2007.jpg";
 import huileJauneBleu from "@/assets/artworks/huile-jaune-bleu-2007.jpg";
@@ -15,13 +25,18 @@ import encreGestuelle from "@/assets/artworks/encre-gestuelle.jpg";
 import huileRougeGris from "@/assets/artworks/huile-rouge-gris-2007.jpg";
 import huileTurquoise from "@/assets/artworks/huile-turquoise-2007.jpg";
 import quadriptyque from "@/assets/artworks/quadriptyque-2007.jpg";
+// 2006
 import huileBleuCreme from "@/assets/artworks/huile-bleu-creme-2006.jpg";
 import huileMarineOrange from "@/assets/artworks/huile-marine-orange-2006.jpg";
 import huileBleuOrange from "@/assets/artworks/huile-bleu-orange-2006.jpg";
 import huileGrisOrange from "@/assets/artworks/huile-gris-orange-2006.jpg";
 import huileOcreGris from "@/assets/artworks/huile-ocre-gris-2006.jpg";
 import huileBleuOcre from "@/assets/artworks/huile-bleu-ocre-2006.jpg";
+// 2005
 import huilePerspective from "@/assets/artworks/huile-perspective-2005.jpg";
+import huileCouteau2005_60x60 from "@/assets/artworks/2005-huile-couteau-60x60.jpg";
+import huileCouteau2005_50x50 from "@/assets/artworks/2005-huile-couteau-50x50.jpg";
+import huileCouteau2005_40x40 from "@/assets/artworks/2005-huile-couteau-40x40.jpg";
 // Sculptures
 import sculptureBlanche from "@/assets/artworks/sculpture-blanche-organique.jpg";
 import sculptureColoree from "@/assets/artworks/sculpture-coloree.jpg";
@@ -36,118 +51,83 @@ import sculptureFeminine from "@/assets/artworks/sculpture-feminine.jpg";
 import sculptureTotemique from "@/assets/artworks/sculpture-totemique.jpg";
 
 const artworks = [
-  // Sculptures
+  // === PEINTURES (triées du plus récent au plus ancien) ===
+  // 2025
   {
-    id: 17,
-    title: "Silhouette",
-    category: "sculptures",
-    technique: "Béton ciré blanc",
-    dimensions: "35 × 12 × 10 cm",
-    year: "2023",
-    image: sculptureBlanche,
-    zoom: 1.4,
-  },
-  {
-    id: 18,
-    title: "Vitrail",
-    category: "sculptures",
-    technique: "Bois peint",
-    dimensions: "45 × 15 × 8 cm",
-    year: "2022",
-    image: sculptureColoree,
-    zoom: 1.3,
-  },
-  {
-    id: 19,
-    title: "Mouvement",
-    category: "sculptures",
-    technique: "Bronze patiné",
-    dimensions: "30 × 25 × 20 cm",
-    year: "2023",
-    image: sculptureNoire,
-    zoom: 1.6,
-  },
-  {
-    id: 20,
-    title: "Architecture",
-    category: "sculptures",
-    technique: "Béton ciré bicolore",
-    dimensions: "40 × 20 × 15 cm",
-    year: "2024",
-    image: sculptureGeometrique,
-    zoom: 1.3,
-  },
-  {
-    id: 21,
-    title: "Élévation",
-    category: "sculptures",
-    technique: "Béton ciré blanc",
-    dimensions: "38 × 12 × 10 cm",
-    year: "2024",
-    image: sculptureElancee,
-    zoom: 1.4,
-  },
-  {
-    id: 22,
-    title: "Contemplation",
-    category: "sculptures",
-    technique: "Béton ciré blanc",
-    dimensions: "30 × 20 × 15 cm",
-    year: "2021",
-    image: sculptureSignee,
-    zoom: 1.5,
-  },
-  {
-    id: 23,
-    title: "Envol",
-    category: "sculptures",
-    technique: "Bronze patiné noir",
-    dimensions: "35 × 30 × 25 cm",
+    id: 28,
+    title: "Abstraction Graphique I",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "80 × 80 cm",
     year: "2025",
-    image: sculptureNoireDynamique,
-    zoom: 1.5,
+    image: acrylique2025_80x80,
   },
   {
-    id: 24,
-    title: "Monument",
-    category: "sculptures",
-    technique: "Béton ciré blanc",
-    dimensions: "60 × 35 × 30 cm",
-    year: "2020",
-    image: sculptureMonumentale,
-    zoom: 1.3,
+    id: 29,
+    title: "Abstraction Graphique II",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "60 × 60 cm",
+    year: "2025",
+    image: acrylique2025_60x60,
   },
   {
-    id: 25,
-    title: "Édifice",
-    category: "sculptures",
-    technique: "Béton ciré blanc",
-    dimensions: "45 × 20 × 15 cm",
-    year: "2019",
-    image: sculptureArchitecturale,
-    zoom: 1.4,
+    id: 30,
+    title: "Abstraction Graphique III",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "40 × 40 cm",
+    year: "2025",
+    image: acrylique2025_40x40,
+  },
+  // 2024
+  {
+    id: 31,
+    title: "Encre Gestuelle I",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "80 × 80 cm",
+    year: "2024",
+    image: acrylique2024_80x80,
   },
   {
-    id: 26,
-    title: "Grâce",
-    category: "sculptures",
-    technique: "Béton ciré blanc",
-    dimensions: "50 × 15 × 12 cm",
-    year: "2019",
-    image: sculptureFeminine,
-    zoom: 1.4,
+    id: 32,
+    title: "Encre Gestuelle II",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "60 × 60 cm",
+    year: "2024",
+    image: blancAcrylique2024_60x60,
   },
   {
-    id: 27,
-    title: "Gardien",
-    category: "sculptures",
-    technique: "Béton moucheté",
-    dimensions: "35 × 10 × 8 cm",
-    year: "2018",
-    image: sculptureTotemique,
-    zoom: 1.5,
+    id: 33,
+    title: "Encre Gestuelle III",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "40 × 40 cm",
+    year: "2024",
+    image: blancAcrylique2024_40x40,
   },
-  // Peintures
+  {
+    id: 34,
+    title: "Encre Gestuelle IV",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "40 × 40 cm",
+    year: "2024",
+    image: blancAcrylique2024_40x40_2,
+  },
+  // 2023
+  {
+    id: 6,
+    title: "Geste Noir",
+    category: "peintures",
+    technique: "Encre sur papier",
+    dimensions: "40 × 50 cm",
+    year: "2023",
+    image: encreGestuelle,
+  },
+  // 2010
   {
     id: 1,
     title: "Tension Rouge",
@@ -166,6 +146,7 @@ const artworks = [
     year: "2010",
     image: huileGrisRouge,
   },
+  // 2007
   {
     id: 3,
     title: "Symphonie Colorée",
@@ -194,15 +175,6 @@ const artworks = [
     image: huileJauneBleu,
   },
   {
-    id: 6,
-    title: "Geste Noir",
-    category: "peintures",
-    technique: "Encre sur papier",
-    dimensions: "40 × 50 cm",
-    year: "2023",
-    image: encreGestuelle,
-  },
-  {
     id: 7,
     title: "Verticalité",
     category: "peintures",
@@ -229,6 +201,7 @@ const artworks = [
     year: "2007",
     image: quadriptyque,
   },
+  // 2006
   {
     id: 10,
     title: "Horizon",
@@ -283,6 +256,7 @@ const artworks = [
     year: "2006",
     image: huileBleuOcre,
   },
+  // 2005
   {
     id: 16,
     title: "Perspective",
@@ -291,6 +265,144 @@ const artworks = [
     dimensions: "50 × 50 cm",
     year: "2005",
     image: huilePerspective,
+  },
+  {
+    id: 35,
+    title: "Composition I",
+    category: "peintures",
+    technique: "Huile sur toile au couteau",
+    dimensions: "60 × 60 cm",
+    year: "2005",
+    image: huileCouteau2005_60x60,
+  },
+  {
+    id: 36,
+    title: "Composition II",
+    category: "peintures",
+    technique: "Huile sur toile au couteau",
+    dimensions: "50 × 50 cm",
+    year: "2005",
+    image: huileCouteau2005_50x50,
+  },
+  {
+    id: 37,
+    title: "Composition III",
+    category: "peintures",
+    technique: "Huile sur toile au couteau",
+    dimensions: "40 × 40 cm",
+    year: "2005",
+    image: huileCouteau2005_40x40,
+  },
+  // === SCULPTURES (triées du plus récent au plus ancien) ===
+  {
+    id: 23,
+    title: "Envol",
+    category: "sculptures",
+    technique: "Bronze patiné noir",
+    dimensions: "35 × 30 × 25 cm",
+    year: "2025",
+    image: sculptureNoireDynamique,
+    zoom: 1.5,
+  },
+  {
+    id: 20,
+    title: "Architecture",
+    category: "sculptures",
+    technique: "Béton ciré bicolore",
+    dimensions: "40 × 20 × 15 cm",
+    year: "2024",
+    image: sculptureGeometrique,
+    zoom: 1.3,
+  },
+  {
+    id: 21,
+    title: "Élévation",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "38 × 12 × 10 cm",
+    year: "2024",
+    image: sculptureElancee,
+    zoom: 1.4,
+  },
+  {
+    id: 17,
+    title: "Silhouette",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "35 × 12 × 10 cm",
+    year: "2023",
+    image: sculptureBlanche,
+    zoom: 1.4,
+  },
+  {
+    id: 19,
+    title: "Mouvement",
+    category: "sculptures",
+    technique: "Bronze patiné",
+    dimensions: "30 × 25 × 20 cm",
+    year: "2023",
+    image: sculptureNoire,
+    zoom: 1.6,
+  },
+  {
+    id: 18,
+    title: "Vitrail",
+    category: "sculptures",
+    technique: "Bois peint",
+    dimensions: "45 × 15 × 8 cm",
+    year: "2022",
+    image: sculptureColoree,
+    zoom: 1.3,
+  },
+  {
+    id: 22,
+    title: "Contemplation",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "30 × 20 × 15 cm",
+    year: "2021",
+    image: sculptureSignee,
+    zoom: 1.5,
+  },
+  {
+    id: 24,
+    title: "Monument",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "60 × 35 × 30 cm",
+    year: "2020",
+    image: sculptureMonumentale,
+    zoom: 1.3,
+  },
+  {
+    id: 25,
+    title: "Édifice",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "45 × 20 × 15 cm",
+    year: "2019",
+    image: sculptureArchitecturale,
+    zoom: 1.4,
+  },
+  {
+    id: 26,
+    title: "Grâce",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "50 × 15 × 12 cm",
+    year: "2019",
+    image: sculptureFeminine,
+    zoom: 1.4,
+  },
+  {
+    id: 27,
+    title: "Gardien",
+    category: "sculptures",
+    technique: "Béton moucheté",
+    dimensions: "35 × 10 × 8 cm",
+    year: "2018",
+    image: sculptureTotemique,
+    zoom: 1.5,
   },
 ];
 
