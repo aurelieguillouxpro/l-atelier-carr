@@ -445,12 +445,9 @@ const gallerySchema = {
                       className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300"
                     />
                   </div>
-                  <h3 className="font-semibold text-base sm:text-lg group-hover:text-primary transition-colors duration-300">
-                    {artwork.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground">
-                    {artwork.technique} — {artwork.dimensions}
-                  </p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">
+                            {artwork.technique} — {artwork.dimensions}
+                          </p>
                 </motion.article>
               ))}
             </AnimatePresence>
@@ -538,9 +535,6 @@ const gallerySchema = {
               
               {!isFullscreen && (
                 <div className="text-white text-center lg:text-left lg:max-w-xs">
-                  <h2 className="text-2xl md:text-4xl font-semibold mb-3">
-                    {selectedArtwork.title}
-                  </h2>
                   <p className="text-white/50 text-sm md:text-base mb-1">
                     {selectedArtwork.technique}
                   </p>
