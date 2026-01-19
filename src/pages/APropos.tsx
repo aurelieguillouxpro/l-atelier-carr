@@ -6,25 +6,54 @@ import portraitArtiste from "@/assets/portrait-artiste.jpg";
 
 const aboutSchema = {
   "@context": "https://schema.org",
-  "@type": "AboutPage",
+  "@type": "ProfilePage",
+  "dateCreated": "2024-01-01",
+  "dateModified": "2026-01-19",
   "mainEntity": {
     "@type": "Person",
+    "@id": "https://carrementabstrait.com/#artist",
     "name": "Marie-Christine Chaillou",
-    "jobTitle": "Artiste peintre et sculptrice",
-    "description": "Artiste contemporaine spécialisée dans l'abstraction géométrique, travaillant l'huile sur toile et le béton ciré depuis plus de 20 ans à Nantes.",
-    "knowsAbout": ["Peinture à l'huile", "Sculpture béton ciré", "Art abstrait géométrique", "Techniques mixtes"],
+    "alternateName": "Carrément Abstrait",
+    "jobTitle": "Artiste peintre et sculptrice contemporaine",
+    "description": "Artiste spécialisée dans l'abstraction géométrique depuis plus de 20 ans. Formation aux Beaux-Arts de Nantes. Travaille l'huile sur toile au couteau et le béton ciré.",
+    "image": "https://carrementabstrait.com/og-image.jpg",
+    "knowsAbout": [
+      "Peinture à l'huile au couteau",
+      "Sculpture béton ciré",
+      "Art abstrait géométrique",
+      "Techniques mixtes",
+      "Composition colorée"
+    ],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "degree",
+      "recognizedBy": {
+        "@type": "EducationalOrganization",
+        "name": "Beaux-Arts de Nantes"
+      }
+    },
     "alumniOf": {
       "@type": "EducationalOrganization",
-      "name": "Beaux-Arts de Nantes"
-    },
-    "workLocation": {
-      "@type": "Place",
+      "name": "Beaux-Arts de Nantes",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Nantes",
-        "addressCountry": "France"
+        "addressCountry": "FR"
       }
-    }
+    },
+    "workLocation": {
+      "@type": "Place",
+      "name": "Atelier Marie-Christine Chaillou",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "43 rue Léon Jost",
+        "addressLocality": "Nantes",
+        "postalCode": "44300",
+        "addressRegion": "Loire-Atlantique",
+        "addressCountry": "FR"
+      }
+    },
+    "award": ["Formation Beaux-Arts de Nantes", "Plus de 20 ans d'expérience"]
   }
 };
 
@@ -32,11 +61,11 @@ const APropos = () => {
   return (
     <Layout>
       <SEO 
-        title="À Propos"
-        description="Découvrez le parcours de Marie-Christine Chaillou, artiste peintre et sculptrice nantaise. Formation aux Beaux-Arts, 20 ans d'expérience en abstraction géométrique."
+        title="À Propos - Biographie de l'Artiste"
+        description="Découvrez le parcours de Marie-Christine Chaillou, artiste peintre et sculptrice nantaise. Formation aux Beaux-Arts de Nantes, plus de 20 ans d'expérience en abstraction géométrique. Huile au couteau et béton ciré."
         canonical="/a-propos"
         type="profile"
-        keywords="biographie artiste, Marie-Christine Chaillou, Beaux-Arts Nantes, peintre abstrait, sculptrice contemporaine"
+        keywords="biographie artiste Nantes, Marie-Christine Chaillou, Beaux-Arts Nantes, peintre abstrait, sculptrice contemporaine, atelier art Nantes, parcours artistique"
         schema={aboutSchema}
       />
       {/* Hero */}

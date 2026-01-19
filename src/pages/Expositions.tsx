@@ -194,43 +194,73 @@ const exhibitions = {
 
 const exhibitionsSchema = {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Expositions de Marie-Christine Chaillou",
-  "description": "Liste des expositions passées et à venir de l'artiste",
-  "itemListElement": [
-    ...exhibitions.upcoming.map((expo, index) => ({
-      "@type": "Event",
-      "position": index + 1,
-      "name": expo.title,
-      "location": {
-        "@type": "Place",
-        "name": expo.venue,
-        "address": expo.location
-      },
-      "description": expo.description
-    })),
-    ...exhibitions.past.map((expo, index) => ({
-      "@type": "Event",
-      "position": exhibitions.upcoming.length + index + 1,
-      "name": expo.title,
-      "location": {
-        "@type": "Place",
-        "name": expo.venue,
-        "address": expo.location
-      },
-      "description": expo.description
-    }))
-  ]
+  "@type": "CollectionPage",
+  "@id": "https://carrementabstrait.com/expositions/#page",
+  "name": "Expositions de Marie-Christine Chaillou - Art Abstrait Nantes",
+  "description": "Calendrier des expositions passées et à venir de Marie-Christine Chaillou. Vernissages, galeries et événements artistiques en Loire-Atlantique.",
+  "url": "https://carrementabstrait.com/expositions",
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Liste des expositions",
+    "numberOfItems": exhibitions.upcoming.length + exhibitions.past.length,
+    "itemListElement": [
+      ...exhibitions.upcoming.map((expo, index) => ({
+        "@type": "Event",
+        "position": index + 1,
+        "name": `${expo.title} - Exposition art abstrait`,
+        "description": expo.description,
+        "startDate": expo.startDate?.toISOString(),
+        "endDate": expo.endDate?.toISOString(),
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": expo.venue,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": expo.location,
+            "addressRegion": "Loire-Atlantique",
+            "addressCountry": "FR"
+          }
+        },
+        "organizer": {
+          "@type": "Person",
+          "@id": "https://carrementabstrait.com/#artist",
+          "name": "Marie-Christine Chaillou"
+        },
+        "performer": {
+          "@type": "Person",
+          "name": "Marie-Christine Chaillou"
+        }
+      })),
+      ...exhibitions.past.slice(0, 6).map((expo, index) => ({
+        "@type": "Event",
+        "position": exhibitions.upcoming.length + index + 1,
+        "name": expo.title,
+        "description": expo.description,
+        "eventStatus": "https://schema.org/EventCancelled",
+        "location": {
+          "@type": "Place",
+          "name": expo.venue,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": expo.location,
+            "addressCountry": "FR"
+          }
+        }
+      }))
+    ]
+  }
 };
 
 const Expositions = () => {
   return (
     <Layout>
       <SEO 
-        title="Expositions"
-        description="Retrouvez les expositions passées et à venir de Marie-Christine Chaillou. Galeries, salons et événements artistiques en Loire-Atlantique et Bretagne."
+        title="Expositions - Agenda et Vernissages"
+        description="Retrouvez le calendrier des expositions de Marie-Christine Chaillou. Prochaine exposition : Carré'Ment abstrait à Vertou en mars 2026. Galeries et événements artistiques en Loire-Atlantique."
         canonical="/expositions"
-        keywords="expositions art abstrait, vernissage Nantes, salon artiste, galerie Loire-Atlantique, événements artistiques"
+        keywords="expositions art abstrait Nantes, vernissage Loire-Atlantique, salon artiste Vertou, galerie art contemporain, événements artistiques Bretagne, agenda expositions"
         schema={exhibitionsSchema}
       />
       {/* Hero */}
