@@ -65,18 +65,10 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-      if (!supabaseUrl || !supabaseAnonKey) {
-        throw new Error("Configuration Supabase manquante");
-      }
-
-      const response = await fetch(`${supabaseUrl}/functions/v1/send-contact-email`, {
-        method: "POST",
+      const response = await fetch('/api/send-contact', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${supabaseAnonKey}`,
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
@@ -84,21 +76,21 @@ const Contact = () => {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || "Erreur lors de l'envoi du message");
+        throw new Error(data.error || 'Erreur lors de l\'envoi du message');
       }
 
       toast({
-        title: "Message envoyé",
-        description: "Merci pour votre message. Je vous répondrai dans les plus brefs délais.",
+        title: 'Message envoyé',
+        description: 'Merci pour votre message. Je vous répondrai dans les plus brefs délais.',
       });
 
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      console.error("Erreur lors de l'envoi:", error);
+      console.error('Erreur lors de l\'envoi:', error);
       toast({
-        title: "Erreur",
-        description: error instanceof Error ? error.message : "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer.",
-        variant: "destructive",
+        title: 'Erreur',
+        description: error instanceof Error ? error.message : 'Une erreur est survenue lors de l\'envoi du message.',
+        variant: 'destructive',
       });
     } finally {
       setIsSubmitting(false);
