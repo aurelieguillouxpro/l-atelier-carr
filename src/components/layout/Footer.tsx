@@ -37,7 +37,7 @@ const Footer = () => {
               Marie-Christine Chaillou
             </h3>
             <p className="text-sm opacity-70 mb-4">
-              <span itemProp="jobTitle">Artiste peintre &amp; sculptrice</span>
+              <span itemProp="jobTitle">Artiste plasticienne</span>
               <br />
               <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
                 <span itemProp="addressLocality">Nantes</span>, <span itemProp="addressCountry">France</span>
