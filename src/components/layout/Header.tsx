@@ -37,7 +37,7 @@ const Header = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h1 className="text-xl md:text-2xl font-semibold tracking-wide">
-              Carrément Abstrait
+              CARRéMENT ABSTRAIT
             </h1>
             <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase">
               Marie-Christine Chaillou
