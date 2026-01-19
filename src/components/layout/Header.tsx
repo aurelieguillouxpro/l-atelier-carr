@@ -109,40 +109,53 @@ const Header = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="md:hidden fixed inset-0 z-[60] flex flex-col"
-            style={{ backgroundColor: '#FAF9F6' }}
+            style={{ 
+              backgroundColor: 'rgba(250, 249, 246, 0.97)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)'
+            }}
           >
             {/* Header area in menu */}
             <div className="h-[72px] flex-shrink-0" />
             <motion.ul 
-              className="container-narrow py-8 space-y-6 flex-1"
+              className="container-narrow py-12 space-y-4 flex-1 flex flex-col justify-center"
               initial="closed"
               animate="open"
               exit="closed"
               variants={{
-                open: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } },
-                closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } }
+                open: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
+                closed: { transition: { staggerChildren: 0.04, staggerDirection: -1 } }
               }}
             >
               {navigation.map((item) => (
                 <motion.li 
                   key={item.name}
                   variants={{
-                    open: { opacity: 1, x: 0, transition: { ease: [0.22, 1, 0.36, 1] } },
-                    closed: { opacity: 0, x: -30 }
+                    open: { 
+                      opacity: 1, 
+                      x: 0, 
+                      transition: { 
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 24
+                      } 
+                    },
+                    closed: { opacity: 0, x: -40 }
                   }}
                 >
                   <Link
                     to={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block text-2xl font-light tracking-wide py-2 transition-colors duration-300 ${
+                    className={`block text-3xl font-light tracking-wide py-3 transition-all duration-300 ${
                       location.pathname === item.href
-                        ? "text-primary"
-                        : "text-foreground hover:text-primary"
+                        ? "text-primary translate-x-2"
+                        : "text-foreground hover:text-primary hover:translate-x-2"
                     }`}
                   >
                     {item.name}
