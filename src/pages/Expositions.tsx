@@ -258,9 +258,9 @@ const Expositions = () => {
     <Layout>
       <SEO 
         title="Expositions - Agenda et Vernissages"
-        description="Retrouvez le calendrier des expositions de Marie-Christine Chaillou. Prochaine exposition : Carré'Ment abstrait à Vertou en mars 2026. Galeries et événements artistiques en Loire-Atlantique."
+        description="Retrouvez le calendrier des expositions de Marie-Christine Chaillou, artiste plasticienne. Prochaine exposition : Carré'Ment abstrait à Vertou du 20 au 29 mars 2026. Événements artistiques en Loire-Atlantique."
         canonical="/expositions"
-        keywords="expositions art abstrait Nantes, vernissage Loire-Atlantique, salon artiste Vertou, galerie art contemporain, événements artistiques Bretagne, agenda expositions"
+        keywords="expositions art abstrait Nantes, vernissage Loire-Atlantique, artiste plasticienne Vertou, galerie art contemporain, événements artistiques Bretagne, agenda expositions"
         schema={exhibitionsSchema}
       />
       {/* Hero */}

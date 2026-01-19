@@ -63,8 +63,8 @@ const Index = () => {
     <Layout>
       <SEO 
         canonical="/"
-        description="Découvrez l'univers abstrait de Marie-Christine Chaillou, artiste peintre et sculptrice à Nantes. Peintures à l'huile au couteau, sculptures béton ciré. Expositions en Loire-Atlantique."
-        keywords="art abstrait Nantes, peinture contemporaine, sculpture béton ciré, artiste Nantes, Marie-Christine Chaillou, huile sur toile, art géométrique, galerie Loire-Atlantique"
+        description="Découvrez l'univers abstrait de Marie-Christine Chaillou, artiste plasticienne à Nantes depuis plus de 25 ans. Peintures, techniques mixtes et sculptures. Expositions en Loire-Atlantique."
+        keywords="art abstrait Nantes, peinture contemporaine, sculpture béton ciré, artiste Nantes, Marie-Christine Chaillou, artiste plasticienne, galerie Loire-Atlantique"
         schema={homeSchema}
       />
       {/* Hero Section - Full screen, immersif */}

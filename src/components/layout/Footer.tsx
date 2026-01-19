@@ -9,8 +9,8 @@ const Footer = () => {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Marie-Christine Chaillou",
-    "jobTitle": "Artiste peintre et sculptrice",
-    "description": "Artiste contemporaine spécialisée dans l'art abstrait, peintures à l'huile et sculptures en béton ciré",
+    "jobTitle": "Artiste plasticienne",
+    "description": "Artiste plasticienne spécialisée dans l'art abstrait, peintures et sculptures",
     "url": "https://carrementabstrait.com",
     "address": {
       "@type": "PostalAddress",

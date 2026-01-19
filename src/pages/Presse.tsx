@@ -67,7 +67,7 @@ const pressSchema = {
   "@type": "CollectionPage",
   "@id": "https://carrementabstrait.com/presse/#page",
   "name": "Presse - Revue de presse Marie-Christine Chaillou",
-  "description": "Articles de presse et témoignages sur le travail de Marie-Christine Chaillou, artiste peintre et sculptrice contemporaine à Nantes",
+  "description": "Articles de presse et témoignages sur le travail de Marie-Christine Chaillou, artiste plasticienne à Nantes",
   "url": "https://carrementabstrait.com/presse",
   "mainEntity": {
     "@type": "ItemList",
@@ -98,9 +98,9 @@ const Presse = () => {
     <Layout>
       <SEO 
         title="Presse - Articles et Témoignages"
-        description="Revue de presse de Marie-Christine Chaillou : articles Ouest-France, Presse Océan, Hippocampe Info. Témoignages et dossier de presse de l'artiste peintre et sculptrice nantaise."
+        description="Revue de presse de Marie-Christine Chaillou : articles Ouest-France, Presse Océan, Hippocampe Info. Témoignages et dossier de presse de l'artiste plasticienne nantaise."
         canonical="/presse"
-        keywords="presse artiste Nantes, Ouest-France art abstrait, Presse Océan exposition, articles art contemporain, témoignages, dossier presse artiste, médias Loire-Atlantique"
+        keywords="presse artiste Nantes, Ouest-France art abstrait, Presse Océan exposition, articles art contemporain, témoignages, dossier presse artiste plasticienne, médias Loire-Atlantique"
         schema={pressSchema}
       />
       {/* Hero */}
