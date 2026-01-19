@@ -249,9 +249,9 @@ const Expositions = () => {
 
                         {/* Highlight */}
                         {expo.highlight && (
-                          <div className="flex items-center justify-center gap-2 bg-primary/20 px-4 py-2 text-sm lg:w-52 flex-shrink-0">
-                            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-                            <span className="text-primary text-xs uppercase tracking-wider">{expo.highlight}</span>
+                          <div className="flex items-center justify-center gap-2 bg-background border border-primary/30 px-5 py-3 lg:w-56 flex-shrink-0 rounded">
+                            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                            <span className="text-foreground text-sm font-medium">{expo.highlight}</span>
                           </div>
                         )}
                       </div>
