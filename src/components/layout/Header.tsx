@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logoMcc from "@/assets/logos/logo-mcc.png";
 
@@ -69,47 +68,85 @@ const Header = () => {
         </ul>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2"
+        <motion.button
+          className="md:hidden p-2 relative z-50"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Menu"
+          whileTap={{ scale: 0.9 }}
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <div className="relative w-6 h-6">
+            <motion.span
+              className="absolute left-0 w-6 h-0.5 bg-foreground rounded-full"
+              animate={{
+                top: mobileMenuOpen ? "50%" : "25%",
+                rotate: mobileMenuOpen ? 45 : 0,
+                y: mobileMenuOpen ? "-50%" : 0,
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            />
+            <motion.span
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-6 h-0.5 bg-foreground rounded-full"
+              animate={{
+                opacity: mobileMenuOpen ? 0 : 1,
+                scaleX: mobileMenuOpen ? 0 : 1,
+              }}
+              transition={{ duration: 0.2 }}
+            />
+            <motion.span
+              className="absolute left-0 w-6 h-0.5 bg-foreground rounded-full"
+              animate={{
+                bottom: mobileMenuOpen ? "50%" : "25%",
+                rotate: mobileMenuOpen ? -45 : 0,
+                y: mobileMenuOpen ? "50%" : 0,
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            />
+          </div>
+        </motion.button>
       </nav>
 
       {/* Mobile Navigation */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-background border-t border-border"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden fixed inset-x-0 top-[72px] bottom-0 bg-background/98 backdrop-blur-md"
           >
-            <ul className="container-narrow py-8 space-y-5">
-              {navigation.map((item, index) => (
+            <motion.ul 
+              className="container-narrow py-12 space-y-6"
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={{
+                open: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } },
+                closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } }
+              }}
+            >
+              {navigation.map((item) => (
                 <motion.li 
                   key={item.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  variants={{
+                    open: { opacity: 1, x: 0, transition: { ease: [0.22, 1, 0.36, 1] } },
+                    closed: { opacity: 0, x: -30 }
+                  }}
                 >
                   <Link
                     to={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block text-lg tracking-wide ${
+                    className={`block text-2xl font-light tracking-wide py-2 transition-colors duration-300 ${
                       location.pathname === item.href
                         ? "text-primary"
-                        : "text-foreground"
+                        : "text-foreground hover:text-primary"
                     }`}
                   >
                     {item.name}
                   </Link>
                 </motion.li>
               ))}
-            </ul>
+            </motion.ul>
           </motion.div>
         )}
       </AnimatePresence>
