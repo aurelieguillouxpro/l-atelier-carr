@@ -9,6 +9,7 @@ import OptimizedImage from "@/components/OptimizedImage";
 import huileRougeNoir from "@/assets/artworks/huile-rouge-noir-2010.jpg";
 import huileGrisRouge from "@/assets/artworks/huile-gris-rouge-2010.jpg";
 import huileOcreGris from "@/assets/artworks/huile-ocre-gris-2006.jpg";
+import encreGestuelle from "@/assets/artworks/encre-gestuelle.jpg";
 
 const featuredWorks = [
   {
@@ -61,7 +62,7 @@ const Index = () => {
         {/* Background image - tons neutres */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
-          style={{ backgroundImage: `url(${huileOcreGris})` }}
+          style={{ backgroundImage: `url(${encreGestuelle})` }}
         />
         
         {/* Overlay élégant */}
