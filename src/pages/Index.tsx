@@ -156,10 +156,9 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="text-xl md:text-2xl leading-relaxed text-foreground/80"
           >
-            Mon atmosphère artistique se traduit au travers de tableaux abstraits colorés, 
-            laissant libre cours à votre imaginaire. Le rythme est insufflé par la dynamique 
-            de la composition, l'animation des couleurs et des formes. Il est la résonance 
-            visuelle retenue par l'œil qui s'y attarde.
+            Mon atmosphère artistique se traduit au travers de la peinture et de la sculpture, 
+            de la couleur au noir et blanc, du plus petit au plus grand. Le rythme est insufflé 
+            par la dynamique de la composition, l'animation des couleurs et des formes.
           </motion.p>
         </div>
       </section>
