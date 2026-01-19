@@ -14,8 +14,8 @@ const aboutSchema = {
     "@id": "https://carrementabstrait.com/#artist",
     "name": "Marie-Christine Chaillou",
     "alternateName": "Carrément Abstrait",
-    "jobTitle": "Artiste peintre et sculptrice contemporaine",
-    "description": "Artiste spécialisée dans l'abstraction géométrique depuis plus de 20 ans. Formation aux Beaux-Arts de Nantes. Travaille l'huile sur toile au couteau et le béton ciré.",
+    "jobTitle": "Artiste plasticienne",
+    "description": "Artiste plasticienne spécialisée dans l'abstraction depuis plus de 25 ans. Formation aux Beaux-Arts de Nantes. Peintures et sculptures.",
     "image": "https://carrementabstrait.com/og-image.jpg",
     "knowsAbout": [
       "Peinture à l'huile au couteau",
@@ -53,7 +53,7 @@ const aboutSchema = {
         "addressCountry": "FR"
       }
     },
-    "award": ["Formation Beaux-Arts de Nantes", "Plus de 20 ans d'expérience"]
+    "award": ["Formation Beaux-Arts de Nantes", "Plus de 25 ans d'expérience"]
   }
 };
 
@@ -62,10 +62,10 @@ const APropos = () => {
     <Layout>
       <SEO 
         title="À Propos - Biographie de l'Artiste"
-        description="Découvrez le parcours de Marie-Christine Chaillou, artiste peintre et sculptrice nantaise. Formation aux Beaux-Arts de Nantes, plus de 20 ans d'expérience en abstraction géométrique. Huile au couteau et béton ciré."
+        description="Découvrez le parcours de Marie-Christine Chaillou, artiste plasticienne nantaise. Formation aux Beaux-Arts de Nantes, plus de 25 ans d'expérience en abstraction. Peintures et sculptures."
         canonical="/a-propos"
         type="profile"
-        keywords="biographie artiste Nantes, Marie-Christine Chaillou, Beaux-Arts Nantes, peintre abstrait, sculptrice contemporaine, atelier art Nantes, parcours artistique"
+        keywords="biographie artiste Nantes, Marie-Christine Chaillou, Beaux-Arts Nantes, artiste plasticienne, atelier art Nantes, parcours artistique"
         schema={aboutSchema}
       />
       {/* Hero */}

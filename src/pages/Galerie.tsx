@@ -374,10 +374,10 @@ const gallerySchema = {
   return (
     <Layout>
       <SEO 
-        title="Galerie - Peintures Abstraites et Sculptures"
-        description="Explorez la galerie de Marie-Christine Chaillou : peintures abstraites à l'huile au couteau et sculptures en béton ciré. Œuvres géométriques aux couleurs vibrantes. Art contemporain Nantes."
+        title="Galerie - Peintures et Sculptures Abstraites"
+        description="Explorez la galerie de Marie-Christine Chaillou : peintures abstraites, techniques mixtes et sculptures en béton ciré et bois. Art contemporain Nantes."
         canonical="/galerie"
-        keywords="galerie art abstrait Nantes, peintures huile couteau, sculptures béton ciré, art contemporain Loire-Atlantique, œuvres Marie-Christine Chaillou, art géométrique, tableau abstrait"
+        keywords="galerie art abstrait Nantes, peintures abstraites, sculptures béton ciré, art contemporain Loire-Atlantique, œuvres Marie-Christine Chaillou, artiste plasticienne"
         schema={gallerySchema}
       />
       <section className="py-20 md:py-28">

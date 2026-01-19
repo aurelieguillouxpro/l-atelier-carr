@@ -109,9 +109,9 @@ const Contact = () => {
     <Layout>
       <SEO 
         title="Contact - Atelier et Collaborations"
-        description="Contactez Marie-Christine Chaillou pour une exposition, collaboration artistique, commande d'œuvre ou visite d'atelier. Atelier à Nantes, disponible pour galeries et professionnels de l'art."
+        description="Contactez Marie-Christine Chaillou pour une exposition ou collaboration artistique. Artiste plasticienne, atelier à Nantes. Disponible pour galeries et professionnels de l'art."
         canonical="/contact"
-        keywords="contact artiste Nantes, atelier peinture Nantes, collaboration artistique, exposition peinture Loire-Atlantique, commande œuvre art abstrait, visite atelier"
+        keywords="contact artiste Nantes, atelier art Nantes, collaboration artistique, exposition peinture Loire-Atlantique, artiste plasticienne, visite atelier"
         schema={contactSchema}
       />
       {/* Hero */}
