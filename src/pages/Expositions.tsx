@@ -79,17 +79,17 @@ const exhibitions = {
   upcoming: [
     {
       id: 0,
-      title: "Couleurs en mouvement",
-      venue: "Galerie L'Atelier",
-      location: "Nantes (44)",
+      title: "Carré'Ment abstrait",
+      venue: "L'Atelier",
+      location: "Vertou (44)",
       date: "Mars 2026",
-      dateRange: "15 mars - 30 avril 2026",
-      startDate: new Date('2026-03-15T18:00:00'),
-      endDate: new Date('2026-04-30T20:00:00'),
-      vernissageDate: new Date('2026-03-15T18:00:00'),
-      vernissageEndDate: new Date('2026-03-15T21:00:00'),
-      description: "Une nouvelle série d'œuvres explorant le dialogue entre la peinture gestuelle et la sculpture monumentale. Vernissage le 15 mars à 18h.",
-      highlight: "Vernissage le 15 mars à 18h"
+      dateRange: "21 - 29 mars 2026",
+      startDate: new Date('2026-03-21T10:00:00'),
+      endDate: new Date('2026-03-29T18:00:00'),
+      vernissageDate: new Date('2026-03-21T18:00:00'),
+      vernissageEndDate: new Date('2026-03-21T21:00:00'),
+      description: "Exposition de peintures abstraites hautes en couleur, dégageant énergie et puissance avec des pigments forts et des traits nets. Vernissage le 21 mars à 18h.",
+      highlight: "Vernissage le 21 mars à 18h"
     }
   ],
   past: [
@@ -221,7 +221,7 @@ const Expositions = () => {
                     <div className="flex flex-col lg:flex-row">
                       {/* Date column */}
                       <div className="lg:w-56 flex-shrink-0 bg-primary p-6 lg:p-8 flex flex-col justify-center items-center text-center">
-                        <span className="text-5xl lg:text-6xl font-bold text-background">15</span>
+                        <span className="text-5xl lg:text-6xl font-bold text-background">21</span>
                         <span className="text-xl uppercase tracking-widest text-background/90 mt-1">Mars</span>
                         <span className="text-sm text-background/60 mt-2 border-t border-background/20 pt-2 px-4">2026</span>
                       </div>
@@ -293,7 +293,7 @@ const Expositions = () => {
                           {expo.highlight && (
                             <div className="flex items-center justify-center gap-2 bg-primary/20 px-4 py-2 text-sm">
                               <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-                              <span className="text-primary text-xs uppercase tracking-wider">Vernissage 18h</span>
+                              <span className="text-primary text-xs uppercase tracking-wider">{expo.highlight}</span>
                             </div>
                           )}
                         </div>
