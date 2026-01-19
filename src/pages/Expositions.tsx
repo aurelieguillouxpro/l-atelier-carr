@@ -80,7 +80,7 @@ const exhibitions = {
     {
       id: 0,
       title: "Carré'Ment abstrait",
-      venue: "L'Atelier",
+      venue: "L'atelier du moulin Gautron",
       location: "Vertou (44)",
       date: "Mars 2026",
       dateRange: "21 - 29 mars 2026",
