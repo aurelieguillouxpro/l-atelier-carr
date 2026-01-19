@@ -114,7 +114,7 @@ const Header = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="md:hidden fixed inset-0 z-[60] flex flex-col"
-            style={{ backgroundColor: '#262626' }}
+            style={{ backgroundColor: '#FAF9F6' }}
           >
             {/* Header area in menu */}
             <div className="h-[72px] flex-shrink-0" />
@@ -141,8 +141,8 @@ const Header = () => {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block text-2xl font-light tracking-wide py-2 transition-colors duration-300 ${
                       location.pathname === item.href
-                        ? "text-[#D4A574]"
-                        : "text-[#FAF9F6] hover:text-[#D4A574]"
+                        ? "text-primary"
+                        : "text-foreground hover:text-primary"
                     }`}
                   >
                     {item.name}
