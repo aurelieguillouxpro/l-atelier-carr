@@ -76,7 +76,7 @@ const Header = () => {
         >
           <div className="relative w-6 h-6">
             <motion.span
-              className={`absolute left-0 w-6 h-0.5 rounded-full ${mobileMenuOpen ? 'bg-background' : 'bg-foreground'}`}
+              className="absolute left-0 w-6 h-0.5 rounded-full bg-foreground"
               animate={{
                 top: mobileMenuOpen ? "50%" : "25%",
                 rotate: mobileMenuOpen ? 45 : 0,
@@ -85,7 +85,7 @@ const Header = () => {
               transition={{ duration: 0.3, ease: "easeInOut" }}
             />
             <motion.span
-              className={`absolute left-0 top-1/2 -translate-y-1/2 w-6 h-0.5 rounded-full ${mobileMenuOpen ? 'bg-background' : 'bg-foreground'}`}
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-6 h-0.5 rounded-full bg-foreground"
               animate={{
                 opacity: mobileMenuOpen ? 0 : 1,
                 scaleX: mobileMenuOpen ? 0 : 1,
@@ -93,7 +93,7 @@ const Header = () => {
               transition={{ duration: 0.2 }}
             />
             <motion.span
-              className={`absolute left-0 w-6 h-0.5 rounded-full ${mobileMenuOpen ? 'bg-background' : 'bg-foreground'}`}
+              className="absolute left-0 w-6 h-0.5 rounded-full bg-foreground"
               animate={{
                 bottom: mobileMenuOpen ? "50%" : "25%",
                 rotate: mobileMenuOpen ? -45 : 0,
@@ -113,7 +113,7 @@ const Header = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden fixed inset-0 z-[60] flex flex-col bg-foreground"
+            className="md:hidden fixed inset-0 z-[60] flex flex-col bg-[#FAF9F6]"
           >
             {/* Header area in menu */}
             <div className="h-[72px] flex-shrink-0" />
@@ -141,7 +141,7 @@ const Header = () => {
                     className={`block text-2xl font-light tracking-wide py-2 transition-colors duration-300 ${
                       location.pathname === item.href
                         ? "text-primary"
-                        : "text-background hover:text-primary"
+                        : "text-foreground hover:text-primary"
                     }`}
                   >
                     {item.name}
