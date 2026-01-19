@@ -44,7 +44,6 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "35 × 12 × 10 cm",
     year: "2023",
-    description: "Une forme féminine stylisée s'élève avec grâce, capturant le mouvement dans la pierre.",
     image: sculptureBlanche,
     zoom: 1.4,
   },
@@ -55,7 +54,6 @@ const artworks = [
     technique: "Bois peint",
     dimensions: "45 × 15 × 8 cm",
     year: "2022",
-    description: "Les couleurs primaires s'entrelacent sur le bois sculpté, créant un dialogue entre peinture et volume.",
     image: sculptureColoree,
     zoom: 1.3,
   },
@@ -66,7 +64,6 @@ const artworks = [
     technique: "Bronze patiné",
     dimensions: "30 × 25 × 20 cm",
     year: "2023",
-    description: "Des formes organiques s'entremêlent dans un équilibre dynamique, capturant l'instant suspendu.",
     image: sculptureNoire,
     zoom: 1.6,
   },
@@ -77,7 +74,6 @@ const artworks = [
     technique: "Béton ciré bicolore",
     dimensions: "40 × 20 × 15 cm",
     year: "2024",
-    description: "Géométrie pure où les plans ocre et blanc créent un jeu d'ombres et de lumière.",
     image: sculptureGeometrique,
     zoom: 1.3,
   },
@@ -88,7 +84,6 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "38 × 12 × 10 cm",
     year: "2024",
-    description: "Une forme élancée qui aspire vers le ciel, alliant force et délicatesse.",
     image: sculptureElancee,
     zoom: 1.4,
   },
@@ -99,7 +94,6 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "30 × 20 × 15 cm",
     year: "2021",
-    description: "Une silhouette méditative aux courbes épurées, signée par l'artiste.",
     image: sculptureSignee,
     zoom: 1.5,
   },
@@ -110,7 +104,6 @@ const artworks = [
     technique: "Bronze patiné noir",
     dimensions: "35 × 30 × 25 cm",
     year: "2025",
-    description: "Formes dynamiques s'élançant dans l'espace, capturant l'énergie du mouvement.",
     image: sculptureNoireDynamique,
     zoom: 1.5,
   },
@@ -121,7 +114,6 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "60 × 35 × 30 cm",
     year: "2020",
-    description: "Une pièce monumentale aux lignes architecturales affirmées.",
     image: sculptureMonumentale,
     zoom: 1.3,
   },
@@ -132,7 +124,6 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "45 × 20 × 15 cm",
     year: "2019",
-    description: "Une sculpture architecturale jouant sur les pleins et les vides, évoquant une construction primitive.",
     image: sculptureArchitecturale,
     zoom: 1.4,
   },
@@ -143,7 +134,6 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "50 × 15 × 12 cm",
     year: "2019",
-    description: "Une silhouette féminine élancée, entre présence et absence, forme et vide.",
     image: sculptureFeminine,
     zoom: 1.4,
   },
@@ -154,7 +144,6 @@ const artworks = [
     technique: "Béton moucheté",
     dimensions: "35 × 10 × 8 cm",
     year: "2018",
-    description: "Un totem minimaliste, figure protectrice aux formes épurées.",
     image: sculptureTotemique,
     zoom: 1.5,
   },
@@ -166,7 +155,6 @@ const artworks = [
     technique: "Huile sur toile",
     dimensions: "50 × 50 cm",
     year: "2010",
-    description: "Une confrontation audacieuse entre le rouge vibrant et le noir profond, où les formes géométriques s'imbriquent dans un dialogue de couleurs intenses.",
     image: huileRougeNoir,
   },
   {
@@ -176,7 +164,6 @@ const artworks = [
     technique: "Huile sur toile",
     dimensions: "50 × 50 cm",
     year: "2010",
-    description: "Jeu subtil de gris et de touches de rouge qui créent une harmonie visuelle entre légèreté et profondeur.",
     image: huileGrisRouge,
   },
   {
@@ -186,7 +173,6 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "80 × 80 cm",
     year: "2007",
-    description: "Une explosion de couleurs où le bleu profond dialogue avec le jaune lumineux et l'orange chaleureux.",
     image: huileBleuJaune,
   },
   {
@@ -196,7 +182,6 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "80 × 80 cm",
     year: "2007",
-    description: "Les teintes chaudes de l'orange et du brun créent une atmosphère enveloppante, évoquant les dernières lueurs du jour.",
     image: huileOrange,
   },
   {
@@ -206,7 +191,6 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "80 × 80 cm",
     year: "2007",
-    description: "Les couleurs primaires s'affrontent et s'enlacent dans une composition vibrante d'énergie.",
     image: huileJauneBleu,
   },
   {
@@ -216,7 +200,6 @@ const artworks = [
     technique: "Encre sur papier",
     dimensions: "40 × 50 cm",
     year: "2023",
-    description: "La spontanéité du geste capturée dans l'encre, où chaque trait révèle l'instant de sa création.",
     image: encreGestuelle,
   },
   {
@@ -226,7 +209,6 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2007",
-    description: "Le rouge s'élève en lignes verticales sur un fond de gris nuancés, créant une tension entre stabilité et mouvement.",
     image: huileRougeGris,
   },
   {
@@ -236,7 +218,6 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "50 × 50 cm",
     year: "2007",
-    description: "Des îlots de turquoise flottent dans un océan de gris et de noir, évoquant des paysages imaginaires.",
     image: huileTurquoise,
   },
   {
@@ -246,7 +227,6 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "4 × 40 × 40 cm",
     year: "2007",
-    description: "Quatre tableaux qui dialoguent entre eux, comme les fenêtres d'une ville abstraite baignée de rouge et de gris.",
     image: quadriptyque,
   },
   {
@@ -256,7 +236,6 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2006",
-    description: "Le bleu profond et les tons crème se rencontrent, séparés par un trait de rouge vibrant.",
     image: huileBleuCreme,
   },
   {
@@ -266,7 +245,6 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2006",
-    description: "Une composition dynamique où le bleu marine et l'orange s'affrontent dans une géométrie audacieuse.",
     image: huileMarineOrange,
   },
   {
@@ -276,7 +254,6 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2006",
-    description: "Le bleu profond encadre des formes orangées lumineuses, créant une fenêtre vers un espace vibrant de couleurs.",
     image: huileBleuOrange,
   },
   {
@@ -286,7 +263,6 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2006",
-    description: "Une composition urbaine où le gris industriel rencontre l'énergie du rouge et de l'orange.",
     image: huileGrisOrange,
   },
   {
@@ -296,7 +272,6 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2006",
-    description: "Des teintes terreuses et grises s'ouvrent sur un chemin de lumière bleutée.",
     image: huileOcreGris,
   },
   {
@@ -306,7 +281,6 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "50 × 50 cm",
     year: "2006",
-    description: "Une forme ocre s'élève au centre, gardienne silencieuse entre les bleus du ciel et de la mer.",
     image: huileBleuOcre,
   },
   {
@@ -316,7 +290,6 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "50 × 50 cm",
     year: "2005",
-    description: "Des plans gris-bleu convergent vers un trait rouge central, créant une profondeur hypnotique.",
     image: huilePerspective,
   },
 ];
@@ -372,8 +345,7 @@ const gallerySchema = {
         "artworkSurface": artwork.category === "peintures" ? "Toile" : "Béton ciré",
         "width": artwork.dimensions.split("×")[0]?.trim(),
         "height": artwork.dimensions.split("×")[1]?.split("cm")[0]?.trim(),
-        "dateCreated": artwork.year,
-        "description": artwork.description
+        "dateCreated": artwork.year
       }))
     }
   };
