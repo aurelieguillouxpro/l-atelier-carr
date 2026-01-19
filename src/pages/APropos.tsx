@@ -163,7 +163,7 @@ const APropos = () => {
                   Techniques
                 </h3>
                 <div className="flex flex-wrap gap-3">
-                  {["Huile sur toile", "Béton ciré", "Techniques mixtes", "Sculpture"].map((technique) => (
+                  {["Huile sur toile", "Techniques mixtes", "Acryliques sur toile", "Gestuel acrylique sur papier", "Sculptures en bois et béton ciré"].map((technique) => (
                     <span
                       key={technique}
                       className="px-5 py-2.5 bg-foreground/5 text-sm hover:bg-foreground/10 transition-colors"
