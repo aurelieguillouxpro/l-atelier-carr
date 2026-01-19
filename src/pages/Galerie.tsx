@@ -437,8 +437,8 @@ const gallerySchema = {
                   <OptimizedImage
                       src={artwork.image}
                       alt={`${artwork.title} - ${artwork.technique} ${artwork.dimensions} par Marie-Christine Chaillou, artiste Nantes`}
-                      className="w-full h-full object-cover"
-                      whileHover={{ scale: 1.05 }}
+                      className="w-full h-full object-cover object-center scale-110"
+                      whileHover={{ scale: 1.15 }}
                       transition={{ duration: 0.6, ease: "easeOut" }}
                     />
                     <motion.div 
