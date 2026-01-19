@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
+import OptimizedImage from "@/components/OptimizedImage";
 
 // Import artwork images - tons neutres privilégiés
 import huileRougeNoir from "@/assets/artworks/huile-rouge-noir-2010.jpg";
@@ -178,11 +179,10 @@ const Index = () => {
               >
                 <Link to="/galerie">
                   <div className="aspect-square bg-muted/10 mb-6 overflow-hidden">
-                    <motion.img
+                    <OptimizedImage
                       src={work.image}
                       alt={`${work.title} - ${work.technique} par Marie-Christine Chaillou, artiste peintre contemporaine Nantes`}
                       className="w-full h-full object-cover"
-                      loading="lazy"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.6, ease: "easeOut" }}
                     />
