@@ -6,12 +6,20 @@ import ouestFranceLogo from "@/assets/logos/ouest-france.png";
 import presseOceanLogo from "@/assets/logos/presse-ocean.svg";
 const pressArticles = [
   {
+    id: 4,
+    title: "Exposition Carré'Ment abstrait",
+    source: "Ville de Vertou",
+    date: "Mars 2026",
+    excerpt: "Découvrez l'exposition de peintures abstraites de Marie-Christine Chaillou à L'Atelier de Vertou, du 21 au 29 mars 2026.",
+    link: "https://vertou.fr/exposition-carrement-abstrait/"
+  },
+  {
     id: 1,
     title: "Sautron. Une expo « Carré'Ment abstrait »",
     source: "Presse Océan",
     date: "Décembre 2025",
     excerpt: "Elle propose des toiles hautes en couleur qui dégagent énergie et puissance, avec des pigments forts et des traits nets et assumés. C'est une peinture abstraite mais sereine, qui ne choque pas le regard et l'esprit.",
-    link: "https://vertou.fr/exposition-carrement-abstrait/"
+    link: "https://saint-nazaire.maville.com/actu/actudet_-sautron.-une-expo-carre-ment-abstrait-_dep-7102158_actu.Htm"
   },
   {
     id: 0,
