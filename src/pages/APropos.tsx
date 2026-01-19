@@ -81,7 +81,7 @@ const APropos = () => {
               Mon parcours
             </h1>
             <p className="text-muted-foreground text-lg">
-              L'art comme langage de l'invisible
+              Un voyage vers l'infini : un horizon sans fin...
             </p>
           </motion.div>
         </div>
@@ -118,36 +118,43 @@ const APropos = () => {
               className="space-y-8"
             >
               <p className="text-lg md:text-xl leading-relaxed">
-                Je vis et travaille à Nantes. Depuis plus de 20 ans, j'évolue dans l'abstraction 
-                avec des toiles travaillées à l'huile et des sculptures en béton ciré. J'ai suivi 
-                une formation aux Beaux-Arts de Nantes pendant cinq ans, puis fréquenté les ateliers 
-                de la Gobinière où j'ai appris la rigueur dans la réalisation des œuvres.
+                Marie-Christine CHAILLOU vit et travaille à Nantes depuis plus de 25 ans, 
+                elle a suivi une formation à l'école des beaux-arts de Nantes ainsi que dans 
+                divers ateliers où elle a appris la rigueur dans la réalisation des œuvres.
               </p>
 
               <p className="text-lg leading-relaxed text-foreground/80">
-                J'ai commencé par peindre des paysages figuratifs avant de me consacrer entièrement 
-                à l'abstraction géométrique. Aujourd'hui, rien de figuratif dans mon travail — 
-                règnent la couleur, le trait, et avant tout la composition. J'utilise principalement 
-                la technique de l'huile, plus contraignante que l'acrylique, et je manie surtout le couteau.
+                Elle évolue dans l'abstraction tant au travers de ses toiles que de ses sculptures. 
+                Elle nous conduit aussi bien au cœur du réel, qu'au seuil du rêve, selon l'humeur 
+                du passant, le voyage entrepris….
               </p>
 
               <blockquote className="border-l-4 border-primary pl-6 py-4 my-8">
                 <p className="font-accent text-xl md:text-2xl text-foreground/90">
-                  « Ce qui m'intéresse, c'est le voyage que chacun entreprend devant mon travail. »
+                  VOYAGER EN ABSTRACTION, c'est développer son imaginaire et son imagination. 
+                  C'est également prendre toutes les libertés d'interprétation et se laisser 
+                  porter par ses émotions.
                 </p>
               </blockquote>
 
               <p className="text-lg leading-relaxed text-foreground/80">
-                Mes tableaux ne portent volontairement aucun titre — une manière de laisser 
-                libre cours à l'interprétation et à la lecture de chacun. Seules restent des 
-                impressions, des portes intérieures s'ouvrent en grand, les images emplissent 
-                l'espace intime au-delà des mots.
+                Par la puissance de ses couleurs, par la force de son trait, quelle que soit 
+                la technique mise en œuvre, Marie-Christine nous entraîne dans son monde où 
+                voyager en toute liberté reste la priorité.
               </p>
 
               <p className="text-lg leading-relaxed text-foreground/80">
-                Porteuse de rêve, de poésie et de douceur, l'abstraction développe l'imaginaire 
-                et l'imagination. Je vous conduis aussi bien au cœur du réel qu'au seuil du rêve, 
-                selon votre humeur, le voyage entrepris...
+                Le rythme de son travail est insufflé par la dynamique de ses compositions.
+              </p>
+
+              <p className="text-lg leading-relaxed text-foreground/80">
+                L'énergie et la sérénité qui en ressortent nous portent dans cette découverte 
+                et ce voyage. Seules restent des impressions porteuses de rêve, de poésie et d'évasion.
+              </p>
+
+              <p className="text-lg leading-relaxed text-foreground/80">
+                Des portes intérieures s'ouvrent en grand, les images emplissent l'espace intime 
+                au-delà des mots.
               </p>
 
               {/* Techniques */}
