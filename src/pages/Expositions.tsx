@@ -86,10 +86,10 @@ const exhibitions = {
       dateRange: "21 - 29 mars 2026",
       startDate: new Date('2026-03-21T10:00:00'),
       endDate: new Date('2026-03-29T18:00:00'),
-      vernissageDate: new Date('2026-03-21T18:00:00'),
-      vernissageEndDate: new Date('2026-03-21T21:00:00'),
-      description: "Exposition de peintures abstraites hautes en couleur, dégageant énergie et puissance avec des pigments forts et des traits nets. Vernissage le 21 mars à 18h.",
-      highlight: "Vernissage le 21 mars à 18h"
+      vernissageDate: new Date('2026-03-21T15:00:00'),
+      vernissageEndDate: new Date('2026-03-21T18:00:00'),
+      description: "Exposition de peintures abstraites hautes en couleur, dégageant énergie et puissance avec des pigments forts et des traits nets. Vernissage le 21 mars à 15h.",
+      highlight: "Vernissage le 21 mars à 15h"
     }
   ],
   past: [
