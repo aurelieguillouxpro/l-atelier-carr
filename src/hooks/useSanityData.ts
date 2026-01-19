@@ -55,7 +55,10 @@ export function useArtworks(category?: 'peinture' | 'sculpture') {
 export function usePageContent(pageId: string) {
   return useQuery<SanityPageContent | null>({
     queryKey: ['pageContent', pageId],
-    queryFn: () => sanityClient.fetch(queries.pageContent(pageId)),
+    queryFn: () => {
+      const { query, params } = queries.pageContent(pageId);
+      return sanityClient.fetch(query, params);
+    },
     staleTime: 1000 * 60 * 5,
   });
 }
