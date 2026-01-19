@@ -45,7 +45,7 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-10">
+        <ul className="hidden md:flex items-center gap-4 lg:gap-8">
           {navigation.map((item, index) => (
             <motion.li 
               key={item.name}
