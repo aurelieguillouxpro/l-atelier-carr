@@ -83,13 +83,13 @@ const exhibitions = {
       venue: "L'atelier du moulin Gautron",
       location: "Vertou (44)",
       date: "Mars 2026",
-      dateRange: "21 - 29 mars 2026",
-      startDate: new Date('2026-03-21T10:00:00'),
+      dateRange: "20 - 29 mars 2026",
+      startDate: new Date('2026-03-20T10:00:00'),
       endDate: new Date('2026-03-29T18:00:00'),
-      vernissageDate: new Date('2026-03-21T15:00:00'),
-      vernissageEndDate: new Date('2026-03-21T18:00:00'),
-      description: "Exposition de peintures abstraites hautes en couleur, dégageant énergie et puissance avec des pigments forts et des traits nets. Vernissage le 21 mars à 15h.",
-      highlight: "Vernissage le 21 mars à 15h"
+      vernissageDate: new Date('2026-03-21T16:00:00'),
+      vernissageEndDate: new Date('2026-03-21T19:00:00'),
+      description: "Vous y découvrirez peintures et sculptures d'hier à aujourd'hui.",
+      highlight: "Vernissage le 21 mars à 16h"
     }
   ],
   past: [
@@ -315,7 +315,7 @@ const Expositions = () => {
                     <div className="flex flex-col lg:flex-row">
                       {/* Date column */}
                       <div className="lg:w-56 flex-shrink-0 bg-primary p-6 lg:p-8 flex flex-col justify-center items-center text-center">
-                        <span className="text-5xl lg:text-6xl font-bold text-background">21</span>
+                        <span className="text-5xl lg:text-6xl font-bold text-background">20</span>
                         <span className="text-xl uppercase tracking-widest text-background/90 mt-1">Mars</span>
                         <span className="text-sm text-background/60 mt-2 border-t border-background/20 pt-2 px-4">2026</span>
                       </div>
