@@ -39,7 +39,7 @@ const Header = () => {
             <h1 className="text-xl md:text-2xl font-semibold tracking-wide">
               CARRéMENT ABSTRAIT
             </h1>
-            <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase">
+            <p className="text-xs text-muted-foreground tracking-[0.35em] uppercase">
               Marie-Christine Chaillou
             </p>
           </motion.div>
