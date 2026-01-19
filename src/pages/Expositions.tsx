@@ -247,56 +247,13 @@ const Expositions = () => {
                           </p>
                         </div>
 
-                        {/* Actions */}
-                        <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:w-52 flex-shrink-0">
-                          <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                              <Button 
-                                className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 font-medium shadow-lg shadow-primary/30"
-                              >
-                                <Plus size={18} />
-                                Ajouter à l'agenda
-                              </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end" className="w-56">
-                              <DropdownMenuItem
-                                onClick={() => window.open(generateGoogleCalendarUrl({
-                                  title: expo.title,
-                                  venue: expo.venue,
-                                  location: expo.location,
-                                  startDate: expo.vernissageDate,
-                                  endDate: expo.vernissageEndDate,
-                                  description: expo.description
-                                }), '_blank')}
-                                className="gap-2 cursor-pointer"
-                              >
-                                <ExternalLink size={14} />
-                                Google Calendar (Vernissage)
-                              </DropdownMenuItem>
-                              <DropdownMenuItem
-                                onClick={() => downloadICalFile({
-                                  title: expo.title,
-                                  venue: expo.venue,
-                                  location: expo.location,
-                                  startDate: expo.vernissageDate,
-                                  endDate: expo.vernissageEndDate,
-                                  description: expo.description
-                                })}
-                                className="gap-2 cursor-pointer"
-                              >
-                                <Calendar size={14} />
-                                Apple / Outlook (iCal)
-                              </DropdownMenuItem>
-                            </DropdownMenuContent>
-                          </DropdownMenu>
-
-                          {expo.highlight && (
-                            <div className="flex items-center justify-center gap-2 bg-primary/20 px-4 py-2 text-sm">
-                              <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-                              <span className="text-primary text-xs uppercase tracking-wider">{expo.highlight}</span>
-                            </div>
-                          )}
-                        </div>
+                        {/* Highlight */}
+                        {expo.highlight && (
+                          <div className="flex items-center justify-center gap-2 bg-primary/20 px-4 py-2 text-sm lg:w-52 flex-shrink-0">
+                            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
+                            <span className="text-primary text-xs uppercase tracking-wider">{expo.highlight}</span>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
