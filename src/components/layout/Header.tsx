@@ -21,11 +21,11 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm">
       <nav className="container-narrow flex items-center justify-between py-6">
         {/* Logo with animation */}
-        <Link to="/" className="group flex items-center gap-3">
+        <Link to="/" className="group flex items-center gap-2 sm:gap-3">
           <motion.img 
             src={logoMcc} 
             alt="Logo MCC" 
-            className="h-14 md:h-18 w-auto"
+            className="h-10 sm:h-12 md:h-18 w-auto"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -36,10 +36,10 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h1 className="text-xl md:text-2xl font-semibold tracking-wide">
+            <h1 className="text-base sm:text-lg md:text-2xl font-semibold tracking-wide whitespace-nowrap">
               CARRéMENT ABSTRAIT
             </h1>
-            <p className="text-xs text-muted-foreground tracking-[0.35em] uppercase">
+            <p className="text-[10px] sm:text-xs text-muted-foreground tracking-[0.15em] sm:tracking-[0.25em] md:tracking-[0.35em] uppercase whitespace-nowrap">
               Marie-Christine Chaillou
             </p>
           </motion.div>
