@@ -99,31 +99,95 @@ const exhibitions = {
       venue: "Le Musée",
       location: "Sautron (44)",
       date: "Décembre 2025",
-      description: "Toiles hautes en couleur qui dégagent énergie et puissance, avec des pigments forts et des traits nets et assumés. Peinture abstraite mais sereine, qui ne choque pas le regard et l'esprit."
+      description: "Toiles hautes en couleur qui dégagent énergie et puissance, avec des pigments forts et des traits nets et assumés."
     },
     {
       id: 2,
-      title: "L'art abstrait ouvre la saison",
-      venue: "Maison du patrimoine",
-      location: "Mesquer (44)",
-      date: "Avril 2025",
-      description: "C'est la troisième fois que Marie-Christine Chaillou expose à la Maison du patrimoine de Mesquer. « C'est un endroit que j'adore, la maison est belle et mon travail y est bien mis en valeur. »"
+      title: "Exposition",
+      venue: "La chapelle Saint-Germain",
+      location: "Saint-Molf (44)",
+      date: "Juillet 2025",
+      description: "Exposition de peintures abstraites dans le cadre exceptionnel de la chapelle Saint-Germain."
     },
     {
       id: 3,
-      title: "Marie-Christine Chaillou expose",
-      venue: "Maison du patrimoine",
+      title: "L'art abstrait ouvre la saison",
+      venue: "La Maison du patrimoine",
       location: "Mesquer (44)",
-      date: "Novembre 2013",
-      description: "Ses rouges et ses oranges sont magnifiques, et la matière est très présente sur ses toiles. Marie-Christine Chaillou utilise la technique de l'huile et manie surtout le couteau."
+      date: "Avril 2025",
+      description: "C'est la troisième fois que Marie-Christine Chaillou expose à la Maison du patrimoine de Mesquer."
     },
     {
       id: 4,
-      title: "Un art concrètement abstrait",
-      venue: "Galerie",
-      location: "La Baule (44)",
-      date: "Octobre 2013",
-      description: "Marie-Christine Chaillou pare ses sentiments de couleurs. Ses œuvres abstraites sont très suggestives et ouvrent un nouvel horizon que recherchent les amateurs d'art."
+      title: "Portes ouvertes Atelier",
+      venue: "Atelier de l'artiste",
+      location: "Nantes (44)",
+      date: "Décembre 2024",
+      description: "Ouverture de l'atelier au public pour découvrir les dernières créations."
+    },
+    {
+      id: 5,
+      title: "Exposition",
+      venue: "Le Musée",
+      location: "Sautron (44)",
+      date: "Décembre 2023",
+      description: "Exposition de peintures abstraites au Musée de Sautron."
+    },
+    {
+      id: 6,
+      title: "Portes ouvertes Atelier",
+      venue: "Atelier de l'artiste",
+      location: "Nantes (44)",
+      date: "Décembre 2022",
+      description: "Ouverture de l'atelier au public pour découvrir les créations de l'année."
+    },
+    {
+      id: 7,
+      title: "Portes ouvertes Atelier",
+      venue: "Atelier de l'artiste",
+      location: "Nantes (44)",
+      date: "Décembre 2021",
+      description: "Ouverture de l'atelier au public."
+    },
+    {
+      id: 8,
+      title: "Portes ouvertes Atelier",
+      venue: "Atelier de l'artiste",
+      location: "Nantes (44)",
+      date: "Décembre 2019",
+      description: "Ouverture de l'atelier au public."
+    },
+    {
+      id: 9,
+      title: "Exposition",
+      venue: "La Galerie du Minage",
+      location: "Clisson (44)",
+      date: "Septembre 2019",
+      description: "Exposition de peintures abstraites à la Galerie du Minage."
+    },
+    {
+      id: 10,
+      title: "Parcours des créateurs",
+      venue: "Parcours des créateurs",
+      location: "Trentemoult (44)",
+      date: "Mai 2018",
+      description: "Participation au parcours des créateurs de Trentemoult."
+    },
+    {
+      id: 11,
+      title: "Exposition",
+      venue: "Espace Écureuil",
+      location: "Nantes (44)",
+      date: "Septembre 2017",
+      description: "Exposition de peintures abstraites à l'Espace Écureuil."
+    },
+    {
+      id: 12,
+      title: "Exposition",
+      venue: "Maison du patrimoine",
+      location: "Mesquer (44)",
+      date: "Avril 2017",
+      description: "Exposition de peintures abstraites à la Maison du patrimoine de Mesquer."
     },
   ]
 };
