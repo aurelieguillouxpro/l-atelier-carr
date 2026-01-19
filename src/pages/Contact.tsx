@@ -42,16 +42,45 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-    toast({
-      title: "Message envoyé",
-      description: "Merci pour votre message. Je vous répondrai dans les plus brefs délais.",
-    });
+      if (!supabaseUrl || !supabaseAnonKey) {
+        throw new Error("Configuration Supabase manquante");
+      }
 
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsSubmitting(false);
+      const response = await fetch(`${supabaseUrl}/functions/v1/send-contact-email`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${supabaseAnonKey}`,
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Erreur lors de l'envoi du message");
+      }
+
+      toast({
+        title: "Message envoyé",
+        description: "Merci pour votre message. Je vous répondrai dans les plus brefs délais.",
+      });
+
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("Erreur lors de l'envoi:", error);
+      toast({
+        title: "Erreur",
+        description: error instanceof Error ? error.message : "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
