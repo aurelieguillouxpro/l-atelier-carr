@@ -554,11 +554,8 @@ const gallerySchema = {
                   <p className="text-white/50 text-sm md:text-base mb-1">
                     {selectedArtwork.dimensions}
                   </p>
-                  <p className="text-white/50 text-sm md:text-base mb-6">
+                  <p className="text-white/50 text-sm md:text-base">
                     {selectedArtwork.year}
-                  </p>
-                  <p className="text-white/70 text-sm md:text-base leading-relaxed">
-                    {selectedArtwork.description}
                   </p>
                 </div>
               )}
