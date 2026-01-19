@@ -245,48 +245,33 @@ const Presse = () => {
             className="flex flex-wrap justify-center items-center gap-6 md:gap-10 lg:gap-16"
           >
             {/* Ouest-France */}
-            <a 
-              href="https://www.ouest-france.fr" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group grayscale hover:grayscale-0 transition-all duration-300"
-            >
+            <div className="grayscale-0">
               <img 
                 src={ouestFranceLogo} 
                 alt="Logo Ouest-France - Journal régional ayant publié des articles sur Marie-Christine Chaillou" 
                 className="h-16 sm:h-20 md:h-[7.5rem] w-auto object-contain"
                 loading="lazy"
               />
-            </a>
+            </div>
             
             {/* Presse Océan */}
-            <a 
-              href="https://www.ouest-france.fr/pays-de-la-loire/nantes-44000/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group grayscale hover:grayscale-0 transition-all duration-300"
-            >
+            <div className="grayscale-0">
               <img 
                 src={presseOceanLogo} 
                 alt="Logo Presse Océan - Média nantais ayant couvert les expositions de l'artiste" 
                 className="h-14 sm:h-18 md:h-24 w-auto object-contain"
                 loading="lazy"
               />
-            </a>
+            </div>
             
             {/* Hippocampe Info */}
-            <a 
-              href="https://hippocampeinfo2.over-blog.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group flex flex-col items-center gap-2 grayscale hover:grayscale-0 transition-all duration-300"
-            >
-              <div className="h-10 md:h-12 flex items-center justify-center px-3 md:px-4 py-2 border border-border rounded bg-background group-hover:border-primary/30 transition-colors">
+            <div className="flex flex-col items-center gap-2">
+              <div className="h-10 md:h-12 flex items-center justify-center px-3 md:px-4 py-2 border border-border rounded bg-background">
                 <span className="font-serif text-base md:text-xl font-bold text-foreground tracking-tight">
                   Hippocampe Info
                 </span>
               </div>
-            </a>
+            </div>
           </motion.div>
         </div>
       </section>
