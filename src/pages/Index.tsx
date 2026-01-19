@@ -114,7 +114,7 @@ const Index = () => {
               transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
               className="text-sm uppercase tracking-[0.3em] text-foreground/70 mb-16"
             >
-              Artiste peintre & sculptrice contemporaine
+              Artiste plasticienne
             </motion.p>
 
             <motion.div
