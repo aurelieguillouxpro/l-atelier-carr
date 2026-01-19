@@ -206,15 +206,15 @@ const APropos = () => {
             {[
               {
                 title: "L'équilibre",
-                description: "Mes dessins sont réalisés d'une manière géométrique et équilibrée. On peut y sentir l'influence de Mondrian, mais j'évolue dans un univers qui m'est propre."
+                description: "Au premier regard on pourrait croire que la composition est née d'une construction mathématique puis le regard se perd : un horizon sans fin... La recherche permanente d'équilibre et de couleurs nous donne à voir beaucoup de force et de beauté dans leur patient assemblage."
               },
               {
                 title: "La couleur",
-                description: "Des couleurs chatoyantes qui donnent de l'énergie. Mes rouges et mes oranges sont intenses, et la matière est très présente sur mes toiles."
+                description: "Sérénité et lumière de la toile blanche, patient découpage en pans de couleur pure, où on s'enchante de cette symphonie géométrique, alliance toujours heureuse de rigueur adoucie de courbes douces."
               },
               {
                 title: "La liberté",
-                description: "C'est une peinture abstraite mais sereine, qui ne choque pas le regard et l'esprit. Elle laisse libre cours à l'imaginaire du visiteur."
+                description: "L'artiste confirme la grande liberté qu'elle exprime dans la création de ses œuvres tant pour elle que pour ceux qui la contemplent."
               }
             ].map((item, index) => (
               <motion.div
