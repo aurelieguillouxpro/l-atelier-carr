@@ -130,8 +130,8 @@ const APropos = () => {
               </p>
 
               <blockquote className="border-l-4 border-primary pl-6 py-4 my-8">
-                <p className="font-accent text-xl md:text-2xl text-foreground/90">
-                  VOYAGER EN ABSTRACTION, c'est développer son imaginaire et son imagination. 
+                <p className="font-accent text-base md:text-lg text-foreground/90">
+                  Voyager en abstraction, c'est développer son imaginaire et son imagination. 
                   C'est également prendre toutes les libertés d'interprétation et se laisser 
                   porter par ses émotions.
                 </p>
