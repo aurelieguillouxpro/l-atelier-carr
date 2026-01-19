@@ -1,92 +1,257 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Maximize2, Loader2 } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
-import OptimizedImage from "@/components/OptimizedImage";
+import OptimizedImage, { usePreloadImage } from "@/components/OptimizedImage";
+import { Button } from "@/components/ui/button";
 
-// Import artwork images - 2025
-import acrylique2025_80x80 from "@/assets/artworks/2025-acrylique-80x80.jpg";
-import acrylique2025_60x60 from "@/assets/artworks/2025-acrylique-60x60.jpg";
-import acrylique2025_40x40 from "@/assets/artworks/2025-acrylique-40x40.jpg";
+// ============= MULTI-SIZE IMAGE IMPORTS =============
+// 2025
+import acrylique2025_80x80_sm from "@/assets/artworks/2025-acrylique-80x80.jpg?w=400&format=webp&quality=80";
+import acrylique2025_80x80_md from "@/assets/artworks/2025-acrylique-80x80.jpg?w=800&format=webp&quality=80";
+import acrylique2025_80x80_lg from "@/assets/artworks/2025-acrylique-80x80.jpg?w=1200&format=webp&quality=85";
+import acrylique2025_60x60_sm from "@/assets/artworks/2025-acrylique-60x60.jpg?w=400&format=webp&quality=80";
+import acrylique2025_60x60_md from "@/assets/artworks/2025-acrylique-60x60.jpg?w=800&format=webp&quality=80";
+import acrylique2025_60x60_lg from "@/assets/artworks/2025-acrylique-60x60.jpg?w=1200&format=webp&quality=85";
+import acrylique2025_40x40_sm from "@/assets/artworks/2025-acrylique-40x40.jpg?w=400&format=webp&quality=80";
+import acrylique2025_40x40_md from "@/assets/artworks/2025-acrylique-40x40.jpg?w=800&format=webp&quality=80";
+import acrylique2025_40x40_lg from "@/assets/artworks/2025-acrylique-40x40.jpg?w=1200&format=webp&quality=85";
+
 // 2024
-import blancAcrylique2024_60x60 from "@/assets/artworks/2024-blanc-acrylique-60x60.jpg";
-import blancAcrylique2024_40x40 from "@/assets/artworks/2024-blanc-acrylique-40x40.jpg";
-import blancAcrylique2024_40x40_2 from "@/assets/artworks/2024-blanc-acrylique-40x40-2.jpg";
-import acrylique2024_80x80 from "@/assets/artworks/2024-acrylique-80x80.jpg";
-import acrylique2024_60x60 from "@/assets/artworks/2024-acrylique-60x60.jpg";
-import acrylique2024_20x20 from "@/assets/artworks/2024-acrylique-20x20.jpg";
-// 2023
-import acrylique2023_80x80 from "@/assets/artworks/2023-acrylique-80x80.jpg";
-import acrylique2023_80x80_2 from "@/assets/artworks/2023-acrylique-80x80-2.jpg";
-import acrylique2023_40x40 from "@/assets/artworks/2023-acrylique-40x40.jpg";
-// 2020
-import acrylique2020_80x80 from "@/assets/artworks/2020-acrylique-80x80.jpg";
-import acrylique2020_40x40 from "@/assets/artworks/2020-acrylique-40x40.jpg";
-import acrylique2020_20x20 from "@/assets/artworks/2020-acrylique-20x20.jpg";
-// 2017
-import acrylique2017_80x80 from "@/assets/artworks/2017-acrylique-80x80.jpg";
-import acrylique2017_80x80_2 from "@/assets/artworks/2017-acrylique-80x80-2.jpg";
-import acrylique2017_80x80_3 from "@/assets/artworks/2017-acrylique-80x80-3.jpg";
-// 2013
-import huileEmpatement2013_80x80 from "@/assets/artworks/2013-huile-empatement-80x80.jpg";
-import huileEmpatement2013_80x80_2 from "@/assets/artworks/2013-huile-empatement-80x80-2.jpg";
-import huileEmpatement2013_60x60 from "@/assets/artworks/2013-huile-empatement-60x60.jpg";
-// 2012
-import huileEmpatement2012_80x80 from "@/assets/artworks/2012-huile-empatement-80x80.jpg";
-import huileEmpatement2012_80x80_2 from "@/assets/artworks/2012-huile-empatement-80x80-2.jpg";
-import huileEmpatement2012_50x50 from "@/assets/artworks/2012-huile-empatement-50x50.jpg";
-import huile2012_50x50 from "@/assets/artworks/2012-huile-50x50.jpg";
-import huile2012_60x60 from "@/assets/artworks/2012-huile-60x60.jpg";
-import huile2012_60x60_2 from "@/assets/artworks/2012-huile-60x60-2.jpg";
-// 2010
-import huileRougeNoir from "@/assets/artworks/huile-rouge-noir-2010.jpg";
-import huileGrisRouge from "@/assets/artworks/huile-gris-rouge-2010.jpg";
-import glacisBois2010_30x30 from "@/assets/artworks/2010-glacis-bois-30x30.jpg";
-import glacisToile2010_30x30 from "@/assets/artworks/2010-glacis-toile-30x30.jpg";
-import glacisToile2010_60x60 from "@/assets/artworks/2010-glacis-toile-60x60.jpg";
-// 2009
-import techniqueMixte2009 from "@/assets/artworks/2009-technique-mixte.jpg";
-import techniqueMixte2009_2 from "@/assets/artworks/2009-technique-mixte-2.jpg";
-import techniqueMixte2009_3 from "@/assets/artworks/2009-technique-mixte-3.jpg";
-// 2008
-import huile2008_60x60 from "@/assets/artworks/2008-huile-60x60.jpg";
-import huile2008_60x60_2 from "@/assets/artworks/2008-huile-60x60-2.jpg";
-import huile2008_80x80 from "@/assets/artworks/2008-huile-80x80.jpg";
-// 2007
-import huileBleuJaune from "@/assets/artworks/huile-bleu-jaune-2007.jpg";
-import huileOrange from "@/assets/artworks/huile-orange-2007.jpg";
-import huileJauneBleu from "@/assets/artworks/huile-jaune-bleu-2007.jpg";
-import encreGestuelle from "@/assets/artworks/encre-gestuelle.jpg";
-import huileRougeGris from "@/assets/artworks/huile-rouge-gris-2007.jpg";
-import huileTurquoise from "@/assets/artworks/huile-turquoise-2007.jpg";
-import quadriptyque from "@/assets/artworks/quadriptyque-2007.jpg";
-// 2006
-import huileBleuCreme from "@/assets/artworks/huile-bleu-creme-2006.jpg";
-import huileMarineOrange from "@/assets/artworks/huile-marine-orange-2006.jpg";
-import huileBleuOrange from "@/assets/artworks/huile-bleu-orange-2006.jpg";
-import huileGrisOrange from "@/assets/artworks/huile-gris-orange-2006.jpg";
-import huileOcreGris from "@/assets/artworks/huile-ocre-gris-2006.jpg";
-import huileBleuOcre from "@/assets/artworks/huile-bleu-ocre-2006.jpg";
-// 2005
-import huilePerspective from "@/assets/artworks/huile-perspective-2005.jpg";
-import huileCouteau2005_60x60 from "@/assets/artworks/2005-huile-couteau-60x60.jpg";
-import huileCouteau2005_50x50 from "@/assets/artworks/2005-huile-couteau-50x50.jpg";
-import huileCouteau2005_40x40 from "@/assets/artworks/2005-huile-couteau-40x40.jpg";
-// Sculptures
-import sculptureBlanche from "@/assets/artworks/sculpture-blanche-organique.jpg";
-import sculptureColoree from "@/assets/artworks/sculpture-coloree.jpg";
-import sculptureNoire from "@/assets/artworks/sculpture-noire.jpg";
-import sculptureGeometrique from "@/assets/artworks/sculpture-geometrique.jpg";
-import sculptureElancee from "@/assets/artworks/sculpture-elancee.jpg";
-import sculptureSignee from "@/assets/artworks/sculpture-blanche-signee.jpg";
-import sculptureNoireDynamique from "@/assets/artworks/sculpture-noire-dynamique.jpg";
-import sculptureMonumentale from "@/assets/artworks/sculpture-monumentale.jpg";
-import sculptureArchitecturale from "@/assets/artworks/sculpture-architecturale.jpg";
-import sculptureFeminine from "@/assets/artworks/sculpture-feminine.jpg";
-import sculptureTotemique from "@/assets/artworks/sculpture-totemique.jpg";
+import blancAcrylique2024_60x60_sm from "@/assets/artworks/2024-blanc-acrylique-60x60.jpg?w=400&format=webp&quality=80";
+import blancAcrylique2024_60x60_md from "@/assets/artworks/2024-blanc-acrylique-60x60.jpg?w=800&format=webp&quality=80";
+import blancAcrylique2024_60x60_lg from "@/assets/artworks/2024-blanc-acrylique-60x60.jpg?w=1200&format=webp&quality=85";
+import blancAcrylique2024_40x40_sm from "@/assets/artworks/2024-blanc-acrylique-40x40.jpg?w=400&format=webp&quality=80";
+import blancAcrylique2024_40x40_md from "@/assets/artworks/2024-blanc-acrylique-40x40.jpg?w=800&format=webp&quality=80";
+import blancAcrylique2024_40x40_lg from "@/assets/artworks/2024-blanc-acrylique-40x40.jpg?w=1200&format=webp&quality=85";
+import blancAcrylique2024_40x40_2_sm from "@/assets/artworks/2024-blanc-acrylique-40x40-2.jpg?w=400&format=webp&quality=80";
+import blancAcrylique2024_40x40_2_md from "@/assets/artworks/2024-blanc-acrylique-40x40-2.jpg?w=800&format=webp&quality=80";
+import blancAcrylique2024_40x40_2_lg from "@/assets/artworks/2024-blanc-acrylique-40x40-2.jpg?w=1200&format=webp&quality=85";
+import acrylique2024_80x80_sm from "@/assets/artworks/2024-acrylique-80x80.jpg?w=400&format=webp&quality=80";
+import acrylique2024_80x80_md from "@/assets/artworks/2024-acrylique-80x80.jpg?w=800&format=webp&quality=80";
+import acrylique2024_80x80_lg from "@/assets/artworks/2024-acrylique-80x80.jpg?w=1200&format=webp&quality=85";
+import acrylique2024_60x60_sm from "@/assets/artworks/2024-acrylique-60x60.jpg?w=400&format=webp&quality=80";
+import acrylique2024_60x60_md from "@/assets/artworks/2024-acrylique-60x60.jpg?w=800&format=webp&quality=80";
+import acrylique2024_60x60_lg from "@/assets/artworks/2024-acrylique-60x60.jpg?w=1200&format=webp&quality=85";
+import acrylique2024_20x20_sm from "@/assets/artworks/2024-acrylique-20x20.jpg?w=400&format=webp&quality=80";
+import acrylique2024_20x20_md from "@/assets/artworks/2024-acrylique-20x20.jpg?w=800&format=webp&quality=80";
+import acrylique2024_20x20_lg from "@/assets/artworks/2024-acrylique-20x20.jpg?w=1200&format=webp&quality=85";
 
-const artworks = [
+// 2023
+import acrylique2023_80x80_sm from "@/assets/artworks/2023-acrylique-80x80.jpg?w=400&format=webp&quality=80";
+import acrylique2023_80x80_md from "@/assets/artworks/2023-acrylique-80x80.jpg?w=800&format=webp&quality=80";
+import acrylique2023_80x80_lg from "@/assets/artworks/2023-acrylique-80x80.jpg?w=1200&format=webp&quality=85";
+import acrylique2023_80x80_2_sm from "@/assets/artworks/2023-acrylique-80x80-2.jpg?w=400&format=webp&quality=80";
+import acrylique2023_80x80_2_md from "@/assets/artworks/2023-acrylique-80x80-2.jpg?w=800&format=webp&quality=80";
+import acrylique2023_80x80_2_lg from "@/assets/artworks/2023-acrylique-80x80-2.jpg?w=1200&format=webp&quality=85";
+import acrylique2023_40x40_sm from "@/assets/artworks/2023-acrylique-40x40.jpg?w=400&format=webp&quality=80";
+import acrylique2023_40x40_md from "@/assets/artworks/2023-acrylique-40x40.jpg?w=800&format=webp&quality=80";
+import acrylique2023_40x40_lg from "@/assets/artworks/2023-acrylique-40x40.jpg?w=1200&format=webp&quality=85";
+import encreGestuelle_sm from "@/assets/artworks/encre-gestuelle.jpg?w=400&format=webp&quality=80";
+import encreGestuelle_md from "@/assets/artworks/encre-gestuelle.jpg?w=800&format=webp&quality=80";
+import encreGestuelle_lg from "@/assets/artworks/encre-gestuelle.jpg?w=1200&format=webp&quality=85";
+
+// 2020
+import acrylique2020_80x80_sm from "@/assets/artworks/2020-acrylique-80x80.jpg?w=400&format=webp&quality=80";
+import acrylique2020_80x80_md from "@/assets/artworks/2020-acrylique-80x80.jpg?w=800&format=webp&quality=80";
+import acrylique2020_80x80_lg from "@/assets/artworks/2020-acrylique-80x80.jpg?w=1200&format=webp&quality=85";
+import acrylique2020_40x40_sm from "@/assets/artworks/2020-acrylique-40x40.jpg?w=400&format=webp&quality=80";
+import acrylique2020_40x40_md from "@/assets/artworks/2020-acrylique-40x40.jpg?w=800&format=webp&quality=80";
+import acrylique2020_40x40_lg from "@/assets/artworks/2020-acrylique-40x40.jpg?w=1200&format=webp&quality=85";
+import acrylique2020_20x20_sm from "@/assets/artworks/2020-acrylique-20x20.jpg?w=400&format=webp&quality=80";
+import acrylique2020_20x20_md from "@/assets/artworks/2020-acrylique-20x20.jpg?w=800&format=webp&quality=80";
+import acrylique2020_20x20_lg from "@/assets/artworks/2020-acrylique-20x20.jpg?w=1200&format=webp&quality=85";
+
+// 2017
+import acrylique2017_80x80_sm from "@/assets/artworks/2017-acrylique-80x80.jpg?w=400&format=webp&quality=80";
+import acrylique2017_80x80_md from "@/assets/artworks/2017-acrylique-80x80.jpg?w=800&format=webp&quality=80";
+import acrylique2017_80x80_lg from "@/assets/artworks/2017-acrylique-80x80.jpg?w=1200&format=webp&quality=85";
+import acrylique2017_80x80_2_sm from "@/assets/artworks/2017-acrylique-80x80-2.jpg?w=400&format=webp&quality=80";
+import acrylique2017_80x80_2_md from "@/assets/artworks/2017-acrylique-80x80-2.jpg?w=800&format=webp&quality=80";
+import acrylique2017_80x80_2_lg from "@/assets/artworks/2017-acrylique-80x80-2.jpg?w=1200&format=webp&quality=85";
+import acrylique2017_80x80_3_sm from "@/assets/artworks/2017-acrylique-80x80-3.jpg?w=400&format=webp&quality=80";
+import acrylique2017_80x80_3_md from "@/assets/artworks/2017-acrylique-80x80-3.jpg?w=800&format=webp&quality=80";
+import acrylique2017_80x80_3_lg from "@/assets/artworks/2017-acrylique-80x80-3.jpg?w=1200&format=webp&quality=85";
+
+// 2013
+import huileEmpatement2013_80x80_sm from "@/assets/artworks/2013-huile-empatement-80x80.jpg?w=400&format=webp&quality=80";
+import huileEmpatement2013_80x80_md from "@/assets/artworks/2013-huile-empatement-80x80.jpg?w=800&format=webp&quality=80";
+import huileEmpatement2013_80x80_lg from "@/assets/artworks/2013-huile-empatement-80x80.jpg?w=1200&format=webp&quality=85";
+import huileEmpatement2013_80x80_2_sm from "@/assets/artworks/2013-huile-empatement-80x80-2.jpg?w=400&format=webp&quality=80";
+import huileEmpatement2013_80x80_2_md from "@/assets/artworks/2013-huile-empatement-80x80-2.jpg?w=800&format=webp&quality=80";
+import huileEmpatement2013_80x80_2_lg from "@/assets/artworks/2013-huile-empatement-80x80-2.jpg?w=1200&format=webp&quality=85";
+import huileEmpatement2013_60x60_sm from "@/assets/artworks/2013-huile-empatement-60x60.jpg?w=400&format=webp&quality=80";
+import huileEmpatement2013_60x60_md from "@/assets/artworks/2013-huile-empatement-60x60.jpg?w=800&format=webp&quality=80";
+import huileEmpatement2013_60x60_lg from "@/assets/artworks/2013-huile-empatement-60x60.jpg?w=1200&format=webp&quality=85";
+
+// 2012
+import huileEmpatement2012_80x80_sm from "@/assets/artworks/2012-huile-empatement-80x80.jpg?w=400&format=webp&quality=80";
+import huileEmpatement2012_80x80_md from "@/assets/artworks/2012-huile-empatement-80x80.jpg?w=800&format=webp&quality=80";
+import huileEmpatement2012_80x80_lg from "@/assets/artworks/2012-huile-empatement-80x80.jpg?w=1200&format=webp&quality=85";
+import huileEmpatement2012_80x80_2_sm from "@/assets/artworks/2012-huile-empatement-80x80-2.jpg?w=400&format=webp&quality=80";
+import huileEmpatement2012_80x80_2_md from "@/assets/artworks/2012-huile-empatement-80x80-2.jpg?w=800&format=webp&quality=80";
+import huileEmpatement2012_80x80_2_lg from "@/assets/artworks/2012-huile-empatement-80x80-2.jpg?w=1200&format=webp&quality=85";
+import huileEmpatement2012_50x50_sm from "@/assets/artworks/2012-huile-empatement-50x50.jpg?w=400&format=webp&quality=80";
+import huileEmpatement2012_50x50_md from "@/assets/artworks/2012-huile-empatement-50x50.jpg?w=800&format=webp&quality=80";
+import huileEmpatement2012_50x50_lg from "@/assets/artworks/2012-huile-empatement-50x50.jpg?w=1200&format=webp&quality=85";
+import huile2012_50x50_sm from "@/assets/artworks/2012-huile-50x50.jpg?w=400&format=webp&quality=80";
+import huile2012_50x50_md from "@/assets/artworks/2012-huile-50x50.jpg?w=800&format=webp&quality=80";
+import huile2012_50x50_lg from "@/assets/artworks/2012-huile-50x50.jpg?w=1200&format=webp&quality=85";
+import huile2012_60x60_sm from "@/assets/artworks/2012-huile-60x60.jpg?w=400&format=webp&quality=80";
+import huile2012_60x60_md from "@/assets/artworks/2012-huile-60x60.jpg?w=800&format=webp&quality=80";
+import huile2012_60x60_lg from "@/assets/artworks/2012-huile-60x60.jpg?w=1200&format=webp&quality=85";
+import huile2012_60x60_2_sm from "@/assets/artworks/2012-huile-60x60-2.jpg?w=400&format=webp&quality=80";
+import huile2012_60x60_2_md from "@/assets/artworks/2012-huile-60x60-2.jpg?w=800&format=webp&quality=80";
+import huile2012_60x60_2_lg from "@/assets/artworks/2012-huile-60x60-2.jpg?w=1200&format=webp&quality=85";
+
+// 2010
+import huileRougeNoir_sm from "@/assets/artworks/huile-rouge-noir-2010.jpg?w=400&format=webp&quality=80";
+import huileRougeNoir_md from "@/assets/artworks/huile-rouge-noir-2010.jpg?w=800&format=webp&quality=80";
+import huileRougeNoir_lg from "@/assets/artworks/huile-rouge-noir-2010.jpg?w=1200&format=webp&quality=85";
+import huileGrisRouge_sm from "@/assets/artworks/huile-gris-rouge-2010.jpg?w=400&format=webp&quality=80";
+import huileGrisRouge_md from "@/assets/artworks/huile-gris-rouge-2010.jpg?w=800&format=webp&quality=80";
+import huileGrisRouge_lg from "@/assets/artworks/huile-gris-rouge-2010.jpg?w=1200&format=webp&quality=85";
+import glacisBois2010_30x30_sm from "@/assets/artworks/2010-glacis-bois-30x30.jpg?w=400&format=webp&quality=80";
+import glacisBois2010_30x30_md from "@/assets/artworks/2010-glacis-bois-30x30.jpg?w=800&format=webp&quality=80";
+import glacisBois2010_30x30_lg from "@/assets/artworks/2010-glacis-bois-30x30.jpg?w=1200&format=webp&quality=85";
+import glacisToile2010_30x30_sm from "@/assets/artworks/2010-glacis-toile-30x30.jpg?w=400&format=webp&quality=80";
+import glacisToile2010_30x30_md from "@/assets/artworks/2010-glacis-toile-30x30.jpg?w=800&format=webp&quality=80";
+import glacisToile2010_30x30_lg from "@/assets/artworks/2010-glacis-toile-30x30.jpg?w=1200&format=webp&quality=85";
+import glacisToile2010_60x60_sm from "@/assets/artworks/2010-glacis-toile-60x60.jpg?w=400&format=webp&quality=80";
+import glacisToile2010_60x60_md from "@/assets/artworks/2010-glacis-toile-60x60.jpg?w=800&format=webp&quality=80";
+import glacisToile2010_60x60_lg from "@/assets/artworks/2010-glacis-toile-60x60.jpg?w=1200&format=webp&quality=85";
+
+// 2009
+import techniqueMixte2009_sm from "@/assets/artworks/2009-technique-mixte.jpg?w=400&format=webp&quality=80";
+import techniqueMixte2009_md from "@/assets/artworks/2009-technique-mixte.jpg?w=800&format=webp&quality=80";
+import techniqueMixte2009_lg from "@/assets/artworks/2009-technique-mixte.jpg?w=1200&format=webp&quality=85";
+import techniqueMixte2009_2_sm from "@/assets/artworks/2009-technique-mixte-2.jpg?w=400&format=webp&quality=80";
+import techniqueMixte2009_2_md from "@/assets/artworks/2009-technique-mixte-2.jpg?w=800&format=webp&quality=80";
+import techniqueMixte2009_2_lg from "@/assets/artworks/2009-technique-mixte-2.jpg?w=1200&format=webp&quality=85";
+import techniqueMixte2009_3_sm from "@/assets/artworks/2009-technique-mixte-3.jpg?w=400&format=webp&quality=80";
+import techniqueMixte2009_3_md from "@/assets/artworks/2009-technique-mixte-3.jpg?w=800&format=webp&quality=80";
+import techniqueMixte2009_3_lg from "@/assets/artworks/2009-technique-mixte-3.jpg?w=1200&format=webp&quality=85";
+
+// 2008
+import huile2008_60x60_sm from "@/assets/artworks/2008-huile-60x60.jpg?w=400&format=webp&quality=80";
+import huile2008_60x60_md from "@/assets/artworks/2008-huile-60x60.jpg?w=800&format=webp&quality=80";
+import huile2008_60x60_lg from "@/assets/artworks/2008-huile-60x60.jpg?w=1200&format=webp&quality=85";
+import huile2008_60x60_2_sm from "@/assets/artworks/2008-huile-60x60-2.jpg?w=400&format=webp&quality=80";
+import huile2008_60x60_2_md from "@/assets/artworks/2008-huile-60x60-2.jpg?w=800&format=webp&quality=80";
+import huile2008_60x60_2_lg from "@/assets/artworks/2008-huile-60x60-2.jpg?w=1200&format=webp&quality=85";
+import huile2008_80x80_sm from "@/assets/artworks/2008-huile-80x80.jpg?w=400&format=webp&quality=80";
+import huile2008_80x80_md from "@/assets/artworks/2008-huile-80x80.jpg?w=800&format=webp&quality=80";
+import huile2008_80x80_lg from "@/assets/artworks/2008-huile-80x80.jpg?w=1200&format=webp&quality=85";
+
+// 2007
+import huileBleuJaune_sm from "@/assets/artworks/huile-bleu-jaune-2007.jpg?w=400&format=webp&quality=80";
+import huileBleuJaune_md from "@/assets/artworks/huile-bleu-jaune-2007.jpg?w=800&format=webp&quality=80";
+import huileBleuJaune_lg from "@/assets/artworks/huile-bleu-jaune-2007.jpg?w=1200&format=webp&quality=85";
+import huileOrange_sm from "@/assets/artworks/huile-orange-2007.jpg?w=400&format=webp&quality=80";
+import huileOrange_md from "@/assets/artworks/huile-orange-2007.jpg?w=800&format=webp&quality=80";
+import huileOrange_lg from "@/assets/artworks/huile-orange-2007.jpg?w=1200&format=webp&quality=85";
+import huileJauneBleu_sm from "@/assets/artworks/huile-jaune-bleu-2007.jpg?w=400&format=webp&quality=80";
+import huileJauneBleu_md from "@/assets/artworks/huile-jaune-bleu-2007.jpg?w=800&format=webp&quality=80";
+import huileJauneBleu_lg from "@/assets/artworks/huile-jaune-bleu-2007.jpg?w=1200&format=webp&quality=85";
+import huileRougeGris_sm from "@/assets/artworks/huile-rouge-gris-2007.jpg?w=400&format=webp&quality=80";
+import huileRougeGris_md from "@/assets/artworks/huile-rouge-gris-2007.jpg?w=800&format=webp&quality=80";
+import huileRougeGris_lg from "@/assets/artworks/huile-rouge-gris-2007.jpg?w=1200&format=webp&quality=85";
+import huileTurquoise_sm from "@/assets/artworks/huile-turquoise-2007.jpg?w=400&format=webp&quality=80";
+import huileTurquoise_md from "@/assets/artworks/huile-turquoise-2007.jpg?w=800&format=webp&quality=80";
+import huileTurquoise_lg from "@/assets/artworks/huile-turquoise-2007.jpg?w=1200&format=webp&quality=85";
+import quadriptyque_sm from "@/assets/artworks/quadriptyque-2007.jpg?w=400&format=webp&quality=80";
+import quadriptyque_md from "@/assets/artworks/quadriptyque-2007.jpg?w=800&format=webp&quality=80";
+import quadriptyque_lg from "@/assets/artworks/quadriptyque-2007.jpg?w=1200&format=webp&quality=85";
+
+// 2006
+import huileBleuCreme_sm from "@/assets/artworks/huile-bleu-creme-2006.jpg?w=400&format=webp&quality=80";
+import huileBleuCreme_md from "@/assets/artworks/huile-bleu-creme-2006.jpg?w=800&format=webp&quality=80";
+import huileBleuCreme_lg from "@/assets/artworks/huile-bleu-creme-2006.jpg?w=1200&format=webp&quality=85";
+import huileMarineOrange_sm from "@/assets/artworks/huile-marine-orange-2006.jpg?w=400&format=webp&quality=80";
+import huileMarineOrange_md from "@/assets/artworks/huile-marine-orange-2006.jpg?w=800&format=webp&quality=80";
+import huileMarineOrange_lg from "@/assets/artworks/huile-marine-orange-2006.jpg?w=1200&format=webp&quality=85";
+import huileBleuOrange_sm from "@/assets/artworks/huile-bleu-orange-2006.jpg?w=400&format=webp&quality=80";
+import huileBleuOrange_md from "@/assets/artworks/huile-bleu-orange-2006.jpg?w=800&format=webp&quality=80";
+import huileBleuOrange_lg from "@/assets/artworks/huile-bleu-orange-2006.jpg?w=1200&format=webp&quality=85";
+import huileGrisOrange_sm from "@/assets/artworks/huile-gris-orange-2006.jpg?w=400&format=webp&quality=80";
+import huileGrisOrange_md from "@/assets/artworks/huile-gris-orange-2006.jpg?w=800&format=webp&quality=80";
+import huileGrisOrange_lg from "@/assets/artworks/huile-gris-orange-2006.jpg?w=1200&format=webp&quality=85";
+import huileOcreGris_sm from "@/assets/artworks/huile-ocre-gris-2006.jpg?w=400&format=webp&quality=80";
+import huileOcreGris_md from "@/assets/artworks/huile-ocre-gris-2006.jpg?w=800&format=webp&quality=80";
+import huileOcreGris_lg from "@/assets/artworks/huile-ocre-gris-2006.jpg?w=1200&format=webp&quality=85";
+import huileBleuOcre_sm from "@/assets/artworks/huile-bleu-ocre-2006.jpg?w=400&format=webp&quality=80";
+import huileBleuOcre_md from "@/assets/artworks/huile-bleu-ocre-2006.jpg?w=800&format=webp&quality=80";
+import huileBleuOcre_lg from "@/assets/artworks/huile-bleu-ocre-2006.jpg?w=1200&format=webp&quality=85";
+
+// 2005
+import huilePerspective_sm from "@/assets/artworks/huile-perspective-2005.jpg?w=400&format=webp&quality=80";
+import huilePerspective_md from "@/assets/artworks/huile-perspective-2005.jpg?w=800&format=webp&quality=80";
+import huilePerspective_lg from "@/assets/artworks/huile-perspective-2005.jpg?w=1200&format=webp&quality=85";
+import huileCouteau2005_60x60_sm from "@/assets/artworks/2005-huile-couteau-60x60.jpg?w=400&format=webp&quality=80";
+import huileCouteau2005_60x60_md from "@/assets/artworks/2005-huile-couteau-60x60.jpg?w=800&format=webp&quality=80";
+import huileCouteau2005_60x60_lg from "@/assets/artworks/2005-huile-couteau-60x60.jpg?w=1200&format=webp&quality=85";
+import huileCouteau2005_50x50_sm from "@/assets/artworks/2005-huile-couteau-50x50.jpg?w=400&format=webp&quality=80";
+import huileCouteau2005_50x50_md from "@/assets/artworks/2005-huile-couteau-50x50.jpg?w=800&format=webp&quality=80";
+import huileCouteau2005_50x50_lg from "@/assets/artworks/2005-huile-couteau-50x50.jpg?w=1200&format=webp&quality=85";
+import huileCouteau2005_40x40_sm from "@/assets/artworks/2005-huile-couteau-40x40.jpg?w=400&format=webp&quality=80";
+import huileCouteau2005_40x40_md from "@/assets/artworks/2005-huile-couteau-40x40.jpg?w=800&format=webp&quality=80";
+import huileCouteau2005_40x40_lg from "@/assets/artworks/2005-huile-couteau-40x40.jpg?w=1200&format=webp&quality=85";
+
+// Sculptures
+import sculptureBlanche_sm from "@/assets/artworks/sculpture-blanche-organique.jpg?w=400&format=webp&quality=80";
+import sculptureBlanche_md from "@/assets/artworks/sculpture-blanche-organique.jpg?w=800&format=webp&quality=80";
+import sculptureBlanche_lg from "@/assets/artworks/sculpture-blanche-organique.jpg?w=1200&format=webp&quality=85";
+import sculptureColoree_sm from "@/assets/artworks/sculpture-coloree.jpg?w=400&format=webp&quality=80";
+import sculptureColoree_md from "@/assets/artworks/sculpture-coloree.jpg?w=800&format=webp&quality=80";
+import sculptureColoree_lg from "@/assets/artworks/sculpture-coloree.jpg?w=1200&format=webp&quality=85";
+import sculptureNoire_sm from "@/assets/artworks/sculpture-noire.jpg?w=400&format=webp&quality=80";
+import sculptureNoire_md from "@/assets/artworks/sculpture-noire.jpg?w=800&format=webp&quality=80";
+import sculptureNoire_lg from "@/assets/artworks/sculpture-noire.jpg?w=1200&format=webp&quality=85";
+import sculptureGeometrique_sm from "@/assets/artworks/sculpture-geometrique.jpg?w=400&format=webp&quality=80";
+import sculptureGeometrique_md from "@/assets/artworks/sculpture-geometrique.jpg?w=800&format=webp&quality=80";
+import sculptureGeometrique_lg from "@/assets/artworks/sculpture-geometrique.jpg?w=1200&format=webp&quality=85";
+import sculptureElancee_sm from "@/assets/artworks/sculpture-elancee.jpg?w=400&format=webp&quality=80";
+import sculptureElancee_md from "@/assets/artworks/sculpture-elancee.jpg?w=800&format=webp&quality=80";
+import sculptureElancee_lg from "@/assets/artworks/sculpture-elancee.jpg?w=1200&format=webp&quality=85";
+import sculptureSignee_sm from "@/assets/artworks/sculpture-blanche-signee.jpg?w=400&format=webp&quality=80";
+import sculptureSignee_md from "@/assets/artworks/sculpture-blanche-signee.jpg?w=800&format=webp&quality=80";
+import sculptureSignee_lg from "@/assets/artworks/sculpture-blanche-signee.jpg?w=1200&format=webp&quality=85";
+import sculptureNoireDynamique_sm from "@/assets/artworks/sculpture-noire-dynamique.jpg?w=400&format=webp&quality=80";
+import sculptureNoireDynamique_md from "@/assets/artworks/sculpture-noire-dynamique.jpg?w=800&format=webp&quality=80";
+import sculptureNoireDynamique_lg from "@/assets/artworks/sculpture-noire-dynamique.jpg?w=1200&format=webp&quality=85";
+import sculptureMonumentale_sm from "@/assets/artworks/sculpture-monumentale.jpg?w=400&format=webp&quality=80";
+import sculptureMonumentale_md from "@/assets/artworks/sculpture-monumentale.jpg?w=800&format=webp&quality=80";
+import sculptureMonumentale_lg from "@/assets/artworks/sculpture-monumentale.jpg?w=1200&format=webp&quality=85";
+import sculptureArchitecturale_sm from "@/assets/artworks/sculpture-architecturale.jpg?w=400&format=webp&quality=80";
+import sculptureArchitecturale_md from "@/assets/artworks/sculpture-architecturale.jpg?w=800&format=webp&quality=80";
+import sculptureArchitecturale_lg from "@/assets/artworks/sculpture-architecturale.jpg?w=1200&format=webp&quality=85";
+import sculptureFeminine_sm from "@/assets/artworks/sculpture-feminine.jpg?w=400&format=webp&quality=80";
+import sculptureFeminine_md from "@/assets/artworks/sculpture-feminine.jpg?w=800&format=webp&quality=80";
+import sculptureFeminine_lg from "@/assets/artworks/sculpture-feminine.jpg?w=1200&format=webp&quality=85";
+import sculptureTotemique_sm from "@/assets/artworks/sculpture-totemique.jpg?w=400&format=webp&quality=80";
+import sculptureTotemique_md from "@/assets/artworks/sculpture-totemique.jpg?w=800&format=webp&quality=80";
+import sculptureTotemique_lg from "@/assets/artworks/sculpture-totemique.jpg?w=1200&format=webp&quality=85";
+
+// ============= ARTWORK DATA =============
+interface ImageSrcSet {
+  sm: string;
+  md: string;
+  lg: string;
+}
+
+interface Artwork {
+  id: number;
+  title: string;
+  category: string;
+  technique: string;
+  dimensions: string;
+  year: string;
+  image: ImageSrcSet;
+  zoom?: number;
+}
+
+const artworks: Artwork[] = [
   // === PEINTURES (triées du plus récent au plus ancien) ===
   // 2025
   {
@@ -96,7 +261,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "80 × 80 cm",
     year: "2025",
-    image: acrylique2025_80x80,
+    image: { sm: acrylique2025_80x80_sm, md: acrylique2025_80x80_md, lg: acrylique2025_80x80_lg },
   },
   {
     id: 29,
@@ -105,7 +270,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "60 × 60 cm",
     year: "2025",
-    image: acrylique2025_60x60,
+    image: { sm: acrylique2025_60x60_sm, md: acrylique2025_60x60_md, lg: acrylique2025_60x60_lg },
   },
   {
     id: 30,
@@ -114,7 +279,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "40 × 40 cm",
     year: "2025",
-    image: acrylique2025_40x40,
+    image: { sm: acrylique2025_40x40_sm, md: acrylique2025_40x40_md, lg: acrylique2025_40x40_lg },
   },
   // 2024
   {
@@ -124,7 +289,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "80 × 80 cm",
     year: "2024",
-    image: acrylique2024_80x80,
+    image: { sm: acrylique2024_80x80_sm, md: acrylique2024_80x80_md, lg: acrylique2024_80x80_lg },
   },
   {
     id: 32,
@@ -133,7 +298,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "60 × 60 cm",
     year: "2024",
-    image: blancAcrylique2024_60x60,
+    image: { sm: blancAcrylique2024_60x60_sm, md: blancAcrylique2024_60x60_md, lg: blancAcrylique2024_60x60_lg },
   },
   {
     id: 33,
@@ -142,7 +307,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "40 × 40 cm",
     year: "2024",
-    image: blancAcrylique2024_40x40,
+    image: { sm: blancAcrylique2024_40x40_sm, md: blancAcrylique2024_40x40_md, lg: blancAcrylique2024_40x40_lg },
   },
   {
     id: 34,
@@ -151,7 +316,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "40 × 40 cm",
     year: "2024",
-    image: blancAcrylique2024_40x40_2,
+    image: { sm: blancAcrylique2024_40x40_2_sm, md: blancAcrylique2024_40x40_2_md, lg: blancAcrylique2024_40x40_2_lg },
   },
   {
     id: 38,
@@ -160,7 +325,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "60 × 60 cm",
     year: "2024",
-    image: acrylique2024_60x60,
+    image: { sm: acrylique2024_60x60_sm, md: acrylique2024_60x60_md, lg: acrylique2024_60x60_lg },
   },
   {
     id: 39,
@@ -169,7 +334,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "20 × 20 cm",
     year: "2024",
-    image: acrylique2024_20x20,
+    image: { sm: acrylique2024_20x20_sm, md: acrylique2024_20x20_md, lg: acrylique2024_20x20_lg },
   },
   // 2023
   {
@@ -179,7 +344,7 @@ const artworks = [
     technique: "Encre sur papier",
     dimensions: "40 × 50 cm",
     year: "2023",
-    image: encreGestuelle,
+    image: { sm: encreGestuelle_sm, md: encreGestuelle_md, lg: encreGestuelle_lg },
   },
   {
     id: 40,
@@ -188,7 +353,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "80 × 80 cm",
     year: "2023",
-    image: acrylique2023_80x80,
+    image: { sm: acrylique2023_80x80_sm, md: acrylique2023_80x80_md, lg: acrylique2023_80x80_lg },
   },
   {
     id: 41,
@@ -197,7 +362,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "80 × 80 cm",
     year: "2023",
-    image: acrylique2023_80x80_2,
+    image: { sm: acrylique2023_80x80_2_sm, md: acrylique2023_80x80_2_md, lg: acrylique2023_80x80_2_lg },
   },
   {
     id: 42,
@@ -206,7 +371,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "40 × 40 cm",
     year: "2023",
-    image: acrylique2023_40x40,
+    image: { sm: acrylique2023_40x40_sm, md: acrylique2023_40x40_md, lg: acrylique2023_40x40_lg },
   },
   // 2020
   {
@@ -216,7 +381,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "80 × 80 cm",
     year: "2020",
-    image: acrylique2020_80x80,
+    image: { sm: acrylique2020_80x80_sm, md: acrylique2020_80x80_md, lg: acrylique2020_80x80_lg },
   },
   {
     id: 44,
@@ -225,7 +390,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "40 × 40 cm",
     year: "2020",
-    image: acrylique2020_40x40,
+    image: { sm: acrylique2020_40x40_sm, md: acrylique2020_40x40_md, lg: acrylique2020_40x40_lg },
   },
   {
     id: 45,
@@ -234,7 +399,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "20 × 20 cm",
     year: "2020",
-    image: acrylique2020_20x20,
+    image: { sm: acrylique2020_20x20_sm, md: acrylique2020_20x20_md, lg: acrylique2020_20x20_lg },
   },
   // 2017
   {
@@ -244,7 +409,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "80 × 80 cm",
     year: "2017",
-    image: acrylique2017_80x80,
+    image: { sm: acrylique2017_80x80_sm, md: acrylique2017_80x80_md, lg: acrylique2017_80x80_lg },
   },
   {
     id: 47,
@@ -253,7 +418,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "80 × 80 cm",
     year: "2017",
-    image: acrylique2017_80x80_2,
+    image: { sm: acrylique2017_80x80_2_sm, md: acrylique2017_80x80_2_md, lg: acrylique2017_80x80_2_lg },
   },
   {
     id: 48,
@@ -262,7 +427,7 @@ const artworks = [
     technique: "Acrylique sur toile",
     dimensions: "80 × 80 cm",
     year: "2017",
-    image: acrylique2017_80x80_3,
+    image: { sm: acrylique2017_80x80_3_sm, md: acrylique2017_80x80_3_md, lg: acrylique2017_80x80_3_lg },
   },
   // 2013
   {
@@ -272,7 +437,7 @@ const artworks = [
     technique: "Huile sur toile avec empâtement",
     dimensions: "80 × 80 cm",
     year: "2013",
-    image: huileEmpatement2013_80x80,
+    image: { sm: huileEmpatement2013_80x80_sm, md: huileEmpatement2013_80x80_md, lg: huileEmpatement2013_80x80_lg },
   },
   {
     id: 50,
@@ -281,7 +446,7 @@ const artworks = [
     technique: "Huile sur toile avec empâtement",
     dimensions: "80 × 80 cm",
     year: "2013",
-    image: huileEmpatement2013_80x80_2,
+    image: { sm: huileEmpatement2013_80x80_2_sm, md: huileEmpatement2013_80x80_2_md, lg: huileEmpatement2013_80x80_2_lg },
   },
   {
     id: 51,
@@ -290,7 +455,7 @@ const artworks = [
     technique: "Huile sur toile avec empâtement",
     dimensions: "60 × 60 cm",
     year: "2013",
-    image: huileEmpatement2013_60x60,
+    image: { sm: huileEmpatement2013_60x60_sm, md: huileEmpatement2013_60x60_md, lg: huileEmpatement2013_60x60_lg },
   },
   // 2012
   {
@@ -300,7 +465,7 @@ const artworks = [
     technique: "Huile sur toile avec empâtement",
     dimensions: "80 × 80 cm",
     year: "2012",
-    image: huileEmpatement2012_80x80,
+    image: { sm: huileEmpatement2012_80x80_sm, md: huileEmpatement2012_80x80_md, lg: huileEmpatement2012_80x80_lg },
   },
   {
     id: 53,
@@ -309,7 +474,7 @@ const artworks = [
     technique: "Huile sur toile avec empâtement",
     dimensions: "80 × 80 cm",
     year: "2012",
-    image: huileEmpatement2012_80x80_2,
+    image: { sm: huileEmpatement2012_80x80_2_sm, md: huileEmpatement2012_80x80_2_md, lg: huileEmpatement2012_80x80_2_lg },
   },
   {
     id: 54,
@@ -318,7 +483,7 @@ const artworks = [
     technique: "Huile sur toile avec empâtement",
     dimensions: "50 × 50 cm",
     year: "2012",
-    image: huileEmpatement2012_50x50,
+    image: { sm: huileEmpatement2012_50x50_sm, md: huileEmpatement2012_50x50_md, lg: huileEmpatement2012_50x50_lg },
   },
   {
     id: 55,
@@ -327,7 +492,7 @@ const artworks = [
     technique: "Huile sur toile",
     dimensions: "50 × 50 cm",
     year: "2012",
-    image: huile2012_50x50,
+    image: { sm: huile2012_50x50_sm, md: huile2012_50x50_md, lg: huile2012_50x50_lg },
   },
   {
     id: 56,
@@ -336,7 +501,7 @@ const artworks = [
     technique: "Huile sur toile",
     dimensions: "60 × 60 cm",
     year: "2012",
-    image: huile2012_60x60,
+    image: { sm: huile2012_60x60_sm, md: huile2012_60x60_md, lg: huile2012_60x60_lg },
   },
   {
     id: 57,
@@ -345,7 +510,7 @@ const artworks = [
     technique: "Huile sur toile",
     dimensions: "60 × 60 cm",
     year: "2012",
-    image: huile2012_60x60_2,
+    image: { sm: huile2012_60x60_2_sm, md: huile2012_60x60_2_md, lg: huile2012_60x60_2_lg },
   },
   // 2010
   {
@@ -355,7 +520,7 @@ const artworks = [
     technique: "Huile sur toile",
     dimensions: "50 × 50 cm",
     year: "2010",
-    image: huileRougeNoir,
+    image: { sm: huileRougeNoir_sm, md: huileRougeNoir_md, lg: huileRougeNoir_lg },
   },
   {
     id: 2,
@@ -364,7 +529,7 @@ const artworks = [
     technique: "Huile sur toile",
     dimensions: "50 × 50 cm",
     year: "2010",
-    image: huileGrisRouge,
+    image: { sm: huileGrisRouge_sm, md: huileGrisRouge_md, lg: huileGrisRouge_lg },
   },
   {
     id: 58,
@@ -373,7 +538,7 @@ const artworks = [
     technique: "Glacis à l'huile avec empâtement sur bois",
     dimensions: "30 × 30 cm",
     year: "2010",
-    image: glacisBois2010_30x30,
+    image: { sm: glacisBois2010_30x30_sm, md: glacisBois2010_30x30_md, lg: glacisBois2010_30x30_lg },
   },
   {
     id: 59,
@@ -382,7 +547,7 @@ const artworks = [
     technique: "Glacis à l'huile avec empâtement sur toile",
     dimensions: "30 × 30 cm",
     year: "2010",
-    image: glacisToile2010_30x30,
+    image: { sm: glacisToile2010_30x30_sm, md: glacisToile2010_30x30_md, lg: glacisToile2010_30x30_lg },
   },
   {
     id: 60,
@@ -391,7 +556,7 @@ const artworks = [
     technique: "Glacis à l'huile avec empâtement sur toile",
     dimensions: "60 × 60 cm",
     year: "2010",
-    image: glacisToile2010_60x60,
+    image: { sm: glacisToile2010_60x60_sm, md: glacisToile2010_60x60_md, lg: glacisToile2010_60x60_lg },
   },
   // 2009
   {
@@ -401,7 +566,7 @@ const artworks = [
     technique: "Technique mixte",
     dimensions: "50 × 65 cm",
     year: "2009",
-    image: techniqueMixte2009,
+    image: { sm: techniqueMixte2009_sm, md: techniqueMixte2009_md, lg: techniqueMixte2009_lg },
   },
   {
     id: 62,
@@ -410,7 +575,7 @@ const artworks = [
     technique: "Technique mixte",
     dimensions: "50 × 65 cm",
     year: "2009",
-    image: techniqueMixte2009_2,
+    image: { sm: techniqueMixte2009_2_sm, md: techniqueMixte2009_2_md, lg: techniqueMixte2009_2_lg },
   },
   {
     id: 63,
@@ -419,7 +584,7 @@ const artworks = [
     technique: "Technique mixte",
     dimensions: "50 × 65 cm",
     year: "2009",
-    image: techniqueMixte2009_3,
+    image: { sm: techniqueMixte2009_3_sm, md: techniqueMixte2009_3_md, lg: techniqueMixte2009_3_lg },
   },
   // 2008
   {
@@ -429,7 +594,7 @@ const artworks = [
     technique: "Huile sur toile",
     dimensions: "60 × 60 cm",
     year: "2008",
-    image: huile2008_60x60,
+    image: { sm: huile2008_60x60_sm, md: huile2008_60x60_md, lg: huile2008_60x60_lg },
   },
   {
     id: 65,
@@ -438,7 +603,7 @@ const artworks = [
     technique: "Huile sur toile",
     dimensions: "60 × 60 cm",
     year: "2008",
-    image: huile2008_60x60_2,
+    image: { sm: huile2008_60x60_2_sm, md: huile2008_60x60_2_md, lg: huile2008_60x60_2_lg },
   },
   {
     id: 66,
@@ -447,7 +612,7 @@ const artworks = [
     technique: "Huile sur toile",
     dimensions: "80 × 80 cm",
     year: "2008",
-    image: huile2008_80x80,
+    image: { sm: huile2008_80x80_sm, md: huile2008_80x80_md, lg: huile2008_80x80_lg },
   },
   // 2007
   {
@@ -457,7 +622,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "80 × 80 cm",
     year: "2007",
-    image: huileBleuJaune,
+    image: { sm: huileBleuJaune_sm, md: huileBleuJaune_md, lg: huileBleuJaune_lg },
   },
   {
     id: 4,
@@ -466,7 +631,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "80 × 80 cm",
     year: "2007",
-    image: huileOrange,
+    image: { sm: huileOrange_sm, md: huileOrange_md, lg: huileOrange_lg },
   },
   {
     id: 5,
@@ -475,7 +640,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "80 × 80 cm",
     year: "2007",
-    image: huileJauneBleu,
+    image: { sm: huileJauneBleu_sm, md: huileJauneBleu_md, lg: huileJauneBleu_lg },
   },
   {
     id: 7,
@@ -484,7 +649,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2007",
-    image: huileRougeGris,
+    image: { sm: huileRougeGris_sm, md: huileRougeGris_md, lg: huileRougeGris_lg },
   },
   {
     id: 8,
@@ -493,7 +658,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "50 × 50 cm",
     year: "2007",
-    image: huileTurquoise,
+    image: { sm: huileTurquoise_sm, md: huileTurquoise_md, lg: huileTurquoise_lg },
   },
   {
     id: 9,
@@ -502,7 +667,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "4 × 40 × 40 cm",
     year: "2007",
-    image: quadriptyque,
+    image: { sm: quadriptyque_sm, md: quadriptyque_md, lg: quadriptyque_lg },
   },
   // 2006
   {
@@ -512,7 +677,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2006",
-    image: huileBleuCreme,
+    image: { sm: huileBleuCreme_sm, md: huileBleuCreme_md, lg: huileBleuCreme_lg },
   },
   {
     id: 11,
@@ -521,7 +686,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2006",
-    image: huileMarineOrange,
+    image: { sm: huileMarineOrange_sm, md: huileMarineOrange_md, lg: huileMarineOrange_lg },
   },
   {
     id: 12,
@@ -530,7 +695,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2006",
-    image: huileBleuOrange,
+    image: { sm: huileBleuOrange_sm, md: huileBleuOrange_md, lg: huileBleuOrange_lg },
   },
   {
     id: 13,
@@ -539,7 +704,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2006",
-    image: huileGrisOrange,
+    image: { sm: huileGrisOrange_sm, md: huileGrisOrange_md, lg: huileGrisOrange_lg },
   },
   {
     id: 14,
@@ -548,7 +713,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2006",
-    image: huileOcreGris,
+    image: { sm: huileOcreGris_sm, md: huileOcreGris_md, lg: huileOcreGris_lg },
   },
   {
     id: 15,
@@ -557,7 +722,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "50 × 50 cm",
     year: "2006",
-    image: huileBleuOcre,
+    image: { sm: huileBleuOcre_sm, md: huileBleuOcre_md, lg: huileBleuOcre_lg },
   },
   // 2005
   {
@@ -567,7 +732,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "50 × 50 cm",
     year: "2005",
-    image: huilePerspective,
+    image: { sm: huilePerspective_sm, md: huilePerspective_md, lg: huilePerspective_lg },
   },
   {
     id: 35,
@@ -576,7 +741,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "60 × 60 cm",
     year: "2005",
-    image: huileCouteau2005_60x60,
+    image: { sm: huileCouteau2005_60x60_sm, md: huileCouteau2005_60x60_md, lg: huileCouteau2005_60x60_lg },
   },
   {
     id: 36,
@@ -585,7 +750,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "50 × 50 cm",
     year: "2005",
-    image: huileCouteau2005_50x50,
+    image: { sm: huileCouteau2005_50x50_sm, md: huileCouteau2005_50x50_md, lg: huileCouteau2005_50x50_lg },
   },
   {
     id: 37,
@@ -594,7 +759,7 @@ const artworks = [
     technique: "Huile sur toile au couteau",
     dimensions: "40 × 40 cm",
     year: "2005",
-    image: huileCouteau2005_40x40,
+    image: { sm: huileCouteau2005_40x40_sm, md: huileCouteau2005_40x40_md, lg: huileCouteau2005_40x40_lg },
   },
   // === SCULPTURES (triées du plus récent au plus ancien) ===
   {
@@ -604,7 +769,7 @@ const artworks = [
     technique: "Bronze patiné noir",
     dimensions: "35 × 30 × 25 cm",
     year: "2025",
-    image: sculptureNoireDynamique,
+    image: { sm: sculptureNoireDynamique_sm, md: sculptureNoireDynamique_md, lg: sculptureNoireDynamique_lg },
     zoom: 1.5,
   },
   {
@@ -614,7 +779,7 @@ const artworks = [
     technique: "Béton ciré bicolore",
     dimensions: "40 × 20 × 15 cm",
     year: "2024",
-    image: sculptureGeometrique,
+    image: { sm: sculptureGeometrique_sm, md: sculptureGeometrique_md, lg: sculptureGeometrique_lg },
     zoom: 1.3,
   },
   {
@@ -624,7 +789,7 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "38 × 12 × 10 cm",
     year: "2024",
-    image: sculptureElancee,
+    image: { sm: sculptureElancee_sm, md: sculptureElancee_md, lg: sculptureElancee_lg },
     zoom: 1.4,
   },
   {
@@ -634,7 +799,7 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "35 × 12 × 10 cm",
     year: "2023",
-    image: sculptureBlanche,
+    image: { sm: sculptureBlanche_sm, md: sculptureBlanche_md, lg: sculptureBlanche_lg },
     zoom: 1.4,
   },
   {
@@ -644,7 +809,7 @@ const artworks = [
     technique: "Bronze patiné",
     dimensions: "30 × 25 × 20 cm",
     year: "2023",
-    image: sculptureNoire,
+    image: { sm: sculptureNoire_sm, md: sculptureNoire_md, lg: sculptureNoire_lg },
     zoom: 1.6,
   },
   {
@@ -654,7 +819,7 @@ const artworks = [
     technique: "Bois peint",
     dimensions: "45 × 15 × 8 cm",
     year: "2022",
-    image: sculptureColoree,
+    image: { sm: sculptureColoree_sm, md: sculptureColoree_md, lg: sculptureColoree_lg },
     zoom: 1.3,
   },
   {
@@ -664,7 +829,7 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "30 × 20 × 15 cm",
     year: "2021",
-    image: sculptureSignee,
+    image: { sm: sculptureSignee_sm, md: sculptureSignee_md, lg: sculptureSignee_lg },
     zoom: 1.5,
   },
   {
@@ -674,7 +839,7 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "60 × 35 × 30 cm",
     year: "2020",
-    image: sculptureMonumentale,
+    image: { sm: sculptureMonumentale_sm, md: sculptureMonumentale_md, lg: sculptureMonumentale_lg },
     zoom: 1.3,
   },
   {
@@ -684,7 +849,7 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "45 × 20 × 15 cm",
     year: "2019",
-    image: sculptureArchitecturale,
+    image: { sm: sculptureArchitecturale_sm, md: sculptureArchitecturale_md, lg: sculptureArchitecturale_lg },
     zoom: 1.4,
   },
   {
@@ -694,7 +859,7 @@ const artworks = [
     technique: "Béton ciré blanc",
     dimensions: "50 × 15 × 12 cm",
     year: "2019",
-    image: sculptureFeminine,
+    image: { sm: sculptureFeminine_sm, md: sculptureFeminine_md, lg: sculptureFeminine_lg },
     zoom: 1.4,
   },
   {
@@ -704,7 +869,7 @@ const artworks = [
     technique: "Béton moucheté",
     dimensions: "35 × 10 × 8 cm",
     year: "2018",
-    image: sculptureTotemique,
+    image: { sm: sculptureTotemique_sm, md: sculptureTotemique_md, lg: sculptureTotemique_lg },
     zoom: 1.5,
   },
 ];
@@ -715,14 +880,67 @@ const categories = [
   { id: "sculptures", label: "Sculptures" },
 ];
 
+const ITEMS_PER_PAGE = 12;
+
+// Lightbox component with HD loading
+const LightboxImage = ({ 
+  artwork, 
+  isFullscreen 
+}: { 
+  artwork: Artwork; 
+  isFullscreen: boolean;
+}) => {
+  const [showHD, setShowHD] = useState(false);
+  const isHDLoaded = usePreloadImage(artwork.image.lg);
+
+  useEffect(() => {
+    if (isHDLoaded) {
+      // Small delay for smooth transition
+      const timer = setTimeout(() => setShowHD(true), 100);
+      return () => clearTimeout(timer);
+    }
+  }, [isHDLoaded]);
+
+  return (
+    <div className={`relative overflow-hidden ${
+      isFullscreen 
+        ? 'max-w-[90vw] max-h-[90vh]' 
+        : 'aspect-square w-full max-w-lg lg:max-w-2xl'
+    }`}>
+      {/* Show medium res first, then HD when loaded */}
+      <img
+        src={showHD ? artwork.image.lg : artwork.image.md}
+        alt={artwork.title}
+        className={`w-full h-full ${isFullscreen ? 'object-contain' : 'object-cover'} transition-opacity duration-300`}
+      />
+      
+      {/* Loading indicator while HD loads */}
+      {!isHDLoaded && (
+        <div className="absolute top-4 right-4 text-white/50">
+          <Loader2 className="w-5 h-5 animate-spin" />
+        </div>
+      )}
+    </div>
+  );
+};
+
 const Galerie = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [selectedArtwork, setSelectedArtwork] = useState<typeof artworks[0] | null>(null);
+  const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
 
   const filteredArtworks = activeCategory === "all"
     ? artworks
     : artworks.filter((art) => art.category === activeCategory);
+
+  // Reset pagination when category changes
+  useEffect(() => {
+    setVisibleCount(ITEMS_PER_PAGE);
+  }, [activeCategory]);
+
+  const visibleArtworks = filteredArtworks.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredArtworks.length;
 
   const currentIndex = selectedArtwork
     ? filteredArtworks.findIndex((art) => art.id === selectedArtwork.id)
@@ -736,7 +954,11 @@ const Galerie = () => {
     setSelectedArtwork(filteredArtworks[newIndex]);
   };
 
-const gallerySchema = {
+  const loadMore = () => {
+    setVisibleCount(prev => Math.min(prev + ITEMS_PER_PAGE, filteredArtworks.length));
+  };
+
+  const gallerySchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "@id": "https://carrementabstrait.com/galerie/#collection",
@@ -840,7 +1062,7 @@ const gallerySchema = {
         <div className="container-narrow">
           <motion.div layout className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 md:gap-10">
             <AnimatePresence mode="popLayout">
-              {filteredArtworks.map((artwork, index) => (
+              {visibleArtworks.map((artwork, index) => (
                 <motion.article
                   key={artwork.id}
                   layout
@@ -852,7 +1074,7 @@ const gallerySchema = {
                   onClick={() => setSelectedArtwork(artwork)}
                 >
                   <div className="aspect-square bg-muted/10 mb-4 overflow-hidden relative">
-                  <OptimizedImage
+                    <OptimizedImage
                       src={artwork.image}
                       alt={`${artwork.title} - ${artwork.technique} ${artwork.dimensions} par Marie-Christine Chaillou, artiste Nantes`}
                       className="w-full h-full object-cover object-center"
@@ -865,17 +1087,38 @@ const gallerySchema = {
                       className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300"
                     />
                   </div>
-                          <p className="text-xs sm:text-sm text-muted-foreground">
-                            {artwork.technique} — {artwork.dimensions}
-                          </p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
+                    {artwork.technique} — {artwork.dimensions}
+                  </p>
                 </motion.article>
               ))}
             </AnimatePresence>
           </motion.div>
+
+          {/* Load More Button */}
+          {hasMore && (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="flex flex-col items-center mt-16 gap-4"
+            >
+              <p className="text-sm text-muted-foreground">
+                {visibleCount} / {filteredArtworks.length} œuvres
+              </p>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={loadMore}
+                className="px-12 py-6 text-sm uppercase tracking-[0.15em] border-foreground/20 hover:border-foreground/50 hover:bg-foreground hover:text-background transition-all duration-300"
+              >
+                Voir plus d'œuvres
+              </Button>
+            </motion.div>
+          )}
         </div>
       </section>
 
-      {/* Lightbox - Fond noir profond */}
+      {/* Lightbox - Fond noir profond avec HD */}
       <AnimatePresence>
         {selectedArtwork && (
           <motion.div
@@ -941,17 +1184,7 @@ const gallerySchema = {
               }`}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className={`overflow-hidden ${
-                isFullscreen 
-                  ? 'max-w-[90vw] max-h-[90vh]' 
-                  : 'aspect-square w-full max-w-lg lg:max-w-2xl'
-              }`}>
-                <img
-                  src={selectedArtwork.image}
-                  alt={selectedArtwork.title}
-                  className={`w-full h-full ${isFullscreen ? 'object-contain' : 'object-cover'}`}
-                />
-              </div>
+              <LightboxImage artwork={selectedArtwork} isFullscreen={isFullscreen} />
               
               {!isFullscreen && (
                 <div className="text-white text-center lg:text-left lg:max-w-xs">

@@ -13,16 +13,8 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     imagetools({
-      defaultDirectives: (url) => {
-        if (url.pathname.includes('/artworks/')) {
-          return new URLSearchParams({
-            format: 'webp',
-            quality: '80',
-            w: '800',
-          });
-        }
-        return new URLSearchParams();
-      },
+      // Allow custom directives per import, no default transformation
+      // Images will be transformed only when using ?w=xxx&format=webp queries
     }),
     mode === "development" && componentTagger(),
   ].filter(Boolean),
