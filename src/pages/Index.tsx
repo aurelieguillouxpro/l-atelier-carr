@@ -233,7 +233,7 @@ const Index = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="font-accent text-2xl md:text-3xl lg:text-4xl leading-relaxed text-foreground/90 mb-6">
-              « Ce qui m'intéresse, c'est le voyage que chacun entreprend devant mon travail. »
+              « Voyager en abstraction c'est accepter de prendre un départ pour l'inconnu »
             </p>
             <cite className="text-sm uppercase tracking-[0.2em] text-muted-foreground not-italic">
               — Marie-Christine Chaillou
