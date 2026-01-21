@@ -75,122 +75,153 @@ const downloadICalFile = (event: {
   URL.revokeObjectURL(url);
 };
 
-const exhibitions = {
-  upcoming: [
-    {
-      id: 0,
-      title: "Carré'Ment abstrait",
-      venue: "L'atelier du moulin Gautron",
-      location: "Vertou (44)",
-      date: "Mars 2026",
-      dateRange: "20 - 29 mars 2026",
-      startDate: new Date('2026-03-20T10:00:00'),
-      endDate: new Date('2026-03-29T18:00:00'),
-      vernissageDate: new Date('2026-03-21T16:00:00'),
-      vernissageEndDate: new Date('2026-03-21T19:00:00'),
-      description: "Vous y découvrirez peintures et sculptures d'hier à aujourd'hui.",
-      highlight: "Vernissage le 21 mars à 16h"
-    }
-  ],
-  past: [
-    {
-      id: 1,
-      title: "Carré'Ment abstrait",
-      venue: "Le Musée",
-      location: "Sautron (44)",
-      date: "Décembre 2025",
-      description: "Toiles hautes en couleur qui dégagent énergie et puissance, avec des pigments forts et des traits nets et assumés."
-    },
-    {
-      id: 2,
-      title: "Exposition",
-      venue: "La chapelle Saint-Germain",
-      location: "Saint-Molf (44)",
-      date: "Juillet 2025",
-      description: "Exposition de peintures abstraites dans le cadre exceptionnel de la chapelle Saint-Germain."
-    },
-    {
-      id: 3,
-      title: "L'art abstrait ouvre la saison",
-      venue: "La Maison du patrimoine",
-      location: "Mesquer (44)",
-      date: "Avril 2025",
-      description: "C'est la troisième fois que Marie-Christine Chaillou expose à la Maison du patrimoine de Mesquer."
-    },
-    {
-      id: 4,
-      title: "Portes ouvertes Atelier",
-      venue: "Atelier de l'artiste",
-      location: "Nantes (44)",
-      date: "Décembre 2024",
-      description: "Ouverture de l'atelier au public pour découvrir les dernières créations."
-    },
-    {
-      id: 5,
-      title: "Exposition",
-      venue: "Le Musée",
-      location: "Sautron (44)",
-      date: "Décembre 2023",
-      description: "Exposition de peintures abstraites au Musée de Sautron."
-    },
-    {
-      id: 6,
-      title: "Portes ouvertes Atelier",
-      venue: "Atelier de l'artiste",
-      location: "Nantes (44)",
-      date: "Décembre 2022",
-      description: "Ouverture de l'atelier au public pour découvrir les créations de l'année."
-    },
-    {
-      id: 7,
-      title: "Portes ouvertes Atelier",
-      venue: "Atelier de l'artiste",
-      location: "Nantes (44)",
-      date: "Décembre 2021",
-      description: "Ouverture de l'atelier au public."
-    },
-    {
-      id: 8,
-      title: "Portes ouvertes Atelier",
-      venue: "Atelier de l'artiste",
-      location: "Nantes (44)",
-      date: "Décembre 2019",
-      description: "Ouverture de l'atelier au public."
-    },
-    {
-      id: 9,
-      title: "Exposition",
-      venue: "La Galerie du Minage",
-      location: "Clisson (44)",
-      date: "Septembre 2019",
-      description: "Exposition de peintures abstraites à la Galerie du Minage."
-    },
-    {
-      id: 10,
-      title: "Parcours des créateurs",
-      venue: "Parcours des créateurs",
-      location: "Trentemoult (44)",
-      date: "Mai 2018",
-      description: "Participation au parcours des créateurs de Trentemoult."
-    },
-    {
-      id: 11,
-      title: "Exposition",
-      venue: "Espace Écureuil",
-      location: "Nantes (44)",
-      date: "Septembre 2017",
-      description: "Exposition de peintures abstraites à l'Espace Écureuil."
-    },
-    {
-      id: 12,
-      title: "Exposition",
-      venue: "Maison du patrimoine",
-      location: "Mesquer (44)",
-      date: "Avril 2017",
-      description: "Exposition de peintures abstraites à la Maison du patrimoine de Mesquer."
-    },
-  ]
+// Helper function to format date range in French
+const formatDateRange = (start: Date, end: Date) => {
+  const dayStart = start.getDate();
+  const dayEnd = end.getDate();
+  const monthEnd = end.toLocaleDateString('fr-FR', { month: 'long' });
+  const year = end.getFullYear();
+  return `${dayStart} - ${dayEnd} ${monthEnd} ${year}`;
 };
+
+const formatMonth = (date: Date) => {
+  return date.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' });
+};
+
+// All exhibitions in a single list with proper dates
+const allExhibitions = [
+  {
+    id: 0,
+    title: "Carré'Ment abstrait",
+    venue: "L'atelier du moulin Gautron",
+    location: "Vertou (44)",
+    startDate: new Date('2026-03-20'),
+    endDate: new Date('2026-03-29'),
+    vernissageDate: new Date('2026-03-21T16:00:00'),
+    vernissageEndDate: new Date('2026-03-21T19:00:00'),
+    description: "Vous y découvrirez peintures et sculptures d'hier à aujourd'hui.",
+    highlight: "Vernissage le 21 mars à 16h"
+  },
+  {
+    id: 1,
+    title: "Carré'Ment abstrait",
+    venue: "Le Musée",
+    location: "Sautron (44)",
+    startDate: new Date('2025-12-01'),
+    endDate: new Date('2025-12-31'),
+    description: "Toiles hautes en couleur qui dégagent énergie et puissance, avec des pigments forts et des traits nets et assumés."
+  },
+  {
+    id: 2,
+    title: "Exposition",
+    venue: "La chapelle Saint-Germain",
+    location: "Saint-Molf (44)",
+    startDate: new Date('2025-07-01'),
+    endDate: new Date('2025-07-31'),
+    description: "Exposition de peintures abstraites dans le cadre exceptionnel de la chapelle Saint-Germain."
+  },
+  {
+    id: 3,
+    title: "L'art abstrait ouvre la saison",
+    venue: "La Maison du patrimoine",
+    location: "Mesquer (44)",
+    startDate: new Date('2025-04-01'),
+    endDate: new Date('2025-04-30'),
+    description: "C'est la troisième fois que Marie-Christine Chaillou expose à la Maison du patrimoine de Mesquer."
+  },
+  {
+    id: 4,
+    title: "Portes ouvertes Atelier",
+    venue: "Atelier de l'artiste",
+    location: "Nantes (44)",
+    startDate: new Date('2024-12-01'),
+    endDate: new Date('2024-12-31'),
+    description: "Ouverture de l'atelier au public pour découvrir les dernières créations."
+  },
+  {
+    id: 5,
+    title: "Exposition",
+    venue: "Le Musée",
+    location: "Sautron (44)",
+    startDate: new Date('2023-12-01'),
+    endDate: new Date('2023-12-31'),
+    description: "Exposition de peintures abstraites au Musée de Sautron."
+  },
+  {
+    id: 6,
+    title: "Portes ouvertes Atelier",
+    venue: "Atelier de l'artiste",
+    location: "Nantes (44)",
+    startDate: new Date('2022-12-01'),
+    endDate: new Date('2022-12-31'),
+    description: "Ouverture de l'atelier au public pour découvrir les créations de l'année."
+  },
+  {
+    id: 7,
+    title: "Portes ouvertes Atelier",
+    venue: "Atelier de l'artiste",
+    location: "Nantes (44)",
+    startDate: new Date('2021-12-01'),
+    endDate: new Date('2021-12-31'),
+    description: "Ouverture de l'atelier au public."
+  },
+  {
+    id: 8,
+    title: "Portes ouvertes Atelier",
+    venue: "Atelier de l'artiste",
+    location: "Nantes (44)",
+    startDate: new Date('2019-12-01'),
+    endDate: new Date('2019-12-31'),
+    description: "Ouverture de l'atelier au public."
+  },
+  {
+    id: 9,
+    title: "Exposition",
+    venue: "La Galerie du Minage",
+    location: "Clisson (44)",
+    startDate: new Date('2019-09-01'),
+    endDate: new Date('2019-09-30'),
+    description: "Exposition de peintures abstraites à la Galerie du Minage."
+  },
+  {
+    id: 10,
+    title: "Parcours des créateurs",
+    venue: "Parcours des créateurs",
+    location: "Trentemoult (44)",
+    startDate: new Date('2018-05-01'),
+    endDate: new Date('2018-05-31'),
+    description: "Participation au parcours des créateurs de Trentemoult."
+  },
+  {
+    id: 11,
+    title: "Exposition",
+    venue: "Espace Écureuil",
+    location: "Nantes (44)",
+    startDate: new Date('2017-09-01'),
+    endDate: new Date('2017-09-30'),
+    description: "Exposition de peintures abstraites à l'Espace Écureuil."
+  },
+  {
+    id: 12,
+    title: "Exposition",
+    venue: "Maison du patrimoine",
+    location: "Mesquer (44)",
+    startDate: new Date('2017-04-01'),
+    endDate: new Date('2017-04-30'),
+    description: "Exposition de peintures abstraites à la Maison du patrimoine de Mesquer."
+  },
+];
+
+// Dynamic filtering based on current date
+const now = new Date();
+
+const upcomingExhibitions = allExhibitions
+  .filter(expo => expo.endDate >= now)
+  .sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
+
+const pastExhibitions = allExhibitions
+  .filter(expo => expo.endDate < now)
+  .sort((a, b) => b.endDate.getTime() - a.endDate.getTime());
 
 const exhibitionsSchema = {
   "@context": "https://schema.org",
@@ -202,9 +233,9 @@ const exhibitionsSchema = {
   "mainEntity": {
     "@type": "ItemList",
     "name": "Liste des expositions",
-    "numberOfItems": exhibitions.upcoming.length + exhibitions.past.length,
+    "numberOfItems": upcomingExhibitions.length + pastExhibitions.length,
     "itemListElement": [
-      ...exhibitions.upcoming.map((expo, index) => ({
+      ...upcomingExhibitions.map((expo, index) => ({
         "@type": "Event",
         "position": index + 1,
         "name": `${expo.title} - Exposition art abstrait`,
@@ -233,9 +264,9 @@ const exhibitionsSchema = {
           "name": "Marie-Christine Chaillou"
         }
       })),
-      ...exhibitions.past.slice(0, 6).map((expo, index) => ({
+      ...pastExhibitions.slice(0, 6).map((expo, index) => ({
         "@type": "Event",
-        "position": exhibitions.upcoming.length + index + 1,
+        "position": upcomingExhibitions.length + index + 1,
         "name": expo.title,
         "description": expo.description,
         "eventStatus": "https://schema.org/EventCancelled",
@@ -283,7 +314,7 @@ const Expositions = () => {
       </section>
 
       {/* Upcoming Exhibitions - Featured Section */}
-      {exhibitions.upcoming.length > 0 && (
+      {upcomingExhibitions.length > 0 && (
         <section className="pb-20">
           <div className="container-narrow">
             <motion.div
@@ -301,7 +332,7 @@ const Expositions = () => {
             </motion.div>
 
             <div className="space-y-6">
-              {exhibitions.upcoming.map((expo, index) => (
+              {upcomingExhibitions.map((expo, index) => (
                 <motion.article
                   key={expo.id}
                   initial={{ opacity: 0, x: -30 }}
@@ -315,9 +346,13 @@ const Expositions = () => {
                     <div className="flex flex-col lg:flex-row">
                       {/* Date column */}
                       <div className="lg:w-56 flex-shrink-0 bg-primary p-6 lg:p-8 flex flex-col justify-center items-center text-center">
-                        <span className="text-5xl lg:text-6xl font-bold text-background">20</span>
-                        <span className="text-xl uppercase tracking-widest text-background/90 mt-1">Mars</span>
-                        <span className="text-sm text-background/60 mt-2 border-t border-background/20 pt-2 px-4">2026</span>
+                        <span className="text-5xl lg:text-6xl font-bold text-background">{expo.startDate.getDate()}</span>
+                        <span className="text-xl uppercase tracking-widest text-background/90 mt-1">
+                          {expo.startDate.toLocaleDateString('fr-FR', { month: 'short' })}
+                        </span>
+                        <span className="text-sm text-background/60 mt-2 border-t border-background/20 pt-2 px-4">
+                          {expo.startDate.getFullYear()}
+                        </span>
                       </div>
                       
                       {/* Content */}
@@ -333,7 +368,7 @@ const Expositions = () => {
                             <MapPin size={14} />
                             <span className="text-sm">{expo.location}</span>
                             <span className="text-background/30 mx-2">•</span>
-                            <span className="text-sm">{expo.dateRange}</span>
+                            <span className="text-sm">{formatDateRange(expo.startDate, expo.endDate)}</span>
                           </div>
 
                           <p className="text-background/60 text-sm leading-relaxed max-w-xl hidden md:block">
@@ -375,7 +410,7 @@ const Expositions = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {exhibitions.past.map((expo, index) => (
+            {pastExhibitions.map((expo, index) => (
               <motion.article
                 key={expo.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -386,8 +421,10 @@ const Expositions = () => {
               >
                 <div className="flex gap-4">
                   <div className="w-16 h-16 flex-shrink-0 bg-muted/50 flex flex-col items-center justify-center text-center">
-                    <span className="text-lg font-semibold text-foreground/70">{expo.date.split(' ')[0].slice(0, 3)}</span>
-                    <span className="text-xs text-muted-foreground">{expo.date.split(' ')[1]}</span>
+                    <span className="text-lg font-semibold text-foreground/70">
+                      {expo.startDate.toLocaleDateString('fr-FR', { month: 'short' }).slice(0, 3)}
+                    </span>
+                    <span className="text-xs text-muted-foreground">{expo.startDate.getFullYear()}</span>
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">{expo.title}</h3>
