@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Download, Quote } from "lucide-react";
+import { ExternalLink, Quote } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import ouestFranceLogo from "@/assets/logos/ouest-france.png";
@@ -122,35 +122,6 @@ const Presse = () => {
         </div>
       </section>
 
-      {/* Press Kit Download */}
-      <section className="pb-10 md:pb-16">
-        <div className="container-narrow">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-primary text-primary-foreground p-6 md:p-8 lg:p-12 text-center"
-          >
-            <h2 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">Dossier de presse</h2>
-            <p className="text-primary-foreground/80 mb-4 md:mb-6 max-w-xl mx-auto text-sm md:text-base">
-              Téléchargez mon dossier de presse complet incluant biographie, 
-              visuels haute définition et informations de contact.
-            </p>
-            <a 
-              href="/documents/dossier-presse-chaillou.pdf"
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 md:gap-3 bg-background text-foreground px-5 md:px-8 py-3 md:py-4 text-xs md:text-sm uppercase tracking-widest hover:bg-background/90 transition-colors"
-            >
-              <Download size={16} className="md:w-[18px] md:h-[18px]" />
-              <span className="hidden sm:inline">Télécharger le dossier de presse</span>
-              <span className="sm:hidden">Télécharger</span>
-            </a>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Articles */}
       <section className="pb-12 md:pb-20">
