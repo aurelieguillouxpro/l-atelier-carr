@@ -176,13 +176,20 @@ const APropos = () => {
 
               {/* Download Portfolio */}
               <div className="pt-8">
-                <motion.button 
-                  className="inline-flex items-center gap-3 border border-foreground px-8 py-4 text-sm uppercase tracking-[0.15em] hover:bg-foreground hover:text-background transition-all duration-300"
-                  whileHover={{ gap: "16px" }}
+                <a 
+                  href="/documents/portfolio-chaillou.pdf"
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <Download size={18} />
-                  Télécharger le portfolio
-                </motion.button>
+                  <motion.span 
+                    className="inline-flex items-center gap-3 border border-foreground px-8 py-4 text-sm uppercase tracking-[0.15em] hover:bg-foreground hover:text-background transition-all duration-300"
+                    whileHover={{ gap: "16px" }}
+                  >
+                    <Download size={18} />
+                    Télécharger le portfolio
+                  </motion.span>
+                </a>
               </div>
             </motion.div>
           </div>
