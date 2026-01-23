@@ -125,7 +125,8 @@ const Header = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="md:hidden fixed top-0 right-0 bottom-0 z-[60] w-64 flex flex-col bg-[#FAF9F6] shadow-[-8px_0_32px_rgba(0,0,0,0.15)] border-l border-border/50"
+              className="md:hidden fixed top-0 right-0 bottom-0 z-[100] w-64 flex flex-col shadow-[-8px_0_32px_rgba(0,0,0,0.15)] border-l border-border/50"
+              style={{ backgroundColor: '#FAF9F6' }}
             >
               {/* Header area in menu */}
               <div className="h-[72px] flex-shrink-0" />
