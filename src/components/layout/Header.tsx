@@ -108,32 +108,20 @@ const Header = () => {
       {/* Mobile Navigation */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden fixed inset-0 z-[55] bg-black/20"
-              onClick={() => setMobileMenuOpen(false)}
-            />
-            
-            {/* Full-screen overlay menu */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden fixed inset-0 z-[100] flex flex-col"
-              style={{ 
-                backgroundColor: '#FAF9F6',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%'
-              }}
-            >
+          <div
+            className="md:hidden fixed inset-0 z-[9999] flex flex-col"
+            style={{ 
+              backgroundColor: '#FAF9F6',
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              width: '100vw',
+              height: '100vh',
+              opacity: 1
+            }}
+          >
               {/* Header area in menu */}
               <div className="h-[72px] flex-shrink-0" />
               <motion.ul 
@@ -176,8 +164,7 @@ const Header = () => {
                   </motion.li>
                 ))}
               </motion.ul>
-            </motion.div>
-          </>
+            </div>
         )}
       </AnimatePresence>
     </header>
