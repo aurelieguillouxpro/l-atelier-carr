@@ -119,14 +119,20 @@ const Header = () => {
               onClick={() => setMobileMenuOpen(false)}
             />
             
-            {/* Side panel */}
+            {/* Full-screen overlay menu */}
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="md:hidden fixed top-0 right-0 bottom-0 z-[100] w-64 flex flex-col shadow-[-8px_0_32px_rgba(0,0,0,0.15)] border-l border-border/50"
-              style={{ backgroundColor: '#FAF9F6' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden fixed inset-0 z-[100] flex flex-col"
+              style={{ 
+                backgroundColor: '#FAF9F6',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%'
+              }}
             >
               {/* Header area in menu */}
               <div className="h-[72px] flex-shrink-0" />
