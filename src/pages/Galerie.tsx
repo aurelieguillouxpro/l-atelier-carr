@@ -163,15 +163,6 @@ const artworks: Artwork[] = [
     image: blancAcrylique2024_60x60,
   },
   {
-    id: 31,
-    title: "Encre Gestuelle I",
-    category: "peintures",
-    technique: "Acrylique sur toile",
-    dimensions: "80 × 80 cm",
-    year: "2024",
-    image: acrylique2024_80x80,
-  },
-  {
     id: 34,
     title: "Encre Gestuelle IV",
     category: "peintures",
@@ -179,6 +170,15 @@ const artworks: Artwork[] = [
     dimensions: "40 × 40 cm",
     year: "2024",
     image: blancAcrylique2024_40x40_2,
+  },
+  {
+    id: 31,
+    title: "Encre Gestuelle I",
+    category: "peintures",
+    technique: "Acrylique sur toile",
+    dimensions: "80 × 80 cm",
+    year: "2024",
+    image: acrylique2024_80x80,
   },
   {
     id: 38,
