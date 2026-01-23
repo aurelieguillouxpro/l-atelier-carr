@@ -200,15 +200,6 @@ const artworks: Artwork[] = [
   },
   // 2023
   {
-    id: 6,
-    title: "Geste Noir",
-    category: "peintures",
-    technique: "Encre sur papier",
-    dimensions: "40 × 50 cm",
-    year: "2023",
-    image: encreGestuelle,
-  },
-  {
     id: 40,
     title: "Géométrie Rouge I",
     category: "peintures",
