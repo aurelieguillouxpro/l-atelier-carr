@@ -95,6 +95,9 @@ import volumeAbstrait3 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-
 import volumeAbstrait4 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-4.jpg";
 import volumeAbstrait5 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-5.jpg";
 import volumeAbstrait6 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-6.jpg";
+import volumeAbstrait7 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-7.jpg";
+import volumeAbstrait8 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-8.jpg";
+import volumeAbstrait9 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-9.jpg";
 // Sculptures - Béton ciré bronze
 import volumeAbstraitBronze1 from "@/assets/artworks/volume-abstrait-beton-cire-bronze-1.jpg";
 import volumeAbstraitBronze2 from "@/assets/artworks/volume-abstrait-beton-cire-bronze-2.jpg";
@@ -667,6 +670,33 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeAbstrait6,
+  },
+  {
+    id: 110,
+    title: "Volume abstrait finition béton ciré blanc",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "",
+    year: "",
+    image: volumeAbstrait7,
+  },
+  {
+    id: 111,
+    title: "Volume abstrait finition béton ciré blanc",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "",
+    year: "",
+    image: volumeAbstrait8,
+  },
+  {
+    id: 112,
+    title: "Volume abstrait finition béton ciré blanc",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "",
+    year: "",
+    image: volumeAbstrait9,
   },
   // Sculptures - Béton ciré bronze
   {
