@@ -114,6 +114,10 @@ import volumeAbstraitNoir2 from "@/assets/artworks/volume-abstrait-beton-cire-no
 import volumeAbstraitBronze1 from "@/assets/artworks/volume-abstrait-beton-cire-bronze-1.jpg";
 import volumeAbstraitBronze2 from "@/assets/artworks/volume-abstrait-beton-cire-bronze-2.jpg";
 import volumeAbstraitBronze3 from "@/assets/artworks/volume-abstrait-beton-cire-bronze-3.jpg";
+// Sculptures extérieures
+import volumeExterieur1 from "@/assets/artworks/volume-exterieur-beton-cire-1.jpg";
+import volumeExterieur2 from "@/assets/artworks/volume-exterieur-beton-cire-2.jpg";
+import volumeExterieur3 from "@/assets/artworks/volume-exterieur-beton-cire-3.jpg";
 
 // ============= ARTWORK DATA =============
 interface Artwork {
@@ -824,6 +828,34 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeAbstraitNoir2,
+  },
+  // Sculptures extérieures
+  {
+    id: 122,
+    title: "Volume extérieur finition béton ciré",
+    category: "sculptures",
+    technique: "Béton ciré polychrome",
+    dimensions: "",
+    year: "",
+    image: volumeExterieur1,
+  },
+  {
+    id: 123,
+    title: "Volume extérieur finition béton ciré",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "",
+    year: "",
+    image: volumeExterieur2,
+  },
+  {
+    id: 124,
+    title: "Volume extérieur finition béton ciré",
+    category: "sculptures",
+    technique: "Béton ciré polychrome",
+    dimensions: "",
+    year: "",
+    image: volumeExterieur3,
   },
 ];
 
