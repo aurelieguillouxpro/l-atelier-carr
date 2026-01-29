@@ -92,6 +92,9 @@ import huileCouteau2005_40x40 from "@/assets/artworks/2005-huile-couteau-40x40.j
 import volumeAbstrait1 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-1.jpg";
 import volumeAbstrait2 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-2.jpg";
 import volumeAbstrait3 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-3.jpg";
+import volumeAbstrait4 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-4.jpg";
+import volumeAbstrait5 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-5.jpg";
+import volumeAbstrait6 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-6.jpg";
 
 // ============= ARTWORK DATA =============
 interface Artwork {
@@ -635,6 +638,36 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeAbstrait3,
+    zoom: 1.3,
+  },
+  {
+    id: 104,
+    title: "Volume abstrait finition béton ciré blanc",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "",
+    year: "",
+    image: volumeAbstrait4,
+    zoom: 1.3,
+  },
+  {
+    id: 105,
+    title: "Volume abstrait finition béton ciré blanc",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "",
+    year: "",
+    image: volumeAbstrait5,
+    zoom: 1.3,
+  },
+  {
+    id: 106,
+    title: "Volume abstrait finition béton ciré blanc",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "",
+    year: "",
+    image: volumeAbstrait6,
     zoom: 1.3,
   },
 ];
