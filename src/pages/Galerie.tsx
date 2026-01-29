@@ -659,7 +659,6 @@ const artworks: Artwork[] = [
     year: "",
     image: volumeAbstrait5,
   },
-  },
   {
     id: 106,
     title: "Volume abstrait finition béton ciré blanc",
