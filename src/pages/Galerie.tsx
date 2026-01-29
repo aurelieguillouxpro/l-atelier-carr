@@ -855,11 +855,11 @@ const Galerie = () => {
                   className="group cursor-pointer"
                   onClick={() => setSelectedArtwork(artwork)}
                 >
-                  <div className={`aspect-square mb-4 overflow-hidden relative ${artwork.category === 'sculptures' ? 'bg-neutral-100 dark:bg-neutral-800' : 'bg-muted/10'}`}>
+                  <div className="aspect-square bg-muted/10 mb-4 overflow-hidden relative">
                     <OptimizedImage
                       src={artwork.image}
                       alt={`${artwork.title} - ${artwork.technique} ${artwork.dimensions} par Marie-Christine Chaillou, artiste Nantes`}
-                      className={`w-full h-full ${artwork.category === 'sculptures' ? 'object-contain p-4' : 'object-cover'} object-center`}
+                      className="w-full h-full object-cover object-center"
                       containerClassName="w-full h-full"
                       style={{ transform: `scale(${artwork.zoom || 1})` }}
                       whileHover={{ scale: (artwork.zoom || 1) * 1.05 }}
