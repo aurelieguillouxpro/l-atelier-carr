@@ -100,6 +100,10 @@ import volumeAbstrait8 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-
 import volumeAbstrait9 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-9.jpg";
 import volumeAbstrait10 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-10.jpg";
 import volumeAbstrait11 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-11.jpg";
+import volumeAbstrait12 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-12.jpg";
+import volumeAbstrait13 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-13.jpg";
+// Sculptures - Béton ciré bicolore
+import volumeAbstraitBicolore1 from "@/assets/artworks/volume-abstrait-beton-cire-bicolore-1.jpg";
 // Sculptures - Béton ciré bleu
 import volumeAbstraitBleu1 from "@/assets/artworks/volume-abstrait-beton-cire-bleu-1.jpg";
 // Sculptures - Béton ciré bronze
@@ -758,6 +762,35 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeAbstraitBleu1,
+  },
+  // Nouvelles sculptures blanches
+  {
+    id: 116,
+    title: "Volume abstrait finition béton ciré blanc",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "",
+    year: "",
+    image: volumeAbstrait12,
+  },
+  {
+    id: 117,
+    title: "Volume abstrait finition béton ciré blanc",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "",
+    year: "",
+    image: volumeAbstrait13,
+  },
+  // Sculpture bicolore
+  {
+    id: 118,
+    title: "Volume abstrait finition béton ciré bicolore",
+    category: "sculptures",
+    technique: "Béton ciré bicolore",
+    dimensions: "",
+    year: "",
+    image: volumeAbstraitBicolore1,
   },
 ];
 
