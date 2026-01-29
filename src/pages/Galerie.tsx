@@ -622,7 +622,6 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeAbstrait1,
-    zoom: 1.3,
   },
   {
     id: 102,
@@ -632,7 +631,6 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeAbstrait2,
-    zoom: 1.3,
   },
   {
     id: 103,
@@ -642,7 +640,6 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeAbstrait3,
-    zoom: 1.3,
   },
   {
     id: 104,
@@ -652,7 +649,6 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeAbstrait4,
-    zoom: 1.3,
   },
   {
     id: 105,
@@ -662,7 +658,7 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeAbstrait5,
-    zoom: 1.3,
+  },
   },
   {
     id: 106,
