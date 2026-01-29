@@ -88,13 +88,17 @@ import huileCouteau2005_60x60 from "@/assets/artworks/2005-huile-couteau-60x60.j
 import huileCouteau2005_50x50 from "@/assets/artworks/2005-huile-couteau-50x50.jpg";
 import huileCouteau2005_40x40 from "@/assets/artworks/2005-huile-couteau-40x40.jpg";
 
-// Sculptures
+// Sculptures - Béton ciré blanc
 import volumeAbstrait1 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-1.jpg";
 import volumeAbstrait2 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-2.jpg";
 import volumeAbstrait3 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-3.jpg";
 import volumeAbstrait4 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-4.jpg";
 import volumeAbstrait5 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-5.jpg";
 import volumeAbstrait6 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-6.jpg";
+// Sculptures - Béton ciré bronze
+import volumeAbstraitBronze1 from "@/assets/artworks/volume-abstrait-beton-cire-bronze-1.jpg";
+import volumeAbstraitBronze2 from "@/assets/artworks/volume-abstrait-beton-cire-bronze-2.jpg";
+import volumeAbstraitBronze3 from "@/assets/artworks/volume-abstrait-beton-cire-bronze-3.jpg";
 
 // ============= ARTWORK DATA =============
 interface Artwork {
@@ -668,7 +672,34 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeAbstrait6,
-    zoom: 1.3,
+  },
+  // Sculptures - Béton ciré bronze
+  {
+    id: 107,
+    title: "Volume abstrait finition béton ciré bronze",
+    category: "sculptures",
+    technique: "Béton ciré bronze",
+    dimensions: "",
+    year: "",
+    image: volumeAbstraitBronze1,
+  },
+  {
+    id: 108,
+    title: "Volume abstrait finition béton ciré bronze",
+    category: "sculptures",
+    technique: "Béton ciré bronze",
+    dimensions: "",
+    year: "",
+    image: volumeAbstraitBronze2,
+  },
+  {
+    id: 109,
+    title: "Volume abstrait finition béton ciré bronze",
+    category: "sculptures",
+    technique: "Béton ciré bronze",
+    dimensions: "",
+    year: "",
+    image: volumeAbstraitBronze3,
   },
 ];
 
@@ -833,7 +864,7 @@ const Galerie = () => {
                     <OptimizedImage
                       src={artwork.image}
                       alt={`${artwork.title} - ${artwork.technique} ${artwork.dimensions} par Marie-Christine Chaillou, artiste Nantes`}
-                      className="w-full h-full object-cover object-center"
+                      className={`w-full h-full ${artwork.category === 'sculptures' ? 'object-contain' : 'object-cover'} object-center`}
                       containerClassName="w-full h-full"
                       style={{ transform: `scale(${artwork.zoom || 1})` }}
                       whileHover={{ scale: (artwork.zoom || 1) * 1.05 }}
