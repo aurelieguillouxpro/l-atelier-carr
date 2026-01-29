@@ -89,17 +89,9 @@ import huileCouteau2005_50x50 from "@/assets/artworks/2005-huile-couteau-50x50.j
 import huileCouteau2005_40x40 from "@/assets/artworks/2005-huile-couteau-40x40.jpg";
 
 // Sculptures
-import sculptureBlanche from "@/assets/artworks/sculpture-blanche-organique.jpg";
-import sculptureColoree from "@/assets/artworks/sculpture-coloree.jpg";
-import sculptureNoire from "@/assets/artworks/sculpture-noire.jpg";
-import sculptureGeometrique from "@/assets/artworks/sculpture-geometrique.jpg";
-import sculptureElancee from "@/assets/artworks/sculpture-elancee.jpg";
-import sculptureSignee from "@/assets/artworks/sculpture-blanche-signee.jpg";
-import sculptureNoireDynamique from "@/assets/artworks/sculpture-noire-dynamique.jpg";
-import sculptureMonumentale from "@/assets/artworks/sculpture-monumentale.jpg";
-import sculptureArchitecturale from "@/assets/artworks/sculpture-architecturale.jpg";
-import sculptureFeminine from "@/assets/artworks/sculpture-feminine.jpg";
-import sculptureTotemique from "@/assets/artworks/sculpture-totemique.jpg";
+import volumeAbstrait1 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-1.jpg";
+import volumeAbstrait2 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-2.jpg";
+import volumeAbstrait3 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-3.jpg";
 
 // ============= ARTWORK DATA =============
 interface Artwork {
@@ -614,116 +606,36 @@ const artworks: Artwork[] = [
     year: "2005",
     image: huileCouteau2005_40x40,
   },
-  // === SCULPTURES (triées du plus récent au plus ancien) ===
+  // === SCULPTURES ===
   {
-    id: 23,
-    title: "Envol",
+    id: 101,
+    title: "Volume abstrait finition béton ciré blanc",
     category: "sculptures",
-    technique: "Bronze patiné noir",
-    dimensions: "35 × 30 × 25 cm",
-    year: "2025",
-    image: sculptureNoireDynamique,
-    zoom: 1.5,
-  },
-  {
-    id: 20,
-    title: "Architecture",
-    category: "sculptures",
-    technique: "Béton ciré bicolore",
-    dimensions: "40 × 20 × 15 cm",
-    year: "2024",
-    image: sculptureGeometrique,
+    technique: "Béton ciré blanc",
+    dimensions: "",
+    year: "",
+    image: volumeAbstrait1,
     zoom: 1.3,
   },
   {
-    id: 21,
-    title: "Élévation",
+    id: 102,
+    title: "Volume abstrait finition béton ciré blanc",
     category: "sculptures",
     technique: "Béton ciré blanc",
-    dimensions: "38 × 12 × 10 cm",
-    year: "2024",
-    image: sculptureElancee,
-    zoom: 1.4,
-  },
-  {
-    id: 17,
-    title: "Silhouette",
-    category: "sculptures",
-    technique: "Béton ciré blanc",
-    dimensions: "35 × 12 × 10 cm",
-    year: "2023",
-    image: sculptureBlanche,
-    zoom: 1.4,
-  },
-  {
-    id: 19,
-    title: "Mouvement",
-    category: "sculptures",
-    technique: "Bronze patiné",
-    dimensions: "30 × 25 × 20 cm",
-    year: "2023",
-    image: sculptureNoire,
-    zoom: 1.6,
-  },
-  {
-    id: 18,
-    title: "Vitrail",
-    category: "sculptures",
-    technique: "Bois peint",
-    dimensions: "45 × 15 × 8 cm",
-    year: "2022",
-    image: sculptureColoree,
+    dimensions: "",
+    year: "",
+    image: volumeAbstrait2,
     zoom: 1.3,
   },
   {
-    id: 22,
-    title: "Contemplation",
+    id: 103,
+    title: "Volume abstrait finition béton ciré blanc",
     category: "sculptures",
     technique: "Béton ciré blanc",
-    dimensions: "30 × 20 × 15 cm",
-    year: "2021",
-    image: sculptureSignee,
-    zoom: 1.5,
-  },
-  {
-    id: 24,
-    title: "Monument",
-    category: "sculptures",
-    technique: "Béton ciré blanc",
-    dimensions: "60 × 35 × 30 cm",
-    year: "2020",
-    image: sculptureMonumentale,
+    dimensions: "",
+    year: "",
+    image: volumeAbstrait3,
     zoom: 1.3,
-  },
-  {
-    id: 25,
-    title: "Édifice",
-    category: "sculptures",
-    technique: "Béton ciré blanc",
-    dimensions: "45 × 20 × 15 cm",
-    year: "2019",
-    image: sculptureArchitecturale,
-    zoom: 1.4,
-  },
-  {
-    id: 26,
-    title: "Grâce",
-    category: "sculptures",
-    technique: "Béton ciré blanc",
-    dimensions: "50 × 15 × 12 cm",
-    year: "2019",
-    image: sculptureFeminine,
-    zoom: 1.4,
-  },
-  {
-    id: 27,
-    title: "Gardien",
-    category: "sculptures",
-    technique: "Béton moucheté",
-    dimensions: "35 × 10 × 8 cm",
-    year: "2018",
-    image: sculptureTotemique,
-    zoom: 1.5,
   },
 ];
 
