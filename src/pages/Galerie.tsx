@@ -98,6 +98,10 @@ import volumeAbstrait6 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-
 import volumeAbstrait7 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-7.jpg";
 import volumeAbstrait8 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-8.jpg";
 import volumeAbstrait9 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-9.jpg";
+import volumeAbstrait10 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-10.jpg";
+import volumeAbstrait11 from "@/assets/artworks/volume-abstrait-beton-cire-blanc-11.jpg";
+// Sculptures - Béton ciré bleu
+import volumeAbstraitBleu1 from "@/assets/artworks/volume-abstrait-beton-cire-bleu-1.jpg";
 // Sculptures - Béton ciré bronze
 import volumeAbstraitBronze1 from "@/assets/artworks/volume-abstrait-beton-cire-bronze-1.jpg";
 import volumeAbstraitBronze2 from "@/assets/artworks/volume-abstrait-beton-cire-bronze-2.jpg";
@@ -725,6 +729,35 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeAbstraitBronze3,
+  },
+  // Nouvelles sculptures blanches
+  {
+    id: 113,
+    title: "Volume abstrait finition béton ciré blanc",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "",
+    year: "",
+    image: volumeAbstrait10,
+  },
+  {
+    id: 114,
+    title: "Volume abstrait finition béton ciré blanc",
+    category: "sculptures",
+    technique: "Béton ciré blanc",
+    dimensions: "",
+    year: "",
+    image: volumeAbstrait11,
+  },
+  // Sculpture bleue
+  {
+    id: 115,
+    title: "Volume abstrait finition béton ciré bleu",
+    category: "sculptures",
+    technique: "Béton ciré bleu",
+    dimensions: "",
+    year: "",
+    image: volumeAbstraitBleu1,
   },
 ];
 
