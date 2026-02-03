@@ -81,7 +81,6 @@ import huileOcreGris from "@/assets/artworks/huile-ocre-gris-2006.jpg";
 import huileBleuOcre from "@/assets/artworks/huile-bleu-ocre-2006.jpg";
 
 // 2005
-import huilePerspective from "@/assets/artworks/huile-perspective-2005.jpg";
 import huileCouteau2005_60x60 from "@/assets/artworks/2005-huile-couteau-60x60.jpg";
 import huileCouteau2005_50x50 from "@/assets/artworks/2005-huile-couteau-50x50.jpg";
 import huileCouteau2005_40x40 from "@/assets/artworks/2005-huile-couteau-40x40.jpg";
@@ -576,15 +575,6 @@ const artworks: Artwork[] = [
     image: huileBleuOcre,
   },
   // 2005
-  {
-    id: 16,
-    title: "Perspective",
-    category: "peintures",
-    technique: "Huile sur toile au couteau",
-    dimensions: "50 × 50 cm",
-    year: "2005",
-    image: huilePerspective,
-  },
   {
     id: 35,
     title: "Composition I",
