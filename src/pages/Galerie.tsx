@@ -45,7 +45,6 @@ import huileEmpatement2013_60x60 from "@/assets/artworks/2013-huile-empatement-6
 import huileEmpatement2012_80x80 from "@/assets/artworks/2012-huile-empatement-80x80.jpg";
 import huileEmpatement2012_80x80_2 from "@/assets/artworks/2012-huile-empatement-80x80-2.jpg";
 import huileEmpatement2012_50x50 from "@/assets/artworks/2012-huile-empatement-50x50.jpg";
-import huile2012_50x50 from "@/assets/artworks/2012-huile-50x50.jpg";
 import huile2012_60x60 from "@/assets/artworks/2012-huile-60x60.jpg";
 import huile2012_60x60_2 from "@/assets/artworks/2012-huile-60x60-2.jpg";
 
@@ -354,15 +353,6 @@ const artworks: Artwork[] = [
     dimensions: "50 × 50 cm",
     year: "2012",
     image: huileEmpatement2012_50x50,
-  },
-  {
-    id: 55,
-    title: "Abstraction I",
-    category: "peintures",
-    technique: "Huile sur toile",
-    dimensions: "50 × 50 cm",
-    year: "2012",
-    image: huile2012_50x50,
   },
   {
     id: 56,
