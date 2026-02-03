@@ -50,7 +50,6 @@ import huile2012_60x60 from "@/assets/artworks/2012-huile-60x60.jpg";
 import huile2012_60x60_2 from "@/assets/artworks/2012-huile-60x60-2.jpg";
 
 // 2010
-import huileRougeNoir from "@/assets/artworks/huile-rouge-noir-2010.jpg";
 import huileGrisRouge from "@/assets/artworks/huile-gris-rouge-2010.jpg";
 import glacisBois2010_30x30 from "@/assets/artworks/2010-glacis-bois-30x30.jpg";
 import glacisToile2010_30x30 from "@/assets/artworks/2010-glacis-toile-30x30.jpg";
@@ -384,15 +383,6 @@ const artworks: Artwork[] = [
     image: huile2012_60x60_2,
   },
   // 2010
-  {
-    id: 1,
-    title: "Tension Rouge",
-    category: "peintures",
-    technique: "Huile sur toile",
-    dimensions: "50 × 50 cm",
-    year: "2010",
-    image: huileRougeNoir,
-  },
   {
     id: 2,
     title: "Équilibre",
