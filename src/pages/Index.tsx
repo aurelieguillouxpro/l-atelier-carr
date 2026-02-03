@@ -19,7 +19,7 @@ const featuredWorks = [
   },
   {
     id: 2,
-    technique: "Bronze patiné noir — 35×30×25 cm",
+    technique: "Béton ciré noir",
     image: sculptureNoireDynamique,
     zoom: 1.5,
   },
