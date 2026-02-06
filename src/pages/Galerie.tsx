@@ -812,6 +812,7 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeExterieur1,
+    objectPosition: "top",
   },
   {
     id: 123,
@@ -821,6 +822,7 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeExterieur2,
+    objectPosition: "top",
   },
   {
     id: 124,
@@ -830,6 +832,7 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeExterieur3,
+    objectPosition: "top",
   },
 ];
 
