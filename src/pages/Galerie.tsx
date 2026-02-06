@@ -723,6 +723,7 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeAbstrait10,
+    objectPosition: "top",
   },
   {
     id: 114,
@@ -732,6 +733,7 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeAbstrait11,
+    objectPosition: "top",
   },
   // Sculpture bleue
   {
