@@ -1,45 +1,17 @@
 
 
-# Intégration de Google Analytics 4
+## Ouverture directe en plein ecran depuis la galerie
 
-## Identifiant de mesure
-`G-XCX6HL5XNF`
+### Ce qui se passe aujourd'hui
+Quand vous cliquez sur une sculpture (ou toute oeuvre) dans la grille, la lightbox s'ouvre d'abord en mode "apercu" avec l'image a gauche et les details (technique, dimensions, annee) a droite. Il faut ensuite cliquer sur le bouton d'agrandissement pour voir l'image en plein ecran.
 
-## Modifications à effectuer
+### Ce qui va changer
+Un clic sur une image ouvrira directement la vue agrandie (plein ecran), sans passer par l'etape intermediaire.
 
-### Fichier : `index.html`
+### Details techniques
+Modification dans le fichier `src/pages/Galerie.tsx` :
 
-Ajouter le script Google Analytics dans le `<head>`, juste après le DNS prefetch existant (ligne 28) :
+- **Ligne 987** : dans le `onClick` de chaque vignette, activer le mode plein ecran en meme temps que la selection de l'oeuvre. Actuellement `onClick={() => setSelectedArtwork(artwork)}` deviendra `onClick={() => { setSelectedArtwork(artwork); setIsFullscreen(true); }}`.
 
-```html
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XCX6HL5XNF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XCX6HL5XNF');
-</script>
-```
-
-## Ce qui sera suivi automatiquement
-
-| Donnee                    | Description                              |
-|---------------------------|------------------------------------------|
-| Pages vues                | Chaque visite de page                    |
-| Sessions                  | Durée et nombre de visites               |
-| Source du trafic          | D'où viennent vos visiteurs              |
-| Appareil                  | Mobile, tablette, ordinateur             |
-| Localisation géographique | Pays, ville des visiteurs                |
-| Temps passé               | Durée moyenne sur le site                |
-
-## Verification apres deploiement
-
-1. Visitez votre site en production
-2. Dans Google Analytics, allez dans **Rapports** puis **Temps reel**
-3. Vous devriez voir votre visite apparaitre en direct
-
-## Note technique
-
-L'identifiant GA4 est une cle publique (visible dans le code source de tout site web). Il n'y a aucun risque de securite a l'integrer directement dans le HTML.
+Le bouton d'agrandissement/reduction et le panneau de details resteront fonctionnels : l'utilisateur pourra toujours basculer entre les deux modes une fois la lightbox ouverte.
 
