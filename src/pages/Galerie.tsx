@@ -126,8 +126,6 @@ interface Artwork {
   year: string;
   image: string;
   zoom?: number;
-  displayOriginal?: boolean; // Affiche l'image en format original dans la lightbox
-  objectPosition?: string; // Position de l'image (ex: "top", "center", "bottom")
 }
 
 const artworks: Artwork[] = [
@@ -761,8 +759,6 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeAbstrait13,
-    displayOriginal: true,
-    objectPosition: "top",
   },
   // Sculpture bicolore
   {
@@ -994,7 +990,7 @@ const Galerie = () => {
                     <OptimizedImage
                       src={artwork.image}
                       alt={`${artwork.title} - ${artwork.technique} ${artwork.dimensions} par Marie-Christine Chaillou, artiste Nantes`}
-                      className={`w-full h-full object-cover ${artwork.objectPosition === "top" ? "object-top" : "object-center"}`}
+                      className="w-full h-full object-cover object-center"
                       containerClassName="w-full h-full"
                       style={{ transform: `scale(${artwork.zoom || 1})` }}
                       whileHover={{ scale: (artwork.zoom || 1) * 1.05 }}
@@ -1106,14 +1102,14 @@ const Galerie = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className={`relative overflow-hidden ${
-                isFullscreen || selectedArtwork.displayOriginal
+                isFullscreen 
                   ? 'max-w-[90vw] max-h-[90vh]' 
                   : 'aspect-square w-full max-w-lg lg:max-w-2xl'
               }`}>
                 <img
                   src={selectedArtwork.image}
                   alt={selectedArtwork.title}
-                  className={`w-full h-full ${isFullscreen || selectedArtwork.displayOriginal ? 'object-contain' : 'object-cover'} transition-opacity duration-300`}
+                  className={`w-full h-full ${isFullscreen ? 'object-contain' : 'object-cover'} transition-opacity duration-300`}
                 />
               </div>
               
