@@ -984,7 +984,7 @@ const Galerie = () => {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5, delay: index * 0.03 }}
                   className="group cursor-pointer"
-                  onClick={() => setSelectedArtwork(artwork)}
+                  onClick={() => { setSelectedArtwork(artwork); setIsFullscreen(true); }}
                 >
                   <div className="aspect-square bg-muted/10 mb-4 overflow-hidden relative">
                     <OptimizedImage
