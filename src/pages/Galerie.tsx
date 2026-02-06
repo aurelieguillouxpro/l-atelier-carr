@@ -127,6 +127,7 @@ interface Artwork {
   image: string;
   zoom?: number;
   objectPosition?: string;
+  lightboxContain?: boolean;
 }
 
 const artworks: Artwork[] = [
@@ -813,6 +814,7 @@ const artworks: Artwork[] = [
     year: "",
     image: volumeExterieur1,
     objectPosition: "top",
+    lightboxContain: true,
   },
   {
     id: 123,
@@ -823,6 +825,7 @@ const artworks: Artwork[] = [
     year: "",
     image: volumeExterieur2,
     objectPosition: "top",
+    lightboxContain: true,
   },
   {
     id: 124,
@@ -833,6 +836,7 @@ const artworks: Artwork[] = [
     year: "",
     image: volumeExterieur3,
     objectPosition: "top",
+    lightboxContain: true,
   },
 ];
 
@@ -1116,7 +1120,7 @@ const Galerie = () => {
                 <img
                   src={selectedArtwork.image}
                   alt={selectedArtwork.title}
-                  className={`w-full h-full ${isFullscreen ? 'object-contain' : 'object-cover'} transition-opacity duration-300`}
+                  className={`w-full h-full ${isFullscreen || selectedArtwork.lightboxContain ? 'object-contain' : 'object-cover'} transition-opacity duration-300`}
                 />
               </div>
               
