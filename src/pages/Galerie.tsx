@@ -1114,9 +1114,9 @@ const Galerie = () => {
             >
               <div className={`relative overflow-hidden ${
                 isFullscreen 
-                  ? 'max-w-[90vw] max-h-[90vh]' 
+                  ? 'w-[90vw] h-[90vh]' 
                   : selectedArtwork.lightboxContain
-                    ? 'w-full max-w-lg lg:max-w-2xl max-h-[80vh]'
+                    ? 'w-full max-w-lg lg:max-w-2xl h-[80vh]'
                     : 'aspect-square w-full max-w-lg lg:max-w-2xl'
               }`}>
                 <img
