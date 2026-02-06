@@ -67,7 +67,7 @@ Envoyé depuis carrementabstrait.com
       },
       body: JSON.stringify({
         from: 'Contact Site Web <contact@carrementabstrait.com>',
-        to: ['aurelie.guilloux.pro@gmail.com'],
+        to: ['Marie-Christine Chaillou <mc.chaillou@gmail.com>'],
         reply_to: email.trim(),
         subject: `[Contact Site] ${subject.trim()}`,
         text: emailContent,
