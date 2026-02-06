@@ -126,6 +126,7 @@ interface Artwork {
   year: string;
   image: string;
   zoom?: number;
+  objectPosition?: string;
 }
 
 const artworks: Artwork[] = [
@@ -674,6 +675,7 @@ const artworks: Artwork[] = [
     dimensions: "",
     year: "",
     image: volumeAbstrait8,
+    objectPosition: "top",
   },
   {
     id: 112,
@@ -990,9 +992,9 @@ const Galerie = () => {
                     <OptimizedImage
                       src={artwork.image}
                       alt={`${artwork.title} - ${artwork.technique} ${artwork.dimensions} par Marie-Christine Chaillou, artiste Nantes`}
-                      className="w-full h-full object-cover object-center"
+                      className={`w-full h-full object-cover ${artwork.objectPosition ? '' : 'object-center'}`}
                       containerClassName="w-full h-full"
-                      style={{ transform: `scale(${artwork.zoom || 1})` }}
+                      style={{ transform: `scale(${artwork.zoom || 1})`, objectPosition: artwork.objectPosition || 'center' }}
                       whileHover={{ scale: (artwork.zoom || 1) * 1.05 }}
                       transition={{ duration: 0.6, ease: "easeOut" }}
                     />
